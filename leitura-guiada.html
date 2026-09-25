@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Leitura Guiada — Primeira Página | História 9º ano</title>
+<style>
+:root{
+  --tinta:#0d0c0a; --tinta2:#16150f; --papel:#c9c3b4; --papel2:#8e8878;
+  --ambar:#e8a33d; --ambar2:#f5c877; --carimbo:#c0392b; --verde:#4f9d69;
+  --borda:#2e2b22;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--papel);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:linear-gradient(180deg,#1b1a14,#0d0c0a);border-bottom:3px double var(--ambar);padding:22px 0 16px}
+.jornal{font-family:'Times New Roman',serif;font-size:2.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar2);text-align:center;font-weight:700}
+.sub{text-align:center;color:var(--papel2);font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+.faixa{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:.78rem;color:var(--papel2);letter-spacing:.1em;text-transform:uppercase}
+nav.abas{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:16px 0 0}
+nav.abas a{display:block;padding:8px 14px;border:1px solid var(--borda);background:#141309;color:var(--papel2);text-decoration:none;font-size:.86rem;letter-spacing:.06em;font-family:Arial,sans-serif}
+nav.abas a:hover{border-color:var(--ambar);color:var(--ambar2)}
+nav.abas a.on{background:var(--ambar);color:#17150d;border-color:var(--ambar);font-weight:700}
+.painel{background:#141309;border:1px solid var(--borda);border-left:4px solid var(--ambar);padding:14px;margin:20px 0;font-family:Arial,sans-serif;font-size:.86rem}
+.painel b{color:var(--ambar2)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button{font-family:Arial,sans-serif;cursor:pointer;border:1px solid var(--borda);background:#1e1c13;color:var(--papel);padding:8px 14px;font-size:.85rem}
+button:hover{border-color:var(--ambar);color:var(--ambar2)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.pri{background:var(--ambar);color:#17150d;font-weight:700;border-color:var(--ambar)}
+button.pri:disabled{background:#4a4534;color:#8e8878;border-color:#4a4534}
+.prog{height:8px;background:#201e15;border:1px solid var(--borda);margin:14px 0}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--ambar),var(--ambar2));width:0;transition:width .4s}
+.bloco{border:1px solid var(--borda);background:#12110b;margin:22px 0;position:relative}
+.bloco.trv{opacity:.45}
+.bhead{border-bottom:1px solid var(--borda);padding:14px 18px;background:#191710}
+.bdata{font-family:Arial,sans-serif;font-size:.74rem;letter-spacing:.2em;color:var(--ambar);text-transform:uppercase}
+.bman{font-size:1.5rem;color:var(--ambar2);margin-top:4px;line-height:1.25}
+.bcap{font-family:Arial,sans-serif;font-size:.72rem;color:var(--papel2);margin-top:6px;letter-spacing:.08em}
+.bbody{padding:18px}
+.bbody p{margin-bottom:14px;text-align:justify}
+.bbody p strong{color:var(--ambar2)}
+.cadeado{padding:26px 18px;text-align:center;color:var(--papel2);font-family:Arial,sans-serif;font-size:.9rem}
+.perg{border-top:1px dashed var(--borda);padding-top:16px;margin-top:8px}
+.pitem{margin-bottom:18px}
+.pnum{font-family:Arial,sans-serif;font-size:.74rem;letter-spacing:.16em;color:var(--ambar);text-transform:uppercase}
+.ptxt{margin:6px 0 8px;font-size:1.02rem}
+.tipo{display:inline-block;font-family:Arial,sans-serif;font-size:.66rem;letter-spacing:.1em;padding:2px 7px;border:1px solid var(--borda);color:var(--papel2);margin-left:6px;text-transform:uppercase;vertical-align:middle}
+textarea{width:100%;min-height:82px;background:#0a0906;color:var(--papel);border:1px solid var(--borda);padding:10px;font-family:Georgia,serif;font-size:.96rem;line-height:1.6;resize:vertical}
+textarea:focus{outline:none;border-color:var(--ambar)}
+.pitem.copia textarea{border-color:var(--carimbo);background:#1a0c0a}
+.aviso{font-family:Arial,sans-serif;font-size:.84rem;padding:10px 12px;margin-top:8px;border-left:3px solid;display:none}
+.aviso.am{display:block;border-color:var(--ambar);background:#241f10;color:var(--ambar2)}
+.aviso.vm{display:block;border-color:var(--carimbo);background:#1e0e0c;color:#e8897e}
+.modelo{display:none;margin-top:10px;border:1px solid var(--borda);background:#151309;padding:12px}
+.modelo.on{display:block}
+.modelo h5{font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.16em;color:var(--verde);text-transform:uppercase;margin-bottom:6px}
+.modelo p{font-size:.95rem;margin-bottom:10px;text-align:left}
+.chk{border-top:1px dashed var(--borda);padding-top:10px}
+.chk h6{font-family:Arial,sans-serif;font-size:.72rem;letter-spacing:.12em;color:var(--ambar);text-transform:uppercase;margin-bottom:8px}
+.chkrow{display:flex;gap:8px;align-items:flex-start;margin-bottom:8px;font-size:.93rem}
+.chkrow span{flex:1}
+.chkrow button{padding:3px 12px;font-size:.78rem}
+.chkrow button.sim.on{background:var(--verde);color:#07120b;border-color:var(--verde);font-weight:700}
+.chkrow button.nao.on{background:var(--carimbo);color:#fff;border-color:var(--carimbo);font-weight:700}
+.status{font-family:Arial,sans-serif;font-size:.85rem;padding:10px 12px;margin-top:12px;display:none}
+.status.ok{display:block;background:#101a12;border-left:3px solid var(--verde);color:#8fd4a5}
+.status.rev{display:block;background:#241f10;border-left:3px solid var(--ambar);color:var(--ambar2)}
+.selo{position:absolute;top:10px;right:12px;font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.18em;border:2px solid var(--carimbo);color:var(--carimbo);padding:3px 8px;transform:rotate(-8deg);display:none}
+.selo.on{display:block}
+.caixa{border:2px solid var(--carimbo);background:#160b09;padding:18px;margin:26px 0}
+.caixa h3{color:#e8897e;font-family:Arial,sans-serif;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.caixa ol{margin-left:20px}
+.caixa li{margin-bottom:9px}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.9rem}
+th,td{border:1px solid var(--borda);padding:8px 10px;text-align:left}
+th{background:#1b1910;color:var(--ambar2);font-family:Arial,sans-serif;font-size:.78rem;letter-spacing:.08em;text-transform:uppercase}
+h2.sec{color:var(--ambar2);font-size:1.4rem;margin:30px 0 4px;border-bottom:1px solid var(--borda);padding-bottom:8px}
+#revisar{border:1px solid var(--ambar);background:#1a1710;padding:16px;margin:22px 0}
+#revisar h3{color:var(--ambar2);font-family:Arial,sans-serif;font-size:.95rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+#revisar ul{margin-left:20px}
+#revisar li{margin-bottom:7px;font-size:.93rem}
+.fim{text-align:center;padding:26px 0;color:var(--papel2);font-family:Arial,sans-serif;font-size:.85rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:99}
+.modal.on{display:flex}
+.modal .box{background:#15130c;border:1px solid var(--ambar);padding:22px;max-width:420px;font-family:Arial,sans-serif}
+.modal h4{color:var(--ambar2);margin-bottom:10px}
+.modal p{font-size:.9rem;margin-bottom:14px}
+@media(max-width:640px){.jornal{font-size:1.7rem}.bman{font-size:1.2rem}}
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <div class="jornal">Primeira Página</div>
+    <div class="sub">Edição especial &bull; 1930 &ndash; 1945</div>
+    <div class="faixa"><span>História &bull; 9º ano</span><span>&bull;</span><span>Caps. 13, 15, 16 e 17</span><span>&bull;</span><span>Prova 29/09</span></div>
+    <nav class="abas">
+      <a href="index.html">🏠 Início</a>
+      <a href="leitura-guiada.html" class="on">📖 Leitura Guiada</a>
+      <a href="quiz.html">🎯 Quiz</a>
+      <a href="resumo.html">🗺️ Resumo</a>
+      <a href="simulado.html">📝 Simulado</a>
+    </nav>
+  </div>
+</header>
+
+<div class="wrap">
+  <div class="painel">
+    <b>📖 Como funciona esta leitura.</b> Cada bloco é uma <b>edição do jornal</b>. Leia a reportagem e responda às <b>3 perguntas escrevendo com as suas palavras</b>. O botão <b>Conferir</b> só libera quando as 3 estiverem preenchidas. Depois de conferir, aparecem a resposta modelo e um checklist — e a edição seguinte se abre.
+    <div style="margin-top:8px;color:var(--papel2)">Salvamento automático: <b id="quando">—</b></div>
+    <div class="btns">
+      <button onclick="exportar()">📥 Exportar</button>
+      <button onclick="document.getElementById('imp').click()">📤 Importar</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importar(event)">
+      <button onclick="pedirZerar()">🗑️ Zerar tudo</button>
+    </div>
+  </div>
+  <div class="prog"><i id="barra"></i></div>
+  <div id="blocos"></div>
+
+  <h2 class="sec">🚨 As 10 pegadinhas da prova</h2>
+  <div class="caixa">
+    <h3>Cuidado — aqui é onde se perde ponto</h3>
+    <ol>
+      <li><strong>Revolução de 1930 não foi feita pelos trabalhadores.</strong> Quem a conduziu foram <strong>oligarquias dissidentes</strong> (Minas, Rio Grande do Sul e Paraíba) aliadas aos tenentes. Era uma disputa dentro da elite, não uma revolução popular.</li>
+      <li><strong>Quem rompeu o café com leite foi Washington Luís</strong>, ao indicar o paulista Júlio Prestes em vez de um mineiro. Não foi Getúlio. Getúlio aproveitou o racha, não o criou.</li>
+      <li><strong>Júlio Prestes venceu a eleição de 1930</strong> — e mesmo assim não tomou posse. A Aliança Liberal não aceitou o resultado e partiu para a luta armada. Não confunda "perdeu a eleição" com "não assumiu".</li>
+      <li><strong>São Paulo perdeu a guerra de 1932, mas ganhou a Constituição.</strong> Os paulistas se renderam em outubro de 1932; ainda assim o governo cedeu e convocou a Constituinte, que gerou a Constituição de 1934. Derrota militar, vitória política.</li>
+      <li><strong>O voto feminino é de 1932</strong> (Código Eleitoral), não de 1934. E ele veio com limites: só maiores de 21 anos, e <strong>analfabetos continuaram proibidos de votar</strong>.</li>
+      <li><strong>A CLT é de 1943</strong>, já dentro do Estado Novo — ela não é o começo das leis trabalhistas. O Ministério do Trabalho é de 1930 e a Carteira de Trabalho é de 1932. A CLT <strong>reuniu</strong> o que já existia num único código.</li>
+      <li><strong>Os trabalhadores rurais ficaram de fora</strong> da legislação trabalhista de Vargas. Foi o preço da aliança dele com a elite agrária. Se a questão falar em "todos os trabalhadores", desconfie.</li>
+      <li><strong>O Plano Cohen era falso.</strong> Foi forjado por um militar ligado ao integralismo e serviu de pretexto para o golpe de 10 de novembro de 1937. Não houve plano comunista nenhum em 1937.</li>
+      <li><strong>O Brasil entrou na guerra em 1942, mas só enviou tropas em 1944.</strong> São dois momentos diferentes: em agosto de 1942 declarou guerra (depois dos ataques de submarinos); a FEB só embarcou para a Itália em 1944.</li>
+      <li><strong>O Brasil lutou contra o nazifascismo sendo uma ditadura.</strong> Esse é o paradoxo que derrubou o Estado Novo: não dá para defender a democracia lá fora e censurar em casa. Foi esse argumento que a oposição usou.</li>
+    </ol>
+  </div>
+
+  <h2 class="sec">🗂️ Cobertura — Tópico → Edição</h2>
+  <table>
+    <tr><th>Tópico do conteúdo</th><th>Capítulo</th><th>Edição (bloco)</th></tr>
+    <tr><td>Crise de 1929, café com leite, Revolução de 1930</td><td>13 (L1)</td><td>1</td></tr>
+    <tr><td>Governo Provisório, interventores, Ministério do Trabalho, DNC</td><td>13 (L1)</td><td>2</td></tr>
+    <tr><td>Revolução Constitucionalista de 1932, voto feminino, Constituição de 1934</td><td>13 (L1)</td><td>3</td></tr>
+    <tr><td>Integralistas (AIB) x Comunistas (ANL), Intentona de 1935</td><td>13 (L1)</td><td>4</td></tr>
+    <tr><td>Plano Cohen, golpe de 1937, Estado Novo, DIP, CLT</td><td>13 (L1)</td><td>5</td></tr>
+    <tr><td>Blitzkrieg, Polônia, Pacto Molotov-Ribbentrop</td><td>15 (L2)</td><td>6</td></tr>
+    <tr><td>Expansão alemã de 1940, Maginot, Dunquerque, Vichy, Grã-Bretanha</td><td>15 (L2)</td><td>7</td></tr>
+    <tr><td>Operação Barbarossa, Japão e o petróleo, Pearl Harbor</td><td>15 (L2)</td><td>8</td></tr>
+    <tr><td>Midway, El Alamein, Stalingrado, Itália, Holocausto</td><td>15 (L2)</td><td>9</td></tr>
+    <tr><td>Teerã, Dia D, Yalta, Berlim, Potsdam, Projeto Manhattan</td><td>16 (L2)</td><td>10</td></tr>
+    <tr><td>Kamikazes, Hiroshima e Nagasaki, ONU, Direitos Humanos</td><td>16 (L2)</td><td>11</td></tr>
+    <tr><td>Brasil entre EUA e Alemanha, FEB, boa vizinhança, fim do Estado Novo</td><td>17 (L2)</td><td>12</td></tr>
+  </table>
+
+  <div id="revisar" style="display:none"><h3>🔁 Para revisar antes da prova</h3><ul id="revlista"></ul></div>
+  <div class="fim">Terminou a leitura? O próximo passo é o <a href="quiz.html" style="color:var(--ambar2)">🎯 Quiz</a>.</div>
+</div>
+
+<div class="modal" id="mdl"><div class="box">
+  <h4 id="mdlt">Confirmar</h4><p id="mdlp">?</p>
+  <div class="btns"><button class="pri" onclick="mdlOk()">Sim, zerar</button><button onclick="fecharModal()">Cancelar</button></div>
+</div></div>
+
+<script>
+/* ===== armazenamento seguro ===== */
+var MEM={};
+function LS(){try{var t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return localStorage;}catch(e){return null;}}
+var ST=LS();
+function getIt(k){try{return ST?ST.getItem(k):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+function setIt(k,v){try{if(ST){ST.setItem(k,v);}else{MEM[k]=v;}}catch(e){MEM[k]=v;}}
+function delIt(k){try{if(ST){ST.removeItem(k);}else{delete MEM[k];}}catch(e){delete MEM[k];}}
+var CHAVE='hist9_primeirapagina_leitura';
+
+/* ===== conteúdo ===== */
+var BLOCOS=[
+{
+ id:1,data:"3 de novembro de 1930",cap:"Capítulo 13 (Livro 1)",
+ man:"Cai a República das oligarquias: Vargas assume o poder",
+ txt:[
+ "Para entender 1930 é preciso voltar um ano. Em 1929 a Bolsa de Nova York quebrou e arrastou o mundo inteiro para uma crise. O Brasil vivia de vender café para fora, e de repente ninguém tinha dinheiro para comprar café. O preço despencou, as exportações caíram e a dívida externa cresceu. A economia que sustentava o poder dos fazendeiros começou a rachar — e junto com ela rachou o arranjo político que vinha desde o começo da República.",
+ "Esse arranjo era a <strong>política do café com leite</strong>: São Paulo (o café) e Minas Gerais (o leite) se revezavam na presidência. A regra não estava escrita em lugar nenhum, mas funcionava havia décadas. O problema é que, em 1929, o presidente Washington Luís, que era paulista, resolveu quebrar o revezamento: em vez de apoiar um mineiro para sucedê-lo, indicou outro paulista, <strong>Júlio Prestes</strong>. Ele justificou dizendo que precisava manter sua política econômica e que São Paulo, sendo o estado mais rico, deveria governar. Minas Gerais ficou furiosa.",
+ "Os mineiros então se aliaram ao Rio Grande do Sul e à Paraíba e formaram a <strong>Aliança Liberal</strong>, lançando <strong>Getúlio Vargas</strong> como candidato. A eleição de 1930 foi marcada por fraudes dos dois lados e Júlio Prestes venceu. Mas a Aliança Liberal não aceitou o resultado. Quando João Pessoa, o candidato a vice, foi assassinado na Paraíba, os derrotados tiveram o estopim que faltava para partir para a luta armada.",
+ "Durante outubro de 1930 houve combates em várias regiões do país. O confronto decisivo era esperado em Itararé, na divisa de São Paulo com o Paraná, mas ele nunca aconteceu — virou piada como <em>a batalha que não houve</em>. Em <strong>24 de outubro</strong> os chefes militares depuseram Washington Luís e, em <strong>3 de novembro de 1930</strong>, uma junta militar entregou a presidência a Getúlio Vargas. Soldados gaúchos amarraram seus cavalos no obelisco da Avenida Rio Branco, no Rio — a cena que ficou como símbolo do fim da República Oligárquica."
+ ],
+ p:[
+  {q:"Explique, com as suas palavras, por que a crise de 1929 mexeu tanto na POLÍTICA brasileira, e não só na economia.",tipo:"conceitual",
+   m:"Porque o poder político da República Velha estava apoiado na riqueza do café. Quando a crise derrubou o preço e as exportações, os fazendeiros de café perderam força econômica — e, sem essa força, também perderam a capacidade de mandar na política. O arranjo do café com leite ficou frágil justamente no momento em que Washington Luís o rompeu, e aí a oposição teve espaço para derrubar o sistema.",
+   c:["Disse que o poder político dependia da riqueza do café?","Ligou a queda das exportações/do preço à perda de força política das oligarquias?"]},
+  {q:"Imagine que um colega do 8º ano diga: 'A Revolução de 1930 foi uma revolta dos trabalhadores contra os ricos'. Escreva como você corrigiria essa frase.",tipo:"aplicação",
+   m:"Eu diria que não foi isso. Quem fez a Revolução de 1930 foram grupos que já faziam parte da elite: as oligarquias de Minas Gerais, Rio Grande do Sul e Paraíba, que estavam descontentes por terem sido deixadas de fora, aliadas a militares (os tenentes). Foi uma briga dentro do próprio grupo que mandava no país, e não um levante dos trabalhadores. Os trabalhadores só entram na história depois, quando Vargas cria leis trabalhistas para ganhar apoio.",
+   c:["Explicou que quem conduziu foram oligarquias dissidentes (e não os trabalhadores)?","Citou pelo menos um dos estados (Minas, RS ou Paraíba) ou os tenentes?"]},
+  {q:"Júlio Prestes ganhou a eleição de 1930 e mesmo assim nunca governou. Explique como isso foi possível.",tipo:"aplicação",
+   m:"Porque o resultado da eleição foi contestado. A Aliança Liberal acusou o pleito de fraudulento e se recusou a aceitar a vitória de Júlio Prestes. Com o assassinato de João Pessoa, ela partiu para as armas: durante outubro de 1930 houve combates pelo país, os militares depuseram o presidente Washington Luís em 24 de outubro e, em 3 de novembro, entregaram o poder a Getúlio Vargas. Ou seja, a eleição foi vencida nas urnas, mas o poder foi decidido pela força.",
+   c:["Disse que a Aliança Liberal não aceitou o resultado e partiu para a luta armada?","Citou a deposição de Washington Luís pelos militares / a posse de Vargas?"]}
+ ]
+},
+{
+ id:2,data:"1931 — 1932",cap:"Capítulo 13 (Livro 1)",
+ man:"Governo Provisório fecha o Congresso e cria a Carteira de Trabalho",
+ txt:[
+ "Vargas assumiu prometendo acabar com o poder das oligarquias estaduais — e cumpriu, mas do jeito dele: centralizando tudo nas próprias mãos. Antes mesmo de 1930 terminar, a <strong>Constituição de 1891 foi revogada</strong> e o <strong>Congresso Nacional foi dissolvido</strong>. Todos os governadores foram substituídos por <strong>interventores</strong>, homens de confiança dele, muitos deles veteranos dos combates de outubro. O argumento oficial era acabar com a corrupção das oligarquias. O resultado prático é que, sem Parlamento, sem Constituição e sem oposição organizada, Getúlio passou a governar com poderes de ditador.",
+ "Ainda em 1930, nos dois primeiros meses de governo, ele criou o <strong>Ministério do Trabalho, Indústria e Comércio</strong>. De lá saíram leis que mudaram a vida de quem trabalhava na cidade: jornada de oito horas, direito a férias, regulamentação do trabalho de menores e do trabalho feminino, aposentadoria e pensões. Em 1932 veio a <strong>Carteira de Trabalho</strong>, que garantia esses direitos — mas só para quem estivesse registrado no Ministério. Foi por causa dessas medidas que a imprensa da época apelidou Vargas de <strong>&ldquo;pai dos pobres&rdquo;</strong>.",
+ "Só que esse pacote tinha letras miúdas importantes. O Decreto 19.770, de 1931, determinou que só <strong>um sindicato por categoria</strong> seria reconhecido, e que apenas os sindicalizados teriam acesso aos direitos. Na prática, o Estado foi tomando conta dos sindicatos: para ser reconhecido, um sindicato precisava ser próximo do governo. O objetivo era impedir o crescimento de um sindicalismo independente e, ao mesmo tempo, manter boas relações com os donos das fábricas. E havia um grupo inteiro deixado de fora: os <strong>trabalhadores rurais não entraram na legislação trabalhista</strong>, porque Vargas não queria desagradar a elite agrária.",
+ "Na economia, o governo respondeu à crise centralizando. Criou o <strong>Departamento Nacional do Café (DNC)</strong>, que comprava parte da produção e a <strong>destruía</strong> para reduzir a oferta e segurar o preço — entre 1931 e 1944 foram queimadas mais de 70 milhões de sacas, o equivalente ao consumo mundial de três anos. A diferença em relação à República Velha é que agora o governo estipulava quanto compraria, forçando a produção a diminuir. Ao mesmo tempo, com a importação cara, a indústria brasileira cresceu para abastecer o mercado interno — setores como o têxtil, o metalúrgico, o calçadista e o alimentício se expandiram, ainda que o país não tivesse siderúrgicas para fabricar as próprias máquinas."
+ ],
+ p:[
+  {q:"Por que o apelido 'pai dos pobres' conta só metade da história do governo Vargas? Escreva a sua explicação.",tipo:"conceitual",
+   m:"Porque as leis trabalhistas realmente melhoraram a vida de muita gente (oito horas, férias, aposentadoria, Carteira de Trabalho), mas vieram com condições que serviam ao governo: só tinha direito quem tivesse carteira registrada e fosse de um sindicato reconhecido pelo Estado. Isso deu ao governo o controle dos sindicatos e impediu a organização independente dos trabalhadores. Além disso, os trabalhadores rurais ficaram de fora. Ou seja, foi proteção e controle ao mesmo tempo.",
+   c:["Reconheceu os direitos concedidos (jornada, férias, carteira etc.)?","Apontou o controle do Estado sobre os sindicatos OU a exclusão dos trabalhadores rurais?"]},
+  {q:"Queimar café para que o preço não caia parece um desperdício absurdo. Explique, como se fosse para um amigo, por que o governo fazia isso.",tipo:"aplicação",
+   m:"Porque o preço depende da quantidade que existe à venda. Com a crise de 1929, ninguém no mundo estava comprando café e sobrava produto, então o preço desabava e os produtores quebravam. Comprando e destruindo parte das sacas, o governo diminuía a oferta de propósito para o preço parar de cair. Era caro e parecia desperdício, mas servia para salvar a renda do setor que sustentava a economia do país — e o dinheiro da compra ainda circulava na economia.",
+   c:["Explicou a relação entre menos oferta e preço mais alto?","Ligou a medida à crise de 1929 / à queda das exportações?"]},
+  {q:"Vargas dizia que acabaria com o poder das oligarquias. Dê DOIS exemplos concretos de atos dele no Governo Provisório e diga que problema esses atos criaram.",tipo:"aplicação",
+   m:"Dois exemplos: ele revogou a Constituição de 1891 e dissolveu o Congresso Nacional; e substituiu todos os governadores dos estados por interventores nomeados por ele. O problema é que esses atos acabaram com o poder das oligarquias, mas também acabaram com os limites ao poder do próprio Vargas: sem Constituição, sem Parlamento e sem oposição, ele passou a governar de forma autoritária, concentrando tudo nas próprias mãos.",
+   c:["Citou dois atos concretos (revogar a Constituição, fechar o Congresso, nomear interventores)?","Disse que isso deu a Vargas poderes ditatoriais / tirou os limites ao poder dele?"]}
+ ]
+},
+{
+ id:3,data:"9 de julho de 1932 — 16 de julho de 1934",cap:"Capítulo 13 (Livro 1)",
+ man:"São Paulo pega em armas; mulheres conquistam o voto",
+ txt:[
+ "Desde 1931 crescia o medo de que o Governo Provisório nunca acabasse. Vargas demorava a convocar eleições para uma Assembleia Constituinte, e sem Constituinte não havia Constituição nova nem eleição presidencial. A insatisfação era mais forte em <strong>São Paulo</strong>, o estado que havia sido alijado — isto é, jogado para fora — do poder depois de 1930.",
+ "Em 23 de maio de 1932, durante uma passeata no centro da capital paulista, houve um tiroteio e quatro manifestantes foram mortos: Martins, Miragaia, Dráusio e Camargo. Das iniciais dos quatro nomes nasceu o movimento <strong>MMDC</strong>. Em <strong>9 de julho de 1932</strong> começou a <strong>Revolução Constitucionalista</strong>, também chamada de Guerra de São Paulo, reunindo cafeicultores, classe média e industriais. Os líderes tentaram apoio de outros estados e não conseguiram. Em <strong>2 de outubro de 1932</strong>, depois de três meses de combates, os paulistas se renderam; os líderes tiveram os direitos políticos cassados e foram exilados em Portugal.",
+ "Aqui está a parte que mais cai em prova: <strong>os paulistas perderam a guerra, mas ganharam a pauta</strong>. Como São Paulo era economicamente importante demais para ser ignorado, o governo cedeu. Em novembro de 1933 foram eleitos os deputados da Assembleia Constituinte, e nessa eleição foi escolhida a <strong>primeira deputada federal do Brasil, a médica Carlota Pereira de Queirós</strong>. A nova <strong>Constituição foi publicada em 16 de julho de 1934</strong>: manteve o princípio federativo (mas sem a autonomia que os estados tinham antes), separou os três poderes, permitiu a nacionalização de empresas e o monopólio estatal em alguns setores, e estabeleceu eleições diretas para vários cargos — menos para presidente, que seria eleito de forma indireta pela própria Assembleia. No dia seguinte à publicação, os deputados elegeram Getúlio Vargas presidente.",
+ "Antes disso, em <strong>1932</strong>, um novo <strong>Código Eleitoral</strong> já havia mudado as regras do jogo: criou a Justiça Eleitoral, instituiu o <strong>voto secreto</strong> e reconheceu o <strong>direito de voto das mulheres</strong>. Ainda assim os limites eram grandes: só votava quem tivesse mais de 21 anos, e os analfabetos continuaram proibidos. Uma das figuras centrais dessa conquista foi <strong>Bertha Lutz</strong> (1894-1976), bióloga do Museu Nacional e uma das fundadoras da Federação Brasileira pelo Progresso Feminino, criada em 1919. Ela foi eleita deputada federal em 1936 e, em 1945, esteve entre as representantes brasileiras na fundação da ONU. Vale lembrar que o primeiro país do mundo a adotar o voto feminino foi a Nova Zelândia, em 1893."
+ ],
+ p:[
+  {q:"Escreva uma frase sua que explique como São Paulo pode ter sido derrotado em 1932 e mesmo assim ter conseguido o que queria.",tipo:"aplicação",
+   m:"São Paulo foi derrotado militarmente — se rendeu em outubro de 1932 e seus líderes foram cassados e exilados —, mas venceu politicamente, porque o governo percebeu que não podia ignorar um estado tão importante para a economia e acabou convocando a Assembleia Constituinte, o que resultou na Constituição de 1934, que era exatamente a exigência do movimento.",
+   c:["Disse que houve derrota militar (rendição em 1932)?","Disse que o governo cedeu e convocou a Constituinte / veio a Constituição de 1934?"]},
+  {q:"O voto feminino foi conquistado em 1932, mas o Código Eleitoral manteve exclusões. Identifique quem continuou sem poder votar e explique por que isso limitava muito o alcance da mudança.",tipo:"aplicação",
+   m:"Continuaram sem poder votar os analfabetos e os menores de 21 anos. Isso limitava muito porque, na época, uma parcela enorme da população brasileira era analfabeta — então, mesmo com o direito garantido no papel, uma grande parte do povo (incluindo muitas mulheres pobres) seguia fora das eleições. A cidadania foi ampliada, mas continuou sendo um direito de poucos.",
+   c:["Identificou os analfabetos (e/ou os menores de 21 anos)?","Explicou que isso deixava grande parte da população de fora, limitando a mudança?"]},
+  {q:"Compare em poucas linhas o poder de Vargas ANTES e DEPOIS da Constituição de 1934, usando exemplos do texto.",tipo:"conceitual",
+   m:"Antes, no Governo Provisório, Vargas governava sem Constituição e sem Congresso, nomeava interventores e concentrava poderes de ditador. Depois de 1934 passou a existir uma Constituição, os três poderes foram separados e houve regras eleitorais definidas, o que impunha limites a ele. Mas o limite era relativo: a própria Assembleia o elegeu presidente e os estados perderam a autonomia que tinham antes, então o poder central continuou forte.",
+   c:["Descreveu o período anterior como sem Constituição/Congresso, com poderes concentrados?","Citou pelo menos um limite trazido pela Constituição de 1934 (separação dos poderes, regras eleitorais)?"]}
+ ]
+},
+{
+ id:4,data:"1932 — novembro de 1935",cap:"Capítulo 13 (Livro 1)",
+ man:"Camisas verdes contra bandeiras vermelhas: o país se divide",
+ txt:[
+ "A década de 1930 foi a década dos regimes totalitários: o fascismo na Itália, o nazismo na Alemanha, o stalinismo na União Soviética. No Brasil, a crise do capitalismo liberal e o medo da propagação de ideias socialistas deixaram o ambiente político em brasa. Dois movimentos opostos cresceram e passaram a disputar as ruas.",
+ "De um lado, a <strong>Ação Integralista Brasileira (AIB)</strong>, criada em <strong>1932</strong> e liderada pelo escritor e jornalista <strong>Plínio Salgado</strong>. O integralismo era uma doutrina antiliberal e anticomunista que defendia um <strong>Estado centralizado e forte</strong>, com o lema <em>&ldquo;Deus, Pátria e Família&rdquo;</em>. Teve adesão das classes dirigentes e médias e de setores das Forças Armadas, além do apoio de Vargas. Um detalhe importante para não errar na prova: apesar de se parecer com o fascismo em vários pontos, <strong>o movimento integralista não defendia o racismo em sua doutrina</strong> — ainda que um de seus principais integrantes, Gustavo Barroso, fosse declaradamente antissemita.",
+ "Do outro lado, em meados da década, tenentes insatisfeitos se juntaram a socialistas e comunistas e formaram a <strong>Aliança Nacional Libertadora (ANL)</strong>, dirigida pelo Partido Comunista. A ANL queria &ldquo;libertar&rdquo; o Brasil das forças estrangeiras e propunha um governo popular, reforma agrária, o boicote ao pagamento da dívida externa, a nacionalização dos serviços públicos, aumento de salários e garantia dos direitos individuais. Num encontro no Teatro João Caetano, no Rio, o jovem estudante Carlos Lacerda propôs que <strong>Luís Carlos Prestes</strong>, recém-chegado da URSS, fosse o presidente de honra do movimento.",
+ "Em <strong>5 de julho de 1935</strong>, Prestes publicou um manifesto convocando a população à luta contra o governo. No dia seguinte, Vargas fechou a ANL. Em novembro estouraram levantes armados: <strong>23 em Natal, 24 em Pernambuco e 27 no Rio de Janeiro</strong>. O governo e a imprensa batizaram o episódio de <strong>Intentona Comunista</strong> — &ldquo;intentona&rdquo; é um termo pejorativo que quer dizer plano insensato, intento louco. A resposta foi dura: Vargas aprovou no Congresso o estado de sítio por 90 dias e desencadeou forte repressão. Entre os presos estavam Prestes, sua companheira <strong>Olga Benário</strong>, o escritor Graciliano Ramos e o prefeito do Rio, Pedro Ernesto. Olga, alemã, judia e comunista, estava grávida e foi deportada para a Alemanha nazista; depois do nascimento da filha, Anita, foi assassinada numa câmara de gás. O estado de sítio, alimentado pela ideia de uma &ldquo;ameaça comunista&rdquo;, foi sendo esticado até 1937."
+ ],
+ p:[
+  {q:"Explique com as suas palavras o que o governo GANHOU com a Intentona Comunista de 1935.",tipo:"conceitual",
+   m:"Ganhou o pretexto perfeito para aumentar o próprio poder. Depois dos levantes, Vargas conseguiu aprovar o estado de sítio, prender opositores e reprimir movimentos políticos. E, principalmente, passou a alimentar a ideia de que uma 'ameaça comunista' pairava sobre o Brasil — um medo que ele mesmo ajudava a espalhar e que serviu para justificar a manutenção de medidas de exceção até 1937, abrindo caminho para o golpe do Estado Novo.",
+   c:["Disse que serviu de pretexto/justificativa para ampliar poderes e reprimir?","Citou o estado de sítio, as prisões OU o caminho aberto para o Estado Novo?"]},
+  {q:"A palavra 'intentona' não é neutra. Explique por que o governo e a imprensa escolheram esse nome — e o que isso mostra sobre o uso das palavras na política.",tipo:"aplicação",
+   m:"'Intentona' significa plano insensato, tentativa louca. Ao chamar o levante assim, o governo e a imprensa já estavam dando a interpretação pronta: aquilo não era um movimento político com propostas, era loucura. Isso mostra que na política a escolha das palavras é uma forma de disputa: nomear um acontecimento de certo jeito já é convencer o público antes mesmo de discutir os fatos.",
+   c:["Explicou o sentido pejorativo de 'intentona' (plano insensato/louco)?","Percebeu que nomear o fato já é uma forma de convencer / desqualificar o adversário?"]},
+  {q:"Monte um quadro comparativo curto, com as suas palavras, entre a AIB e a ANL: quem liderava e o que cada uma defendia.",tipo:"aplicação",
+   m:"AIB (Ação Integralista Brasileira): criada em 1932, liderada por Plínio Salgado; era antiliberal e anticomunista, defendia um Estado centralizado e forte, com o lema 'Deus, Pátria e Família'; tinha apoio das classes dirigentes e médias, de setores militares e do próprio Vargas. ANL (Aliança Nacional Libertadora): dirigida pelo Partido Comunista, tinha Luís Carlos Prestes como presidente de honra; queria libertar o país da influência estrangeira e defendia governo popular, reforma agrária, fim do pagamento da dívida externa, nacionalização dos serviços públicos e aumento de salários.",
+   c:["Identificou corretamente os líderes (Plínio Salgado na AIB e Prestes na ANL)?","Apresentou pelo menos uma bandeira de cada um dos dois lados?"]}
+ ]
+},
+{
+ id:5,data:"10 de novembro de 1937 — 1945",cap:"Capítulo 13 (Livro 1)",
+ man:"Com um plano falso, Vargas fecha o Congresso e decreta o Estado Novo",
+ txt:[
+ "Em 1937 estava marcada a eleição presidencial prevista na Constituição de 1934, e o Congresso já não aceitava mais prorrogar o estado de sítio. O problema é que Vargas não queria sair. Com a promessa de modernizar o país e criar indústrias ligadas à defesa nacional, ele conseguiu o apoio de militares para um plano secreto. O general <strong>Olímpio Mourão Filho</strong>, ligado ao integralismo, redigiu um documento falso que simulava um plano comunista de tomada do poder: o <strong>Plano Cohen</strong>. O governo divulgou o documento nos jornais e no rádio como se fosse verdadeiro. Com esse pretexto, em <strong>10 de novembro de 1937</strong>, Vargas fechou o Congresso Nacional e instaurou uma ditadura: o <strong>Estado Novo</strong>.",
+ "Plínio Salgado, que era candidato à presidência, retirou sua candidatura e apoiou o golpe, esperando que o integralismo virasse o partido-base do novo regime. Não virou: <strong>todos os partidos políticos foram fechados</strong>, inclusive a AIB. Os integralistas se revoltaram e tentaram derrubar Vargas, mas foram presos.",
+ "Logo após o golpe, o governo outorgou — isto é, impôs, sem votação — uma nova Carta Constitucional. Como foi inspirada na Constituição da Polônia, o povo a apelidou de <strong>&ldquo;Polaca&rdquo;</strong>. Ela dava poderes quase ilimitados ao Executivo e criou o <strong>DASP</strong> (Departamento Administrativo do Serviço Público), pelo qual o presidente nomeava interventores nos estados, que por sua vez indicavam os prefeitos dos municípios. O controle das Forças Armadas também ficava com o presidente. Foi instituída uma polícia secreta e a censura legal aos meios de comunicação, com a ampliação da <strong>DESPS</strong> (Delegacia Especial de Segurança Política e Social), comandada por Filinto Müller, simpatizante do nazismo — sob a qual houve repressão, prisões, torturas e mortes.",
+ "Em <strong>1939</strong> foi criado o <strong>DIP</strong> (Departamento de Imprensa e Propaganda), que ao mesmo tempo <strong>divulgava e censurava</strong>, interferindo no rádio, no cinema, na imprensa e nos livros. Foi aí que o rádio virou o canal direto entre governo e povo: no programa <em>Hora do Brasil</em>, Vargas falava para a população inteira. Nas escolas circulavam cartilhas que ensinavam a amar a pátria e a cultuar o líder. O Ministério da Educação e Saúde Pública tornou o ensino primário obrigatório, nacionalizou a educação e valorizou uma identidade nacional mestiça — chegando a oficializar práticas antes proibidas, como a capoeira. E, em <strong>1943</strong>, veio a <strong>CLT (Consolidação das Leis do Trabalho)</strong>, que reuniu num único código as normas trabalhistas, garantindo direitos como salário mínimo e férias remuneradas. Por causa dessa política, Vargas é muitas vezes chamado de populista; mas o livro alerta que essa análise simplifica: os operários já reivindicavam esses direitos <em>antes</em> dele. Por isso se fala em <strong>trabalhismo</strong> — a estratégia de atender demandas reais dos trabalhadores para, com isso, conquistar apoio político."
+ ],
+ p:[
+  {q:"O Plano Cohen era falso. Explique, com as suas palavras, para que ele serviu.",tipo:"conceitual",
+   m:"Serviu como pretexto para o golpe. Era um documento forjado por um militar ligado ao integralismo que simulava um plano comunista para tomar o poder. O governo o divulgou nos jornais e no rádio como se fosse verdadeiro, criando pânico com a ideia de uma ameaça comunista. Com esse medo fabricado, Vargas conseguiu justificar o fechamento do Congresso em 10 de novembro de 1937 e a instalação da ditadura do Estado Novo.",
+   c:["Disse que era um documento falso/forjado simulando um plano comunista?","Explicou que serviu de pretexto para o golpe / fechamento do Congresso em 1937?"]},
+  {q:"Um mesmo órgão, o DIP, divulgava e censurava. Explique por que essas duas funções juntas são tão poderosas para um governo autoritário.",tipo:"aplicação",
+   m:"Porque juntas elas controlam os dois lados da informação. Censurando, o DIP impedia que aparecesse qualquer crítica ao governo; divulgando, ele espalhava apenas a versão oficial, pelo rádio, pelo cinema, pelos jornais e até por cartilhas nas escolas. O resultado é que a população não tinha como comparar versões: só chegava até ela aquilo que o governo queria. Assim ficava muito mais fácil construir a imagem do líder e se manter no poder.",
+   c:["Explicou que censurar elimina a crítica e divulgar espalha a versão oficial?","Percebeu que sem outras versões a população não consegue comparar / formar opinião própria?"]},
+  {q:"Plínio Salgado apoiou o golpe de 1937 esperando ser recompensado. Escreva o que aconteceu com ele e com a AIB, e o que esse episódio ensina sobre o Estado Novo.",tipo:"aplicação",
+   m:"Ele retirou sua candidatura à presidência e apoiou Vargas, esperando que o integralismo virasse o partido-base do regime. Mas Vargas fechou todos os partidos políticos, inclusive a AIB. Os integralistas então se revoltaram, tentaram derrubar o governo e acabaram presos. Isso mostra que o Estado Novo não queria dividir o poder com ninguém, nem com aliados: a intenção era concentrar tudo nas mãos de Vargas, eliminando qualquer organização política independente.",
+   c:["Disse que todos os partidos foram fechados, inclusive a AIB, e que os integralistas se revoltaram e foram presos?","Concluiu que o regime não admitia dividir o poder / queria concentração total?"]}
+ ]
+},
+{
+ id:6,data:"1º de setembro de 1939",cap:"Capítulo 15 (Livro 2)",
+ man:"Guerra-relâmpago: Alemanha invade a Polônia e o mundo entra em guerra",
+ txt:[
+ "Em <strong>setembro de 1939</strong>, a Alemanha atacou a Polônia sem aviso prévio. O ataque foi montado com base em informações militares que os alemães vinham colhendo em segredo, e usou uma tática nova: a <strong>Blitzkrieg</strong>, a &ldquo;guerra-relâmpago&rdquo;. Em vez de trincheiras e avanços lentos como na Primeira Guerra, a Blitzkrieg concentrava os tanques das divisões panzer numa ponta ofensiva, apoiada por aviões que mergulhavam sobre o inimigo funcionando como uma artilharia voadora. Os tanques não esperavam a infantaria: avançavam de 50 a 80 quilômetros em 24 horas, e o rádio permitia que o quartel-general recebesse informações e desse ordens na mesma velocidade — algo que passou a ser chamado de &ldquo;tempo real&rdquo;.",
+ "As tropas polonesas resistiram, mas não tinham como enfrentar aquela tecnologia militar. E havia um segundo golpe a caminho: em <strong>17 de setembro</strong>, os soviéticos invadiram o leste da Polônia e tomaram parte do país. Isso estava combinado no <strong>Pacto Molotov-Ribbentrop</strong>, também chamado de Pacto Germano-Soviético, assinado em agosto de 1939 — um acordo entre dois regimes inimigos para não brigarem entre si e dividirem territórios.",
+ "Por trás do ataque havia uma velha disputa territorial. Em 1918, ao fim da Primeira Guerra, a Polônia recuperou a independência, e sua saída para o mar passava por uma faixa de território alemão conhecida como <strong>Corredor Polonês</strong>. A Liga das Nações garantia a soberania polonesa sobre a região — algo que nem a Alemanha nem a União Soviética aceitavam.",
+ "A invasão fez <strong>França e Inglaterra declararem guerra à Alemanha</strong>, dando início à Segunda Guerra Mundial. Só que, na prática, elas não tomaram nenhuma atitude imediata: não reorganizaram suas tropas nem atacaram enquanto a Polônia era esmagada. Por que não intervieram é até hoje tema de debate entre pesquisadores. O governo britânico chegou a colocar em prática um plano de contra-ataque aéreo curioso: em 4 de setembro, lançou sobre a Alemanha três toneladas de panfletos incitando o povo alemão contra o próprio governo, com frases como &ldquo;Seus chefes condenaram vocês aos massacres, às misérias e às privações de uma guerra que não podem ter a menor esperança de ganhar&rdquo;."
+ ],
+ p:[
+  {q:"Explique com as suas palavras o que tornava a Blitzkrieg diferente da guerra de trincheiras da Primeira Guerra Mundial.",tipo:"conceitual",
+   m:"A guerra de trincheiras era lenta e parada: os exércitos se enterravam e avançavam poucos metros por vez. A Blitzkrieg era o contrário — apostava na velocidade. Concentrava os tanques numa ponta de ataque, apoiados por aviões que mergulhavam sobre o inimigo como se fossem artilharia voadora, e avançava de 50 a 80 km por dia sem esperar a infantaria. Além disso, o rádio permitia dar ordens e receber informações quase instantaneamente, em 'tempo real'.",
+   c:["Contrastou a lentidão das trincheiras com a velocidade da Blitzkrieg?","Citou os tanques/aviões atuando juntos OU o rádio permitindo comunicação em tempo real?"]},
+  {q:"Alemanha nazista e União Soviética eram inimigas ideológicas, mas assinaram um pacto em 1939. Explique, como se explicasse para um colega, por que isso não é tão contraditório quanto parece.",tipo:"aplicação",
+   m:"Porque o pacto não era uma aliança de ideias, era um acordo de conveniência. Cada lado ganhava tempo e território: a Alemanha atacaria a Polônia sem correr o risco de ter que lutar em duas frentes ao mesmo tempo, e a União Soviética tomava a parte leste da Polônia e ficava livre de um ataque alemão naquele momento. Os dois sabiam que provavelmente iriam se enfrentar mais tarde — e foi o que aconteceu em 1941 —, mas naquele momento o acordo servia aos dois.",
+   c:["Explicou que era um acordo de conveniência (ganhar tempo e/ou território), não de ideias?","Citou uma vantagem concreta para cada lado (evitar duas frentes / ficar com o leste da Polônia)?"]},
+  {q:"França e Inglaterra declararam guerra mas não atacaram de imediato. Na sua opinião, o que essa demora custou? Escreva a sua avaliação usando o que leu.",tipo:"aplicação",
+   m:"A demora custou a Polônia. Enquanto França e Inglaterra não reorganizaram tropas nem atacaram, a Alemanha esmagou a resistência polonesa com a Blitzkrieg e ainda dividiu o país com a União Soviética. Isso também deu tempo para a Alemanha se preparar e, logo em seguida, em 1940, avançar sobre a Dinamarca, a Noruega, a Bélgica, a Holanda, o Luxemburgo e a própria França. Declarar guerra no papel sem agir acabou fortalecendo o inimigo.",
+   c:["Disse que a Polônia foi derrotada/dividida sem socorro?","Relacionou a demora ao fortalecimento alemão / à facilidade da expansão de 1940?"]}
+ ]
+},
+{
+ id:7,data:"abril a agosto de 1940",cap:"Capítulo 15 (Livro 2)",
+ man:"A Europa cai: Paris é ocupada e só a Grã-Bretanha resiste",
+ txt:[
+ "Entre <strong>abril e junho de 1940</strong>, uma nova Blitzkrieg foi lançada, agora contra o norte e o oeste da Europa. Em poucas semanas, <strong>Dinamarca, Noruega, Bélgica, Holanda, Luxemburgo e França</strong> viraram alvos. A França havia apostado numa linha de fortificações na fronteira com a Alemanha, construída a partir do fim dos anos 1920: a <strong>Linha Maginot</strong>. O que os franceses não sabiam é que aquelas fortificações já estavam ultrapassadas — e, pior, os alemães simplesmente <strong>contornaram a Linha Maginot pelo norte</strong>, avançando pela Bélgica. As tropas franco-britânicas foram encurraladas em <strong>Dunquerque</strong>, cidade portuária no norte da França, e tiveram de ser evacuadas às pressas para a Inglaterra, abandonando armamentos, carros e tanques.",
+ "Em junho de 1940 Paris foi tomada. O marechal <strong>Pétain</strong>, herói da Primeira Guerra mas simpatizante dos regimes fascistas, assinou a rendição. A França ficou dividida em duas: o norte sob ocupação alemã direta e o sul governado a partir da cidade de <strong>Vichy</strong>. A <strong>França de Vichy</strong> foi um governo <strong>colaboracionista</strong>, ou seja, que cooperava com o nazismo. O general <strong>Charles de Gaulle</strong> se refugiou em Londres e de lá organizou a <strong>Resistência Francesa</strong>, convocando os franceses a lutar pela retomada do país. A Resistência usava métodos clandestinos e até crianças como mensageiros — o caso mais conhecido é o de Marcel Pinte, o agente mais jovem, com apenas seis anos, condecorado postumamente em 1950.",
+ "Com a França fora do jogo, o próximo alvo era a Inglaterra, que passou a lutar sozinha contra a máquina de guerra alemã. Em <strong>agosto de 1940</strong> começou a <strong>Batalha da Grã-Bretanha</strong>: a Luftwaffe (a força aérea alemã) bombardeou o território britânico durante meses, e a RAF (Real Força Aérea) revidou. Nos céus era comum avistar os caças Spitfire britânicos e os Messerschmitt alemães. Apesar da destruição em cidades como Birmingham, os ataques <strong>não garantiram à Alemanha a vitória</strong> nem permitiram a invasão das ilhas britânicas. Um trunfo decisivo foi a captura da máquina <strong>Enigma</strong>, que codificava as mensagens alemãs: matemáticos e espiões britânicos conseguiram decifrá-las — trabalho difícil, porque os alemães trocavam as chaves todos os dias, mas que permitiu antecipar ataques.",
+ "A Itália de <strong>Mussolini</strong>, aliada de Hitler, só declarou guerra à Grã-Bretanha em <strong>junho de 1940</strong>, quando a vitória alemã já parecia certa. Querendo recriar o Império Romano em torno do Mediterrâneo, atacou o <strong>Egito</strong> (sob domínio britânico) em setembro e, no mês seguinte, a <strong>Grécia</strong>, partindo da Albânia. As duas campanhas fracassaram: os britânicos expulsaram os italianos do Egito e os gregos resistiram. Esses fracassos preocuparam a Alemanha, que em fevereiro de 1941 enviou o general <strong>Erwin Rommel</strong> e o Afrika Korps ao norte da África, e em abril invadiu a Grécia."
+ ],
+ p:[
+  {q:"A Linha Maginot foi construída com muito dinheiro e não impediu a derrota francesa. Explique por quê.",tipo:"conceitual",
+   m:"Por dois motivos. Primeiro, as fortificações já estavam tecnologicamente ultrapassadas para o tipo de guerra que os alemães faziam. Segundo, e principal: ela só cobria a fronteira direta com a Alemanha, e os alemães simplesmente não passaram por ali — contornaram a linha pelo norte, avançando pela Bélgica. Ou seja, a França se preparou para o ataque que esperava, no lugar que esperava, e o inimigo veio por outro caminho.",
+   c:["Disse que os alemães contornaram a Linha (passando pela Bélgica/pelo norte)?","Mencionou que as fortificações estavam ultrapassadas OU que a França se preparou para a guerra errada?"]},
+  {q:"Explique a diferença entre a França de Vichy e a Resistência Francesa. Use as suas palavras.",tipo:"aplicação",
+   m:"A França de Vichy era o governo do sul do país, liderado pelo marechal Pétain, que assinou a rendição e colaborava com o nazismo — por isso é chamado de colaboracionista. A Resistência Francesa era o oposto: um movimento clandestino, organizado a partir de Londres pelo general Charles de Gaulle, que lutava para expulsar os alemães e retomar o país, agindo em segredo dentro da França ocupada. Um cooperava com o invasor, o outro o combatia por dentro.",
+   c:["Identificou Vichy como governo colaboracionista (com Pétain)?","Identificou a Resistência como movimento clandestino de luta contra a ocupação (com De Gaulle)?"]},
+  {q:"A máquina Enigma não disparava nenhum tiro. Explique por que, mesmo assim, decifrá-la valia tanto quanto ganhar uma batalha.",tipo:"aplicação",
+   m:"Porque saber o que o inimigo vai fazer antes que ele faça muda tudo. A Enigma codificava as mensagens alemãs com os alvos e as estratégias; ao decifrá-la, os britânicos passaram a conhecer os planos de ataque com antecedência e puderam se preparar ou desviar suas embarcações. Por isso, mesmo com menos recursos, a Inglaterra conseguiu resistir: muitos ataques alemães deixaram de ser eficientes porque já eram esperados. Informação, na guerra, funciona como uma arma.",
+   c:["Explicou que decifrar dava acesso antecipado aos alvos/estratégias alemãs?","Ligou isso à capacidade de resistir / à ineficácia de muitos ataques alemães?"]}
+ ]
+},
+{
+ id:8,data:"22 de junho e 7 de dezembro de 1941",cap:"Capítulo 15 (Livro 2)",
+ man:"Hitler ataca a URSS; Japão bombardeia Pearl Harbor",
+ txt:[
+ "Apesar do Pacto Molotov-Ribbentrop, a União Soviética sabia que a guerra contra a Alemanha viria: o programa nazista pregava o fim do comunismo e a ocupação do Leste Europeu. E, desde que os britânicos passaram a decifrar as mensagens da Enigma, o governo soviético começou a receber informações sobre a movimentação alemã. Na madrugada de <strong>22 de junho de 1941</strong>, começou a <strong>Operação Barbarossa</strong>: uma ofensiva numa frente de 3 mil quilômetros, tendo como alvos <strong>Leningrado</strong> (atual São Petersburgo), <strong>Moscou</strong> e <strong>Kiev</strong>. Os alemães reuniram cerca de 3 milhões de soldados; os soviéticos, cerca de 2 milhões para a defesa.",
+ "Em poucos meses os alemães chegaram a Leningrado, mas a cidade resistiu e eles a mantiveram sob <strong>cerco por 900 dias</strong> — cercar é uma tática militar que impede a retirada do inimigo e corta o abastecimento, e a população local morreu tanto pela guerra quanto pela fome. O problema alemão era a distância: quanto mais avançavam pelo imenso território russo, mais longe ficavam de suas bases de suprimento. Hitler ordenou que, antes de Moscou, fossem conquistados os campos férteis da Ucrânia, o que desviou muitos soldados.",
+ "Stálin convocou o povo a usar a tática da <strong>terra arrasada</strong>: a população deveria fugir para o leste levando tudo o que pudesse servir ao inimigo e destruindo o que não pudesse ser carregado. E havia o aliado mais confiável dos russos, o <strong>&ldquo;General Inverno&rdquo;</strong>. As mensagens decifradas pelos britânicos e repassadas aos soviéticos traziam boas notícias: os soldados alemães estavam enfraquecidos, esfomeados e doentes; as armas travavam com o frio e os tanques atolavam na lama. Em dezembro, a temperatura chegou a cerca de 30 graus negativos.",
+ "Do outro lado do mundo, o <strong>Japão</strong> tinha um problema estrutural: seu território é pobre em recursos naturais. Faltava borracha, arroz, estanho, bauxita — e, acima de tudo, <strong>petróleo</strong>. Sem uma fonte segura de combustível, não havia como sustentar uma guerra. Os campos de petróleo que o Japão queria estavam nas Índias Orientais Holandesas (atual Indonésia), e para chegar lá era preciso tirar do caminho as forças americanas nas Filipinas e as britânicas na Malásia e em Cingapura. Foi por isso que, na manhã de <strong>7 de dezembro de 1941</strong>, cerca de 300 aviões japoneses atacaram a base naval de <strong>Pearl Harbor</strong>, no Havaí, sem declaração de guerra, destruindo navios e aviões e deixando milhares de mortos e feridos. O ataque deu ao Japão o controle do Pacífico por alguns meses — e fez os <strong>Estados Unidos entrarem na Segunda Guerra Mundial</strong>."
+ ],
+ p:[
+  {q:"Explique com as suas palavras por que o tamanho do território soviético, que parecia uma vantagem para o invasor, acabou sendo um problema para a Alemanha.",tipo:"conceitual",
+   m:"Porque conquistar terreno não é o mesmo que conseguir se sustentar nele. Quanto mais os alemães avançavam, mais se distanciavam de suas bases de suprimento, então comida, combustível e munição demoravam a chegar. Some-se a isso a tática de terra arrasada, que destruía tudo o que poderia abastecê-los pelo caminho, e o inverno russo, que fazia as armas travarem e os tanques atolarem. O resultado foi um exército enorme, mas enfraquecido, faminto e doente.",
+   c:["Explicou que o avanço afastava as tropas das bases de suprimento?","Citou a terra arrasada e/ou o inverno como agravantes?"]},
+  {q:"Um colega afirma: 'O Japão atacou Pearl Harbor porque odiava os Estados Unidos'. Reescreva essa explicação de forma correta, usando o motivo econômico do texto.",tipo:"aplicação",
+   m:"Eu diria que o motivo principal era econômico, não ódio. O Japão não tinha recursos naturais no próprio território, e o que mais lhe faltava era petróleo — sem combustível não dá para sustentar uma guerra. O petróleo que ele queria estava nas Índias Orientais Holandesas, a atual Indonésia. Para chegar até lá, era preciso neutralizar a frota americana, que era a única força capaz de barrar o avanço japonês no Pacífico. Pearl Harbor foi um ataque estratégico para abrir caminho, não uma vingança.",
+   c:["Identificou o petróleo (ou a falta de recursos naturais) como motivo central?","Explicou que o ataque visava neutralizar a frota americana para abrir caminho no Pacífico?"]},
+  {q:"O ataque a Pearl Harbor foi uma vitória imediata para o Japão, mas muitos historiadores o consideram um erro. Explique essa aparente contradição.",tipo:"aplicação",
+   m:"No curto prazo foi uma vitória: os japoneses destruíram navios e aviões e ficaram com o controle do Oceano Pacífico por alguns meses. Mas o ataque fez os Estados Unidos entrarem na guerra — e os Estados Unidos tinham uma capacidade de produção gigantesca de aviões, navios, tanques, alimentos e combustível, além de nunca terem tido seu território bombardeado. Ou seja, o Japão ganhou uma batalha e, ao mesmo tempo, colocou contra si o inimigo mais poderoso possível, o que a longo prazo definiu a derrota do Eixo.",
+   c:["Reconheceu o ganho imediato (destruição da frota / controle do Pacífico por meses)?","Explicou que o custo foi trazer os EUA e seu enorme poder produtivo para a guerra?"]}
+ ]
+},
+{
+ id:9,data:"1942 — 1943",cap:"Capítulo 15 (Livro 2)",
+ man:"Midway, El Alamein e Stalingrado viram o jogo; o horror dos campos vem à tona",
+ txt:[
+ "Com a entrada dos Estados Unidos, a União Soviética e a Inglaterra deixaram de estar sozinhas. E o peso disso era enorme: entre junho de 1940 e julho de 1945, as fábricas americanas produziram cerca de <strong>296 mil aviões de guerra, 71 mil navios e 86 mil tanques</strong> — mais do que a produção somada de quase todas as outras nações em luta. Como foi o único dos grandes países envolvidos a não ter o território bombardeado, seu sistema econômico nunca parou de funcionar.",
+ "Entre 1942 e 1943 aconteceram <strong>três batalhas em lugares distantes entre si</strong> que, juntas, viraram o jogo. Na <strong>Batalha de Midway</strong> (Pacífico, junho de 1942), seis meses depois de Pearl Harbor, os Estados Unidos repeliram a invasão japonesa ao atol de Midway. Foi a primeira derrota japonesa no Pacífico e causou baixas incalculáveis: o Japão ficou sem condições de recompor suas frotas. Em seguida os Aliados tomaram a ilha de Guadalcanal, e a força naval japonesa foi praticamente aniquilada.",
+ "Na <strong>Batalha de El Alamein</strong> (norte da África, outubro de 1942), o general britânico <strong>Montgomery</strong> venceu o alemão <strong>Rommel</strong> no Egito, derrotando definitivamente as tropas do Eixo na África. E na <strong>Batalha de Stalingrado</strong> (União Soviética, 1942-1943), considerada uma das mais violentas da história, cerca de 1 milhão de soldados combateram numa única cidade. Os alemães chegaram perto de conquistá-la, mas foram cercados pelos soviéticos e, sem munição e sem comida, tiveram de se render em <strong>fevereiro de 1943</strong> — apesar de Hitler ter proibido a rendição. A partir dali, os soviéticos passaram a expulsar o Eixo de seu território. Em junho de 1943 os Aliados desembarcaram na Sicília; em julho, o rei Vítor Emanuel III demitiu e prendeu <strong>Mussolini</strong>, e dois meses depois a Itália assinou um armistício. Com ajuda alemã, Mussolini fugiu e criou no norte a República Social Italiana (ou República de Salò); o país se dividiu numa guerra civil, com a resistência italiana dos <em>partigiani</em>.",
+ "Enquanto isso, o regime nazista levava ao extremo a perseguição iniciada em 1933. Com a expansão pela Europa, foi preciso aumentar o número de <strong>campos de concentração</strong>, administrados pelas SS, para escravizar, humilhar, matar e exterminar prisioneiros. O genocídio praticado contra os judeus ficou conhecido como <strong>Holocausto</strong>, chamado pelos líderes nazistas de &ldquo;solução final&rdquo;, e tinha como objetivo a eliminação do povo judeu como um todo — uma das práticas foi o extermínio em <strong>câmaras de gás</strong>. Cerca de <strong>6 milhões de judeus</strong> foram assassinados. Além deles, foram perseguidos ciganos, eslavos, negros, homossexuais e opositores políticos. <strong>Auschwitz</strong>, na Polônia, foi o maior complexo de extermínio: ali morreram cerca de 2,5 milhões de pessoas nas câmaras de gás e meio milhão por fome, excesso de trabalho, doenças e maus-tratos."
+ ],
+ p:[
+  {q:"As três batalhas de 1942-1943 aconteceram em continentes diferentes. Explique o que elas tiveram em comum.",tipo:"conceitual",
+   m:"Todas as três marcaram o momento em que o Eixo parou de avançar e passou a recuar. Em Midway, no Pacífico, o Japão sofreu sua primeira derrota e perdeu a capacidade de repor sua frota; em El Alamein, no norte da África, os alemães e italianos foram derrotados de vez no continente africano; em Stalingrado, na União Soviética, os alemães foram cercados e tiveram de se render. Juntas, elas iniciaram a contraofensiva dos Aliados: a partir dali quem estava na defensiva era o Eixo.",
+   c:["Disse que as três marcaram a virada / o início da contraofensiva dos Aliados?","Identificou corretamente pelo menos duas das batalhas com seu resultado?"]},
+  {q:"O texto diz que os Estados Unidos foram o único grande país envolvido a não ter o território bombardeado. Explique, com as suas palavras, o peso militar que esse detalhe geográfico teve.",tipo:"aplicação",
+   m:"Teve um peso enorme. Como nenhuma fábrica americana foi destruída, a produção nunca parou nem precisou ser reconstruída — enquanto Alemanha, Inglaterra, União Soviética e Japão tinham suas indústrias sendo bombardeadas. Por isso os Estados Unidos conseguiram produzir centenas de milhares de aviões, navios e tanques e ainda abastecer os aliados com caminhões e combustível. Ou seja, um detalhe de geografia virou vantagem decisiva: eles podiam produzir cada vez mais e mais rápido enquanto os outros perdiam capacidade.",
+   c:["Explicou que sem bombardeios a produção nunca parou / não precisou ser reconstruída?","Ligou isso à enorme produção de material bélico e/ou ao abastecimento dos aliados?"]},
+  {q:"Escreva um parágrafo explicando o que foi o Holocausto, dizendo: qual grupo era o alvo principal, que tipo de estrutura foi montada, um dos métodos usados, outros grupos perseguidos e o resultado.",tipo:"aplicação",
+   m:"O Holocausto foi o genocídio promovido pelo regime nazista, chamado por seus líderes de 'solução final', que tinha como alvo principal o povo judeu e como objetivo eliminá-lo por completo. Para isso foi montada uma estrutura de campos de concentração e extermínio espalhados pela Europa, administrados pelas SS, onde os prisioneiros eram escravizados, humilhados e mortos. Um dos métodos foi o extermínio em câmaras de gás. Além dos judeus, foram perseguidos ciganos, eslavos, negros, homossexuais e opositores políticos. O resultado foi a morte de cerca de 6 milhões de judeus, sendo Auschwitz, na Polônia, o maior complexo de extermínio.",
+   c:["Identificou os judeus como alvo principal e a estrutura dos campos administrados pelas SS?","Citou as câmaras de gás, outros grupos perseguidos e a ordem de grandeza (cerca de 6 milhões)?"]}
+ ]
+},
+{
+ id:10,data:"novembro de 1943 — maio de 1945",cap:"Capítulo 16 (Livro 2)",
+ man:"Dia D abre a segunda frente; Berlim cai e a Alemanha se rende",
+ txt:[
+ "Depois de Midway, El Alamein e Stalingrado, os Aliados sabiam que era questão de tempo. Em <strong>novembro de 1943</strong> aconteceu a <strong>Conferência de Teerã</strong>, no Irã, reunindo os <strong>&ldquo;Três Grandes&rdquo;</strong>: Churchill (Inglaterra), Roosevelt (Estados Unidos) e Stálin (União Soviética). Stálin cobrou com urgência a abertura de uma <strong>segunda frente na França</strong>, para dividir as tropas alemãs e aliviar a pressão sobre o Exército Vermelho. Ele desconfiava, desde o início da guerra, de que Churchill quisesse deixar soviéticos e alemães se desgastarem mutuamente. O alto comando americano apoiou a proposta.",
+ "Nasceu daí a <strong>Operação Overlord</strong>, conhecida popularmente como <strong>Dia D</strong>. Tudo foi mantido em sigilo absoluto, inclusive a data. Para confundir os alemães, agentes secretos permitiram que mensagens falsas chegassem até eles, indicando a Noruega e Pas de Calais como locais da invasão; e um exército de mentira foi montado, com tanques e aviões feitos de papelão e plástico, colocados justamente onde os alemães achavam que as tropas partiriam. Na madrugada de <strong>6 de junho de 1944</strong>, paraquedistas saltaram atrás das linhas de defesa alemãs enquanto centenas de milhares de soldados atravessavam o Canal da Mancha rumo à Normandia. No fim do dia os Aliados tinham ocupado cinco praias, com os codinomes <strong>Utah, Omaha, Gold, Juno e Sword</strong>, e começava a libertação da França — Paris foi alcançada em agosto de 1944.",
+ "A Alemanha ainda tentou reagir com tecnologia: os <strong>mísseis V-2</strong>, testados em 1942, tinham alcance de cerca de 250 quilômetros e chegavam em segundos, sem permitir defesa preventiva. Mas os gastos imensos da guerra atrasaram seu uso, que só começou em 1944, tarde demais. Em <strong>fevereiro de 1945</strong>, os Três Grandes se reuniram de novo na <strong>Conferência de Yalta</strong>, na União Soviética, e definiram como ficariam as relações depois da guerra: a URSS teria uma <strong>zona de influência no Leste Europeu</strong> e seria criado um <strong>novo órgão internacional</strong> para substituir a fracassada Liga das Nações.",
+ "Em 1945 o <strong>Exército Vermelho</strong> alcançou a periferia de Berlim; em 20 de abril, aniversário de Hitler, a capital foi bombardeada. Enquanto avançavam, as tropas aliadas encontravam os campos de concentração, onde as SS tinham tentado destruir as provas queimando documentos e edificações. Em <strong>27 de abril</strong>, Mussolini foi capturado pela resistência italiana ao tentar fugir para a Suíça, julgado sumariamente e executado. Em <strong>30 de abril</strong>, escondido num bunker, sem aliados, Hitler ditou seu testamento, casou-se com Eva Braun e suicidou-se com um tiro na cabeça. Em <strong>2 de maio</strong> Berlim se rendeu aos soviéticos e, em <strong>8 de maio</strong>, o alto comando alemão pôs fim a todas as operações: a guerra na Europa tinha acabado. Entre julho e agosto veio a <strong>Conferência de Potsdam</strong>, já com Truman no lugar de Roosevelt (morto em abril) e sem Churchill, que terminara seu mandato — ali ficou decidida a <strong>divisão da Alemanha em quatro zonas de ocupação</strong>, incluindo Berlim."
+ ],
+ p:[
+  {q:"Explique por que Stálin insistia tanto na abertura de uma segunda frente na França.",tipo:"conceitual",
+   m:"Porque enquanto só houvesse uma frente, no leste, todo o peso da guerra terrestre contra a Alemanha caía sobre a União Soviética. Abrindo uma frente na França, os alemães teriam de dividir suas tropas entre dois lados, o que aliviaria a pressão sobre o Exército Vermelho e ajudaria os soviéticos a expulsar os alemães de seu território. Stálin também desconfiava que Churchill estivesse adiando de propósito para deixar alemães e soviéticos se desgastarem mutuamente.",
+   c:["Explicou que uma segunda frente obrigaria a Alemanha a dividir tropas / aliviaria a pressão sobre a URSS?","Mencionou a desconfiança de Stálin em relação a Churchill OU o peso desproporcional sobre os soviéticos?"]},
+  {q:"Tanques de papelão e mensagens falsas parecem brincadeira, mas fizeram parte de uma operação militar séria. Explique como esse engodo ajudou no sucesso do Dia D.",tipo:"aplicação",
+   m:"Ajudou porque fez os alemães concentrarem sua defesa no lugar errado. Com mensagens falsas plantadas de propósito e um exército de mentira, feito de tanques e aviões de papelão e plástico, os Aliados convenceram o inimigo de que a invasão viria pela Noruega e por Pas de Calais. Assim, quando o desembarque real aconteceu na Normandia, em 6 de junho de 1944, a defesa alemã estava dividida e mal posicionada — o que permitiu ocupar as cinco praias no mesmo dia.",
+   c:["Explicou que o engodo levou os alemães a defender o lugar errado (Noruega/Pas de Calais)?","Ligou isso ao êxito do desembarque real na Normandia?"]},
+  {q:"Em Yalta decidiu-se criar um novo órgão internacional para substituir a Liga das Nações. Escreva por que os líderes achavam que a Liga precisava ser substituída.",tipo:"aplicação",
+   m:"Porque a Liga das Nações havia fracassado no seu objetivo principal, que era manter a paz. Ela não conseguiu impedir a escalada dos regimes totalitários nem evitar que estourasse uma segunda guerra mundial, ainda mais destruidora que a primeira. Diante desse fracasso evidente, os Três Grandes entenderam que não bastava reformar: era preciso um novo órgão, com outra estrutura e mais capacidade de ação, para tentar evitar que uma guerra daquele tamanho se repetisse. Esse órgão seria a ONU.",
+   c:["Disse que a Liga das Nações fracassou em manter a paz / evitar a guerra?","Relacionou isso à criação de um novo órgão (a ONU) para evitar novas guerras?"]}
+ ]
+},
+{
+ id:11,data:"6 de agosto de 1945 — 1948",cap:"Capítulo 16 (Livro 2)",
+ man:"Hiroshima e Nagasaki encerram a guerra; nasce a ONU",
+ txt:[
+ "Mesmo com a vitória na Europa, a guerra continuava no Pacífico. O Japão havia se tornado membro do Eixo em 1940, pelo <strong>Pacto Tripartite</strong>, e resistia com uma cultura militarista que valorizava o guerreiro que luta até a morte. Ao perderem campos de concentração para os Aliados, centenas de soldados japoneses se suicidavam num ritual de orgulho militar (o <em>haraquiri</em>). Foi nesse cenário que o Japão lançou mão dos <strong>kamikazes</strong> — termo que pode ser traduzido como &ldquo;vento divino&rdquo;: jovens obrigados a pilotar aviões cheios de explosivos, <strong>sem combustível para voltar e sem paraquedas</strong>, com o objetivo de se chocar contra os navios americanos.",
+ "Enquanto isso, desde antes da guerra, cientistas — entre eles Albert Einstein — haviam recorrido ao governo dos Estados Unidos para financiar estudos sobre a energia nuclear, antes que a Alemanha nazista o fizesse. Nasceu assim o <strong>Projeto Manhattan</strong>, dirigido pelo físico <strong>Robert Oppenheimer</strong>, desenvolvido em segredo numa área isolada em <strong>Los Alamos</strong>, no deserto do Novo México. Em <strong>16 de julho de 1945</strong> ocorreu o primeiro teste de detonação; o poder de explosão equivalia a cerca de 18 mil toneladas de TNT e espantou os próprios cientistas. Sabendo do sucesso do teste, o presidente Truman anunciou durante a Conferência de Potsdam que os Estados Unidos tinham uma nova arma — uma clara tentativa de intimidar Stálin.",
+ "Em <strong>6 de agosto de 1945</strong>, às 8h15 no horário local, a bomba atômica apelidada de <strong>Little Boy</strong> (&ldquo;Garotinho&rdquo;) foi lançada sobre <strong>Hiroshima</strong>. Explodiu a cerca de 600 metros do solo, destruindo tudo num raio de dois quilômetros e provocando incêndios num raio de mais quatro. A população da cidade era de aproximadamente 350 mil pessoas; estima-se que <strong>140 mil morreram até o fim daquele ano</strong>. Muitos tiveram a pele descolada do corpo e os órgãos internos afetados, e sobreviventes adoeceram anos depois por causa da radiação. Três dias depois, em <strong>9 de agosto</strong>, às 11h02, uma segunda bomba, <strong>Fat Man</strong> (&ldquo;Homem Gordo&rdquo;), atingiu <strong>Nagasaki</strong>. Os japoneses se renderam em <strong>15 de agosto</strong> e assinaram os documentos oficiais em <strong>2 de setembro de 1945</strong> — data que marca o fim da Segunda Guerra Mundial. O custo total do conflito: cerca de <strong>50 milhões de mortos</strong>, a maioria civis, 100 milhões de homens mobilizados e 72 países envolvidos.",
+ "Diante do fracasso da Liga das Nações, a entidade foi reformulada e deu origem à <strong>Organização das Nações Unidas (ONU)</strong>. As potências vencedoras assinaram a <strong>Carta das Nações Unidas</strong> em 1945, que entrou em vigor em outubro do mesmo ano. A sede fica em <strong>Nova York</strong>, e seus seis órgãos principais são a Assembleia Geral, o Secretariado Geral, o Conselho de Segurança, o Conselho Tutelar, o Conselho Econômico e Social e a Corte Internacional de Justiça — além de agências especializadas como a <strong>Unicef</strong> (infância), a <strong>Unesco</strong> (patrimônio histórico-cultural), a <strong>OMS</strong> (saúde) e a <strong>OIT</strong> (trabalho). Em <strong>1948</strong>, a Assembleia Geral elaborou a <strong>Declaração Universal dos Direitos Humanos</strong>, com 30 artigos, hoje o documento mais traduzido do mundo."
+ ],
+ p:[
+  {q:"Explique a relação entre o fracasso da Liga das Nações e a criação da ONU, com as suas palavras.",tipo:"conceitual",
+   m:"A Liga das Nações tinha sido criada para manter a paz depois da Primeira Guerra, mas fracassou: não conseguiu conter os regimes totalitários nem impedir que uma segunda guerra mundial, ainda mais destrutiva, acontecesse. Diante disso, as potências vencedoras decidiram reformular a entidade e criar a ONU, assinando a Carta das Nações Unidas em 1945, com o objetivo de evitar novas guerras, garantir a paz e a segurança internacionais e promover a cooperação entre os países.",
+   c:["Disse que a Liga fracassou em impedir a Segunda Guerra?","Explicou que a ONU nasceu dessa reformulação, com o objetivo de evitar novas guerras?"]},
+  {q:"Truman anunciou a nova arma durante a Conferência de Potsdam, antes de usá-la. Explique o que esse anúncio tinha a ver com Stálin.",tipo:"aplicação",
+   m:"Tinha tudo a ver. Em Potsdam as condições já eram outras: Roosevelt havia morrido, Churchill saíra do cargo, e Stálin era o único dos Três Grandes originais, pressionando para que as decisões anteriores fossem cumpridas. Ao anunciar que os Estados Unidos possuíam uma arma nova e poderosa, Truman estava mandando um recado de intimidação ao líder soviético: mostrava que a correlação de forças havia mudado e que os americanos tinham agora um poder que a União Soviética não tinha. Era uma demonstração de força diplomática, não apenas uma informação.",
+   c:["Explicou que o anúncio era uma tentativa de intimidar Stálin / demonstrar poder?","Situou o contexto de Potsdam (Truman no lugar de Roosevelt, disputa sobre os acordos anteriores)?"]},
+  {q:"A Declaração Universal dos Direitos Humanos é de 1948, logo depois da guerra. Explique por que essa data não é coincidência.",tipo:"aplicação",
+   m:"Não é coincidência porque a Declaração nasceu como resposta direta ao que tinha acabado de acontecer. A Segunda Guerra revelou até onde um Estado pode ir contra pessoas: o Holocausto, os campos de extermínio, a perseguição a grupos inteiros, as bombas sobre cidades civis. Foram justamente essas violações que levaram a ONU a escrever, em 1948, um documento afirmando direitos que valem para todo ser humano, em qualquer país, para tentar impedir que aquilo se repetisse.",
+   c:["Ligou a Declaração às violações ocorridas na guerra (Holocausto, perseguições, mortes de civis)?","Explicou que o objetivo era afirmar direitos universais para evitar a repetição?"]}
+ ]
+},
+{
+ id:12,data:"1942 — 29 de outubro de 1945",cap:"Capítulo 17 (Livro 2)",
+ man:"A cobra fumou na Itália — e o Estado Novo caiu em casa",
+ txt:[
+ "Antes da guerra, o Brasil era cortejado por dois lados. A <strong>Alemanha nazista</strong> tinha planos expansionistas e precisava de matérias-primas para sua indústria de armamentos; além disso, o Brasil abrigava muitos imigrantes alemães. Os <strong>Estados Unidos</strong>, por sua vez, queriam montar na América Latina uma zona de influência que afastasse tanto a ameaça nazista quanto a comunista — em <strong>1935</strong> os dois países assinaram um tratado comercial dando prioridade mútua a seus mercados. O curioso é que o governo Vargas, que simpatizava com o fascismo, aceitou estreitar laços com os americanos. O Estado Novo <strong>jogava com os interesses dos dois lados</strong> e não se preocupava com as ideologias envolvidas.",
+ "A situação ficou insustentável quando se estabeleceu na França a <strong>República de Vichy (1940)</strong>, que permitiu aos alemães usar o Marrocos como ponto estratégico na África, aumentando a influência alemã no sul do Atlântico. A pressão americana pelo rompimento aumentou. Para ceder, o governo negociou a liberação de créditos para construir a <strong>Companhia Siderúrgica Nacional</strong>, que daria ao país autossuficiência em aço. Em <strong>1942</strong>, o Brasil assinou acordos com os Estados Unidos: venderia produtos estratégicos — ferro, borracha, cobre, bauxita, zinco — exclusivamente aos Aliados, e permitiria a instalação de <strong>bases militares no Nordeste</strong> (Natal, no Rio Grande do Norte, é a ponta mais oriental da América, posição estratégica para levar suprimentos à África).",
+ "Mesmo tendo rompido com a Alemanha, o Brasil adotou inicialmente uma postura neutra. Foi só em <strong>agosto de 1942</strong>, depois de uma série de ataques de <strong>submarinos alemães a navios mercantes brasileiros</strong>, que o país entrou efetivamente no conflito. Entre 1942 e 1944 mais de mil brasileiros morreram nesses ataques, gerando forte comoção popular. Em <strong>1944</strong>, o Brasil enviou a <strong>Força Expedicionária Brasileira (FEB)</strong> à Itália: 25 mil homens que se juntaram ao exército americano e atuaram na tomada de <strong>Monte Castelo, Castelnuovo e Montese</strong>; 454 soldados morreram em ação e outros dois mil em decorrência de ferimentos. Foram enviados também 400 homens da Força Aérea Brasileira. O mascote da FEB era uma <strong>cobra fumando</strong> — referência bem-humorada à descrença popular, já que muitos diziam que era mais fácil uma cobra fumar do que o Brasil mandar tropas.",
+ "Dentro do país, a guerra mudou a vida. Faltou gasolina e trigo, e surgiu o &ldquo;pão de guerra&rdquo;, feito à base de farinha e mandioca. Pela <strong>política de boa vizinhança</strong>, quadrinhos americanos passaram a circular e Walt Disney criou o <strong>Zé Carioca</strong>, que estreou em 1942 no filme <em>Alô, Amigos</em>; <strong>Carmen Miranda</strong> virou símbolo dessa aproximação — e alvo do incômodo de quem não queria ver o Brasil retratado como uma &ldquo;República das Bananas&rdquo;. As comunidades japonesa, alemã e italiana passaram a ser hostilizadas e algumas pessoas foram detidas em campos de prisioneiros políticos. A economia, porém, se beneficiou: os preços das matérias-primas subiram e o país avançou na industrialização, com o Conselho Nacional do Petróleo (1938), a CSN (1941), a Vale do Rio Doce (1942) e a Companhia Hidrelétrica do São Francisco (1945).",
+ "E aí veio o <strong>paradoxo</strong> que derrubou o regime: o Brasil lutava ao lado dos Aliados em defesa da democracia no mundo, mas era governado por uma <strong>ditadura de ares fascistas</strong>. A oposição explorou essa contradição desde a entrada na guerra. Em outubro de 1943, no aniversário da Revolução de 1930, políticos mineiros lançaram o <strong>Manifesto dos Mineiros</strong>, pedindo a democratização. O apoio dos militares foi diminuindo. Vargas então tentou se manter no poder articulando a democratização e buscando o apoio dos trabalhadores: concedeu anistia a presos políticos, entre eles Luís Carlos Prestes. Formaram-se três partidos — a <strong>UDN</strong> (antigetulista e liberal), o <strong>PSD</strong> (getulista, ligado às elites e aos interventores) e o <strong>PTB</strong> (getulista, ligado aos trabalhadores). Em março de 1945, estudantes de Direito que pediam a queda de Getúlio foram atacados por trabalhadores aos gritos de &ldquo;Queremos Getúlio&rdquo; — o movimento ficou conhecido como <strong>queremismo</strong>. Mas em <strong>29 de outubro de 1945</strong>, quando Vargas substituiu o chefe de polícia do Distrito Federal, os militares temeram um novo golpe e forçaram sua renúncia. Nas eleições de <strong>2 de dezembro de 1945</strong>, o general <strong>Eurico Gaspar Dutra</strong> (PSD) venceu com 52,39% dos votos, contra 24,74% de Eduardo Gomes (UDN). Encerrava-se o Estado Novo."
+ ],
+ p:[
+  {q:"Explique, com as suas palavras, o 'paradoxo' que ajudou a derrubar o Estado Novo.",tipo:"conceitual",
+   m:"O paradoxo é que o Brasil mandou soldados para a Itália lutar ao lado dos Aliados contra o nazifascismo, dizendo defender a democracia no mundo, enquanto dentro de casa era governado por uma ditadura: com o Congresso fechado, partidos proibidos, censura pelo DIP e presos políticos. Essa contradição ficou impossível de sustentar — a oposição a explorou desde a entrada na guerra, e ela foi um dos principais argumentos que levaram ao fim do regime em 1945.",
+   c:["Descreveu a contradição: lutar pela democracia fora e manter ditadura dentro?","Citou pelo menos um elemento autoritário interno (censura, Congresso fechado, partidos proibidos, presos políticos)?"]},
+  {q:"O Brasil rompeu com a Alemanha, mas ainda ficou um tempo neutro. Explique o que finalmente fez o país entrar de fato na guerra, e por que isso teve tanta força.",tipo:"aplicação",
+   m:"O que fez o Brasil entrar de fato foram os ataques de submarinos alemães a navios mercantes brasileiros, que levaram o país a declarar guerra em agosto de 1942. Isso teve tanta força porque não era mais um assunto diplomático distante: entre 1942 e 1944 mais de mil brasileiros morreram nesses ataques. A morte de civis brasileiros gerou uma comoção popular enorme e exigiu uma resposta do governo — ou seja, foi a pressão da própria população que tornou a entrada inevitável.",
+   c:["Identificou os ataques de submarinos alemães a navios brasileiros como estopim?","Explicou a força da comoção popular / a pressão sobre o governo (mortes de brasileiros)?"]},
+  {q:"Vargas foi derrubado em 1945, mas o partido que ele criou venceu a eleição daquele ano. Explique como as duas coisas podem ser verdadeiras ao mesmo tempo.",tipo:"aplicação",
+   m:"Porque ser afastado do cargo não significava ter perdido apoio popular. Vargas foi obrigado a renunciar em outubro de 1945 pela pressão dos militares, que temiam que ele desse outro golpe para não deixar o poder. Mas a base política que ele tinha construído continuava forte, principalmente entre os trabalhadores, por causa das leis trabalhistas — o queremismo mostrou isso. Por isso, na eleição de dezembro, o candidato apoiado por ele, o general Eurico Gaspar Dutra, do PSD, venceu com 52,39% dos votos, enquanto o candidato antigetulista da UDN ficou com apenas 24,74%.",
+   c:["Explicou que a renúncia veio da pressão dos militares, não de perda de apoio popular?","Citou a vitória de Dutra (PSD), candidato apoiado por Vargas, e/ou o queremismo como prova do apoio?"]}
+ ]
+}
+];
+
+/* ===== estado ===== */
+var D={blocos:{},aberto:1};
+function salvar(){
+  D.quando=new Date().toLocaleString('pt-BR');
+  setIt(CHAVE,JSON.stringify(D));
+  var q=document.getElementById('quando'); if(q) q.textContent=D.quando;
+}
+function carregar(){
+  var r=getIt(CHAVE);
+  if(r){ try{ var o=JSON.parse(r); if(o&&typeof o==='object'){ D=o; if(!D.blocos)D.blocos={}; if(!D.aberto)D.aberto=1; } }catch(e){} }
+  var q=document.getElementById('quando'); if(q) q.textContent=D.quando||'ainda não salvo';
+}
+function est(id){
+  if(!D.blocos[id]) D.blocos[id]={resp:['','',''],feito:false,transcrita:[false,false,false],tentou:['','',''],chk:{}};
+  var b=D.blocos[id];
+  if(!b.resp) b.resp=['','',''];
+  if(!b.transcrita) b.transcrita=[false,false,false];
+  if(!b.tentou) b.tentou=['','',''];
+  if(!b.chk) b.chk={};
+  return b;
+}
+
+/* ===== anticópia ===== */
+function norm(s){
+  return (s||'').toLowerCase()
+   .normalize('NFD').replace(/[̀-ͯ]/g,'')
+   .replace(/[^a-z0-9\s]/g,' ')
+   .replace(/\s+/g,' ').trim();
+}
+function pal(s){ var n=norm(s); return n?n.split(' '):[]; }
+function seqComuns(a,b,min){
+  /* devolve os índices de 'a' cobertos por sequências de >=min palavras presentes em b */
+  var cob={},i,j,k;
+  var bs=b.join(' ');
+  for(i=0;i<a.length;i++){
+    for(j=a.length;j>i+min-1;j--){
+      var tr=a.slice(i,j).join(' ');
+      if(tr.length>2 && bs.indexOf(tr)!==-1){
+        for(k=i;k<j;k++) cob[k]=true;
+        i=j-1; break;
+      }
+    }
+  }
+  return cob;
+}
+function maiorSeq(a,b){
+  var bs=b.join(' '),mx=0,i,j;
+  for(i=0;i<a.length;i++){
+    for(j=a.length;j>i+mx;j--){
+      var tr=a.slice(i,j).join(' ');
+      if(tr.length>2 && bs.indexOf(tr)!==-1){ if(j-i>mx) mx=j-i; break; }
+    }
+  }
+  return mx;
+}
+/* Limiares calibrados: pegam 12/12 cópias literais do texto sem gerar
+   nenhum falso positivo em respostas escritas com palavras próprias. */
+function ehTranscrita(resp,textoBloco,enunciado){
+  var r=pal(resp);
+  if(r.length<8) return false;
+  /* descontar trechos citados do próprio enunciado (4+ palavras) */
+  var en=pal(enunciado);
+  var cobEn=seqComuns(r,en,4);
+  var rest=[];
+  for(var i=0;i<r.length;i++){ if(!cobEn[i]) rest.push(r[i]); }
+  if(rest.length<8) return false;
+  var tb=pal(textoBloco);
+  if(maiorSeq(rest,tb)>=12) return true;
+  var cob=seqComuns(rest,tb,6);
+  var n=0; for(var k in cob){ if(cob.hasOwnProperty(k)) n++; }
+  return (n/rest.length)>0.75;
+}
+
+/* ===== render ===== */
+function textoPuro(b){
+  var d=document.createElement('div'); d.innerHTML=b.txt.join(' ');
+  return d.textContent||d.innerText||'';
+}
+function render(){
+  var c=document.getElementById('blocos'); c.innerHTML='';
+  for(var i=0;i<BLOCOS.length;i++){
+    var b=BLOCOS[i], e=est(b.id), liberado=(b.id<=D.aberto);
+    var d=document.createElement('div');
+    d.className='bloco'+(liberado?'':' trv'); d.id='bl'+b.id;
+    var h='<div class="selo" id="selo'+b.id+'">Revisar</div>'+
+      '<div class="bhead"><div class="bdata">Edição '+b.id+' &bull; '+b.data+'</div>'+
+      '<div class="bman">'+b.man+'</div><div class="bcap">'+b.cap+'</div></div>';
+    if(!liberado){
+      h+='<div class="cadeado">🔒 Esta edição abre depois que você conferir a anterior.</div>';
+    }else{
+      h+='<div class="bbody">';
+      for(var p=0;p<b.txt.length;p++) h+='<p>'+b.txt[p]+'</p>';
+      h+='<div class="perg">';
+      for(var q=0;q<b.p.length;q++){
+        var pg=b.p[q], marc=e.transcrita[q];
+        h+='<div class="pitem'+(marc?' copia':'')+'" id="pi'+b.id+'_'+q+'">'+
+           '<div class="pnum">Pergunta '+(q+1)+' <span class="tipo">'+pg.tipo+'</span></div>'+
+           '<div class="ptxt">'+pg.q+'</div>'+
+           '<textarea id="ta'+b.id+'_'+q+'" oninput="mudou('+b.id+','+q+')" placeholder="Escreva aqui, com as suas palavras...">'+(e.resp[q]||'')+'</textarea>'+
+           '<div class="aviso" id="av'+b.id+'_'+q+'"></div>'+
+           '<div class="modelo" id="md'+b.id+'_'+q+'"><h5>Resposta modelo</h5><p>'+pg.m+'</p>'+
+           '<div class="chk"><h6>A minha resposta disse que...</h6>'+chkHtml(b.id,q,pg.c)+'</div></div>'+
+           '</div>';
+      }
+      h+='<button class="pri" id="cf'+b.id+'" onclick="conferir('+b.id+')">✔️ Conferir a edição '+b.id+'</button>'+
+         '<div class="status" id="st'+b.id+'"></div>';
+      h+='</div></div>';
+    }
+    d.innerHTML=h; c.appendChild(d);
+  }
+  /* restaurar visual */
+  for(var i2=0;i2<BLOCOS.length;i2++){
+    var bb=BLOCOS[i2], ee=est(bb.id);
+    if(bb.id<=D.aberto && ee.feito) mostrarConferido(bb.id,true);
+    if(bb.id<=D.aberto) attCf(bb.id);
+  }
+  attBarra(); attRevisar();
+}
+function chkHtml(id,q,pontos){
+  var e=est(id),h='';
+  for(var i=0;i<pontos.length;i++){
+    var v=(e.chk[q+'_'+i]!==undefined)?e.chk[q+'_'+i]:null;
+    h+='<div class="chkrow"><span>'+pontos[i]+'</span>'+
+       '<button class="sim'+(v===true?' on':'')+'" onclick="marcar('+id+','+q+','+i+',true)">Sim</button>'+
+       '<button class="nao'+(v===false?' on':'')+'" onclick="marcar('+id+','+q+','+i+',false)">Não</button></div>';
+  }
+  return h;
+}
+function mudou(id,q){
+  var e=est(id), ta=document.getElementById('ta'+id+'_'+q);
+  e.resp[q]=ta.value;
+  if(e.transcrita[q]){
+    /* reescreveu com palavras próprias -> limpa a marca */
+    var b=buscaBloco(id);
+    if(!ehTranscrita(ta.value,textoPuro(b),b.p[q].q)){
+      e.transcrita[q]=false;
+      document.getElementById('pi'+id+'_'+q).className='pitem';
+      var av=document.getElementById('av'+id+'_'+q); av.className='aviso'; av.textContent='';
+      attSelo(id); attRevisar();
+    }
+  }
+  attCf(id); salvar();
+}
+function buscaBloco(id){ for(var i=0;i<BLOCOS.length;i++){ if(BLOCOS[i].id===id) return BLOCOS[i]; } return null; }
+function attCf(id){
+  var btn=document.getElementById('cf'+id); if(!btn) return;
+  var ok=true;
+  for(var q=0;q<3;q++){
+    var ta=document.getElementById('ta'+id+'_'+q);
+    if(!ta || ta.value.trim().length<3) ok=false;
+  }
+  btn.disabled=!ok;
+}
+function conferir(id){
+  var b=buscaBloco(id), e=est(id), tp=textoPuro(b), travou=false;
+  for(var q=0;q<3;q++){
+    var ta=document.getElementById('ta'+id+'_'+q), av=document.getElementById('av'+id+'_'+q);
+    var v=ta.value, copia=ehTranscrita(v,tp,b.p[q].q);
+    if(copia){
+      if(!e.tentou[q]){
+        /* 1ª detecção: não aceita ainda */
+        e.tentou[q]=v;
+        av.className='aviso am';
+        av.innerHTML='✏️ <b>Boa parte da sua resposta está igual ao texto.</b> Tente reescrever com as suas palavras — explique como se fosse para um amigo, sem olhar o texto. Pode ficar mais curto e simples; o que vale é ser <b>seu</b>.';
+        travou=true;
+      }else if(v===e.tentou[q]){
+        av.className='aviso am';
+        av.innerHTML='✏️ A resposta continua igual à anterior. <b>Mude alguma coisa</b> antes de conferir de novo.';
+        travou=true;
+      }else{
+        /* 2ª tentativa: aceita, mas marca em vermelho */
+        e.transcrita[q]=true;
+        document.getElementById('pi'+id+'_'+q).className='pitem copia';
+        av.className='aviso vm';
+        av.innerHTML='📌 <b>Esta resposta ficou muito parecida com o texto.</b> Ela foi aceita, mas entrou na lista "para revisar". Reescreva com as suas palavras quando quiser — a marca some sozinha.';
+      }
+    }else{
+      e.transcrita[q]=false;
+      document.getElementById('pi'+id+'_'+q).className='pitem';
+      av.className='aviso'; av.innerHTML='';
+    }
+  }
+  salvar();
+  if(travou){ attSelo(id); attRevisar(); return; }
+  e.feito=true;
+  if(D.aberto<id+1 && id<BLOCOS.length) D.aberto=id+1;
+  salvar(); render();
+  var el=document.getElementById('bl'+id); if(el) el.scrollIntoView({behavior:'smooth',block:'center'});
+}
+function mostrarConferido(id,scroll){
+  var e=est(id);
+  for(var q=0;q<3;q++){
+    var md=document.getElementById('md'+id+'_'+q); if(md) md.className='modelo on';
+    if(e.transcrita[q]){
+      var pi=document.getElementById('pi'+id+'_'+q); if(pi) pi.className='pitem copia';
+      var av=document.getElementById('av'+id+'_'+q);
+      if(av){ av.className='aviso vm'; av.innerHTML='📌 <b>Esta resposta ficou muito parecida com o texto.</b> Reescreva com as suas palavras quando quiser — a marca some sozinha.'; }
+    }
+  }
+  attStatus(id); attSelo(id);
+}
+function marcar(id,q,i,val){
+  var e=est(id); e.chk[q+'_'+i]=val; salvar();
+  var md=document.getElementById('md'+id+'_'+q);
+  if(md){ var b=buscaBloco(id); md.querySelector('.chk').innerHTML='<h6>A minha resposta disse que...</h6>'+chkHtml(id,q,b.p[q].c); }
+  attStatus(id); attSelo(id); attRevisar();
+}
+function blocoOk(id){
+  var b=buscaBloco(id), e=est(id);
+  for(var q=0;q<3;q++){
+    if(e.transcrita[q]) return false;
+    for(var i=0;i<b.p[q].c.length;i++){
+      if(e.chk[q+'_'+i]!==true) return false;
+    }
+  }
+  return true;
+}
+function attStatus(id){
+  var st=document.getElementById('st'+id); if(!st) return;
+  var e=est(id); if(!e.feito){ st.className='status'; return; }
+  if(blocoOk(id)){ st.className='status ok'; st.innerHTML='✅ <b>Edição fechada.</b> Você deu conta dos pontos-chave desta edição.'; }
+  else{ st.className='status rev'; st.innerHTML='🔁 <b>Vale revisar.</b> Ficou algum ponto marcado como "Não" ou alguma resposta muito parecida com o texto — está na lista do fim da página.'; }
+}
+function attSelo(id){
+  var s=document.getElementById('selo'+id); if(!s) return;
+  var e=est(id);
+  s.className='selo'+((e.feito&&!blocoOk(id))?' on':'');
+}
+function attBarra(){
+  var n=0; for(var i=0;i<BLOCOS.length;i++){ if(est(BLOCOS[i].id).feito) n++; }
+  document.getElementById('barra').style.width=(n/BLOCOS.length*100)+'%';
+}
+function attRevisar(){
+  var box=document.getElementById('revisar'), ul=document.getElementById('revlista');
+  ul.innerHTML=''; var tem=false;
+  for(var i=0;i<BLOCOS.length;i++){
+    var b=BLOCOS[i], e=est(b.id); if(!e.feito) continue;
+    for(var q=0;q<3;q++){
+      var motivos=[];
+      if(e.transcrita[q]) motivos.push('resposta muito parecida com o texto');
+      var faltou=[];
+      for(var k=0;k<b.p[q].c.length;k++){ if(e.chk[q+'_'+k]===false) faltou.push(b.p[q].c[k]); }
+      if(faltou.length) motivos.push('faltou: '+faltou.join(' / '));
+      if(motivos.length){
+        tem=true;
+        var li=document.createElement('li');
+        li.innerHTML='<b>Edição '+b.id+', pergunta '+(q+1)+'</b> ('+b.cap+') — '+motivos.join('; ');
+        ul.appendChild(li);
+      }
+    }
+  }
+  box.style.display=tem?'block':'none';
+  attBarra();
+}
+
+/* ===== export / import / zerar ===== */
+function exportar(){
+  var out={material:'Leitura Guiada',kit:'Primeira Página — História 9º ano',quando:D.quando||'',aberto:D.aberto,blocos:{}};
+  for(var i=0;i<BLOCOS.length;i++){
+    var b=BLOCOS[i], e=est(b.id);
+    var qs=[];
+    for(var q=0;q<3;q++){
+      var ch={};
+      for(var k=0;k<b.p[q].c.length;k++){ ch[b.p[q].c[k]]=(e.chk[q+'_'+k]===undefined?null:e.chk[q+'_'+k]); }
+      qs.push({pergunta:b.p[q].q,resp:e.resp[q]||'',transcrita:!!e.transcrita[q],tentou:e.tentou[q]||'',chk:ch});
+    }
+    out.blocos['edicao_'+b.id]={manchete:b.man,capitulo:b.cap,feito:!!e.feito,status:(e.feito?(blocoOk(b.id)?'ok':'revisar'):'não feito'),perguntas:qs};
+  }
+  var bl=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(bl);
+  a.download='leitura-guiada-historia9.json'; a.click();
+}
+function importar(ev){
+  var f=ev.target.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(x){
+    try{
+      var o=JSON.parse(x.target.result);
+      if(o&&o.blocos){
+        for(var i=0;i<BLOCOS.length;i++){
+          var b=BLOCOS[i], src=o.blocos['edicao_'+b.id]; if(!src) continue;
+          var e=est(b.id); e.feito=!!src.feito;
+          if(src.perguntas){
+            for(var q=0;q<src.perguntas.length&&q<3;q++){
+              var sp=src.perguntas[q];
+              e.resp[q]=sp.resp||''; e.transcrita[q]=!!sp.transcrita; e.tentou[q]=sp.tentou||'';
+              if(sp.chk){ var idx=0; for(var key in sp.chk){ if(sp.chk.hasOwnProperty(key)){ e.chk[q+'_'+idx]=sp.chk[key]; idx++; } } }
+            }
+          }
+        }
+        if(o.aberto) D.aberto=o.aberto;
+        salvar(); render();
+      }
+    }catch(e){}
+  };
+  r.readAsText(f); ev.target.value='';
+}
+var acaoModal=null;
+function pedirZerar(){
+  acaoModal=function(){ delIt(CHAVE); D={blocos:{},aberto:1}; salvar(); render(); fecharModal(); };
+  document.getElementById('mdlt').textContent='Zerar tudo?';
+  document.getElementById('mdlp').textContent='Isso apaga todas as respostas desta Leitura Guiada. Não dá para desfazer.';
+  document.getElementById('mdl').className='modal on';
+}
+function mdlOk(){ if(acaoModal) acaoModal(); }
+function fecharModal(){ document.getElementById('mdl').className='modal'; acaoModal=null; }
+
+carregar(); render();
+</script>
+</body>
+</html>

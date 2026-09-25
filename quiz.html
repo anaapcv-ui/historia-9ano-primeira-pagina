@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz — Primeira Página | História 9º ano</title>
+<style>
+:root{--tinta:#0d0c0a;--papel:#c9c3b4;--papel2:#8e8878;--ambar:#e8a33d;--ambar2:#f5c877;--carimbo:#c0392b;--verde:#4f9d69;--borda:#2e2b22}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--papel);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:linear-gradient(180deg,#1b1a14,#0d0c0a);border-bottom:3px double var(--ambar);padding:22px 0 16px}
+.jornal{font-size:2.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar2);text-align:center;font-weight:700}
+.sub{text-align:center;color:var(--papel2);font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+nav.abas{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:16px 0 0}
+nav.abas a{padding:8px 14px;border:1px solid var(--borda);background:#141309;color:var(--papel2);text-decoration:none;font-size:.86rem;font-family:Arial,sans-serif}
+nav.abas a:hover{border-color:var(--ambar);color:var(--ambar2)}
+nav.abas a.on{background:var(--ambar);color:#17150d;border-color:var(--ambar);font-weight:700}
+.painel{background:#141309;border:1px solid var(--borda);border-left:4px solid var(--ambar);padding:14px;margin:20px 0;font-family:Arial,sans-serif;font-size:.86rem}
+.painel b{color:var(--ambar2)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button{font-family:Arial,sans-serif;cursor:pointer;border:1px solid var(--borda);background:#1e1c13;color:var(--papel);padding:8px 14px;font-size:.85rem}
+button:hover{border-color:var(--ambar);color:var(--ambar2)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.pri{background:var(--ambar);color:#17150d;font-weight:700;border-color:var(--ambar)}
+button.pri:disabled{background:#4a4534;color:#8e8878;border-color:#4a4534}
+.prog{height:8px;background:#201e15;border:1px solid var(--borda);margin:14px 0}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--ambar),var(--ambar2));width:0;transition:width .4s}
+.q{border:1px solid var(--borda);background:#12110b;margin:20px 0;padding:18px}
+.qn{font-family:Arial,sans-serif;font-size:.74rem;letter-spacing:.18em;color:var(--ambar);text-transform:uppercase}
+.qt{margin:8px 0 14px;font-size:1.05rem}
+.alt{display:block;border:1px solid var(--borda);background:#0f0e09;padding:10px 12px;margin-bottom:8px;cursor:pointer;font-size:.98rem}
+.alt:hover{border-color:var(--ambar)}
+.alt.sel{border-color:var(--ambar);background:#231f12}
+.alt input{margin-right:8px}
+.alt.cta{border-color:var(--verde);background:#0f1a12}
+.alt.err{border-color:var(--carimbo);background:#1a0c0a}
+.alt.neu{opacity:.75}
+.exp{display:none;font-family:Arial,sans-serif;font-size:.86rem;margin-top:6px;padding-left:24px;color:var(--papel2)}
+.exp.on{display:block}
+.exp.v{color:#8fd4a5}
+.codigo{border:2px solid var(--ambar);background:#1a1710;padding:20px;text-align:center;margin:24px 0;display:none}
+.codigo.on{display:block}
+.codigo .big{font-family:'Courier New',monospace;font-size:2.2rem;color:var(--ambar2);letter-spacing:.18em;margin:10px 0}
+.codigo .nota{font-family:Arial,sans-serif;font-size:.86rem;color:var(--papel2)}
+.gate{border:1px solid var(--borda);background:#141309;padding:18px;margin:20px 0;display:none;font-family:Arial,sans-serif}
+.gate.on{display:block}
+.gate input{background:#0a0906;border:1px solid var(--borda);color:var(--papel);padding:9px;font-family:'Courier New',monospace;font-size:1rem;letter-spacing:.1em;width:180px;text-transform:uppercase}
+.gate .msg{margin-top:8px;font-size:.86rem;display:none}
+.gate .msg.err{display:block;color:#e8897e}
+.fim{text-align:center;padding:26px 0;color:var(--papel2);font-family:Arial,sans-serif;font-size:.85rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:99}
+.modal.on{display:flex}
+.modal .box{background:#15130c;border:1px solid var(--ambar);padding:22px;max-width:420px;font-family:Arial,sans-serif}
+.modal h4{color:var(--ambar2);margin-bottom:10px}.modal p{font-size:.9rem;margin-bottom:14px}
+@media(max-width:640px){.jornal{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="jornal">Primeira Página</div>
+  <div class="sub">Quiz &bull; 15 questões &bull; caps. 13, 15, 16 e 17</div>
+  <nav class="abas">
+    <a href="index.html">🏠 Início</a>
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html" class="on">🎯 Quiz</a>
+    <a href="resumo.html">🗺️ Resumo</a>
+    <a href="simulado.html">📝 Simulado</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+  <div class="painel">
+    <b>🎯 Como funciona.</b> São <b>15 questões de múltipla escolha</b>. Responda <b>todas</b> antes de enviar — depois de enviar não dá para mudar. Você recebe um <b>código MED</b> para mostrar em casa, e o gabarito comentado abre com esse código.
+    <div style="margin-top:8px;color:var(--papel2)">Salvamento automático: <b id="quando">—</b></div>
+    <div class="btns">
+      <button onclick="exportar()">📥 Exportar</button>
+      <button onclick="document.getElementById('imp').click()">📤 Importar</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importar(event)">
+      <button onclick="pedirZerar()">🗑️ Zerar tudo</button>
+    </div>
+  </div>
+  <div class="prog"><i id="barra"></i></div>
+  <div id="qs"></div>
+  <button class="pri" id="env" onclick="enviar()" style="width:100%;padding:14px;font-size:1rem">📨 Enviar respostas</button>
+
+  <div class="codigo" id="cod">
+    <div class="nota">Código de liberação — mostre para um responsável</div>
+    <div class="big" id="codbig">MED-00-XX</div>
+    <div class="nota">Acertos: <b id="acertos">0</b> de 15</div>
+  </div>
+
+  <div class="gate" id="gate">
+    <b style="color:var(--ambar2)">🔒 Gabarito comentado</b>
+    <p style="font-size:.88rem;margin:8px 0">Digite o código MED para abrir o gabarito.</p>
+    <input id="codin" placeholder="MED-00-XX" maxlength="9">
+    <button class="pri" onclick="abrirGab()">Abrir</button>
+    <div class="msg" id="gmsg">Código incorreto. Confira as letras e os números.</div>
+  </div>
+
+  <div class="fim">Depois do quiz, o próximo passo é o <a href="resumo.html" style="color:var(--ambar2)">🗺️ Resumo</a>.</div>
+</div>
+
+<div class="modal" id="mdl"><div class="box">
+  <h4 id="mdlt">Confirmar</h4><p id="mdlp">?</p>
+  <div class="btns"><button class="pri" onclick="mdlOk()">Confirmar</button><button onclick="fecharModal()">Cancelar</button></div>
+</div></div>
+
+<script>
+var MEM={};
+function LS(){try{var t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return localStorage;}catch(e){return null;}}
+var ST=LS();
+function getIt(k){try{return ST?ST.getItem(k):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+function setIt(k,v){try{if(ST){ST.setItem(k,v);}else{MEM[k]=v;}}catch(e){MEM[k]=v;}}
+function delIt(k){try{if(ST){ST.removeItem(k);}else{delete MEM[k];}}catch(e){delete MEM[k];}}
+var CHAVE='hist9_primeirapagina_quiz';
+
+/* Cada alternativa tem id. 'ok' guarda o ID da correta (nunca a posição). */
+var QS=[
+{id:1,q:"O rompimento da política do café com leite, em 1929, aconteceu porque:",
+ alts:[
+  {id:'a',t:"o presidente Washington Luís indicou o paulista Júlio Prestes como sucessor, em vez de um candidato mineiro.",e:"Correta. Washington Luís era paulista e quebrou o revezamento ao indicar outro paulista, deixando Minas Gerais descontente."},
+  {id:'b',t:"Minas Gerais se recusou a lançar candidato por causa da crise do café.",e:"Errada. Minas queria a vez dela; o problema foi não ter sido contemplada pelo presidente."},
+  {id:'c',t:"Getúlio Vargas se recusou a apoiar o candidato de São Paulo.",e:"Errada. Vargas surge como candidato da oposição DEPOIS do racha — ele aproveitou a crise, não a criou."},
+  {id:'d',t:"o Rio Grande do Sul exigiu a presidência por ser o estado mais rico do país.",e:"Errada. O estado mais rico era São Paulo, e esse foi justamente um dos argumentos de Washington Luís."}
+ ],ok:'a'},
+{id:2,q:"Sobre a Revolução de 1930, é correto afirmar que:",
+ alts:[
+  {id:'a',t:"foi conduzida por oligarquias dissidentes aliadas ao tenentismo, e não por um levante de trabalhadores.",e:"Correta. Minas, Rio Grande do Sul e Paraíba formaram a Aliança Liberal, com apoio dos tenentes: foi uma disputa dentro da própria elite."},
+  {id:'b',t:"foi um levante operário que exigia leis trabalhistas.",e:"Errada. As leis trabalhistas vieram depois, como política do governo Vargas, e não como causa do movimento."},
+  {id:'c',t:"consagrou a vitória eleitoral de Getúlio Vargas nas urnas.",e:"Errada. Quem venceu a eleição foi Júlio Prestes; Vargas chegou ao poder pela via armada."},
+  {id:'d',t:"foi liderada pela Ação Integralista Brasileira, de inspiração fascista.",e:"Errada. A AIB só foi criada em 1932, dois anos depois."}
+ ],ok:'a'},
+{id:3,q:"No Governo Provisório (1930-1934), Vargas revogou a Constituição de 1891, dissolveu o Congresso e substituiu os governadores por interventores. A principal consequência política desses atos foi:",
+ alts:[
+  {id:'a',t:"a concentração de poderes nas mãos do presidente, que passou a governar sem os limites de um Parlamento ou de uma Constituição.",e:"Correta. O fim do poder das oligarquias veio junto com o fim dos limites ao poder do próprio Vargas."},
+  {id:'b',t:"o fortalecimento da autonomia dos estados, que passaram a escolher seus próprios líderes.",e:"Errada. Foi o contrário: os governadores eleitos foram trocados por homens nomeados por Vargas."},
+  {id:'c',t:"a imediata convocação de eleições diretas para presidente.",e:"Errada. A demora em convocar a Constituinte foi justamente uma das causas da revolta de 1932."},
+  {id:'d',t:"a devolução do poder aos coronéis do interior.",e:"Errada. O objetivo declarado era acabar com o regionalismo político, e não reforçá-lo."}
+ ],ok:'a'},
+{id:4,q:"O Departamento Nacional do Café (DNC) comprava e destruía parte da produção cafeeira. O objetivo dessa medida era:",
+ alts:[
+  {id:'a',t:"reduzir a oferta do produto no mercado para impedir que o preço continuasse caindo.",e:"Correta. Com menos café à venda, o preço se sustenta. Entre 1931 e 1944 foram queimadas mais de 70 milhões de sacas."},
+  {id:'b',t:"punir os cafeicultores paulistas que apoiaram a Revolução Constitucionalista.",e:"Errada. A medida era de proteção econômica ao setor, não de punição — e começou antes de 1932."},
+  {id:'c',t:"liberar terras para a reforma agrária defendida pela ANL.",e:"Errada. Vargas manteve proximidade com a elite agrária e não fez reforma agrária."},
+  {id:'d',t:"aumentar a exportação de café para os Estados Unidos.",e:"Errada. Destruir produto não aumenta exportação; a crise de 1929 é que havia derrubado a demanda mundial."}
+ ],ok:'a'},
+{id:5,q:"A Revolução Constitucionalista de 1932 é lembrada como uma derrota militar que se transformou em vitória política porque:",
+ alts:[
+  {id:'a',t:"São Paulo se rendeu em outubro de 1932, mas o governo cedeu e convocou a Assembleia Constituinte, que gerou a Constituição de 1934.",e:"Correta. Como São Paulo era economicamente importante demais para ser ignorado, o governo atendeu à principal exigência do movimento."},
+  {id:'b',t:"os paulistas venceram os combates e impuseram sua Constituição ao país.",e:"Errada. Os paulistas foram derrotados militarmente e se renderam após três meses de combates."},
+  {id:'c',t:"o movimento conseguiu o apoio armado de todos os outros estados.",e:"Errada. Os líderes buscaram apoio de outros estados, mas não conseguiram."},
+  {id:'d',t:"Vargas renunciou à presidência ao fim do conflito.",e:"Errada. Vargas permaneceu no poder e, em 1934, foi eleito presidente pela própria Assembleia."}
+ ],ok:'a'},
+{id:6,q:"Sobre o direito de voto no Brasil a partir do Código Eleitoral de 1932, é correto afirmar que:",
+ alts:[
+  {id:'a',t:"as mulheres passaram a votar, mas os analfabetos continuaram proibidos de participar das eleições.",e:"Correta. O Código criou a Justiça Eleitoral, o voto secreto e o voto feminino, mas manteve a exclusão dos analfabetos e dos menores de 21 anos."},
+  {id:'b',t:"o voto passou a ser universal, alcançando toda a população adulta.",e:"Errada. A exclusão dos analfabetos deixava de fora uma parcela enorme da população da época."},
+  {id:'c',t:"o voto feminino só foi conquistado com a Constituição de 1934.",e:"Errada. O direito veio antes, no Código Eleitoral de 1932."},
+  {id:'d',t:"o voto continuou aberto, para permitir a fiscalização dos coronéis.",e:"Errada. Uma das principais novidades foi justamente o voto secreto, para combater fraudes e coação."}
+ ],ok:'a'},
+{id:7,q:"Comparando a Ação Integralista Brasileira (AIB) e a Aliança Nacional Libertadora (ANL), é correto afirmar que:",
+ alts:[
+  {id:'a',t:"a AIB, de Plínio Salgado, era antiliberal e anticomunista e defendia um Estado centralizado; a ANL, ligada ao Partido Comunista, defendia reforma agrária e governo popular.",e:"Correta. Eram os dois polos opostos da radicalização política dos anos 1930 no Brasil."},
+  {id:'b',t:"as duas defendiam a democracia liberal e a alternância de poder.",e:"Errada. Nenhuma das duas era liberal: uma queria um Estado forte e centralizado, a outra, um governo popular revolucionário."},
+  {id:'c',t:"a ANL era liderada por Plínio Salgado e a AIB por Luís Carlos Prestes.",e:"Errada. Os nomes estão trocados: Plínio Salgado liderava a AIB e Prestes era o presidente de honra da ANL."},
+  {id:'d',t:"ambas foram apoiadas por Vargas até o fim do Estado Novo.",e:"Errada. Em 1937 todos os partidos foram fechados, inclusive a AIB, que chegou a tentar derrubar o governo."}
+ ],ok:'a'},
+{id:8,q:"O chamado Plano Cohen, de 1937, pode ser definido como:",
+ alts:[
+  {id:'a',t:"um documento falso, que simulava um plano comunista de tomada do poder e serviu de pretexto para o golpe do Estado Novo.",e:"Correta. Foi redigido por um militar ligado ao integralismo e divulgado como verdadeiro nos jornais e no rádio."},
+  {id:'b',t:"um plano econômico de substituição de importações elaborado pelo DASP.",e:"Errada. O DASP era o órgão de administração criado pela Constituição de 1937, e não um plano econômico."},
+  {id:'c',t:"o acordo comercial assinado entre o Brasil e os Estados Unidos em 1935.",e:"Errada. Esse foi um tratado comercial, sem relação com o pretexto do golpe."},
+  {id:'d',t:"um levante comunista real, ocorrido em Natal, Recife e Rio de Janeiro.",e:"Errada. Esse foi o Levante Comunista de 1935 (a 'Intentona'), um acontecimento diferente e anterior."}
+ ],ok:'a'},
+{id:9,q:"A Constituição outorgada em 1937 ficou popularmente conhecida como 'Polaca' porque:",
+ alts:[
+  {id:'a',t:"foi inspirada na Constituição da Polônia.",e:"Correta. Por ter sido baseada no modelo polonês, recebeu esse apelido da população."},
+  {id:'b',t:"foi escrita por juristas poloneses contratados por Vargas.",e:"Errada. O apelido vem da inspiração no modelo polonês, não da autoria."},
+  {id:'c',t:"garantia direitos aos imigrantes poloneses do sul do país.",e:"Errada. A Carta de 1937 ampliava os poderes do Executivo; não tratava de direitos de imigrantes."},
+  {id:'d',t:"foi aprovada durante a invasão alemã da Polônia.",e:"Errada. A Carta é de novembro de 1937 e a invasão da Polônia, de setembro de 1939."}
+ ],ok:'a'},
+{id:10,q:"A tática militar alemã conhecida como Blitzkrieg ('guerra-relâmpago') caracterizava-se por:",
+ alts:[
+  {id:'a',t:"concentrar tanques numa ponta ofensiva apoiada por aviões, avançando dezenas de quilômetros por dia com ordens transmitidas por rádio.",e:"Correta. Velocidade e coordenação em 'tempo real' eram o oposto da guerra de trincheiras da Primeira Guerra."},
+  {id:'b',t:"fortificar as fronteiras e esperar o ataque inimigo em posições defensivas.",e:"Errada. Isso descreve a lógica da Linha Maginot francesa, que a Blitzkrieg simplesmente contornou."},
+  {id:'c',t:"bombardear apenas alvos civis para desmoralizar a população.",e:"Errada. A Blitzkrieg é uma tática de avanço terrestre rápido com apoio aéreo, e não uma política de bombardeio de civis."},
+  {id:'d',t:"avançar lentamente com a infantaria, consolidando cada trecho de terreno conquistado.",e:"Errada. Os tanques não esperavam a infantaria: essa era exatamente a novidade da tática."}
+ ],ok:'a'},
+{id:11,q:"O Pacto Molotov-Ribbentrop, assinado em agosto de 1939 entre Alemanha e União Soviética, pode ser explicado como:",
+ alts:[
+  {id:'a',t:"um acordo de conveniência que evitava a guerra imediata entre os dois e previa a divisão de territórios, como a Polônia.",e:"Correta. Não era aliança ideológica: a Alemanha evitava lutar em duas frentes e a URSS ficava com o leste polonês."},
+  {id:'b',t:"uma aliança ideológica entre nazismo e comunismo, que passaram a defender o mesmo projeto político.",e:"Errada. Eram inimigos ideológicos; o programa nazista pregava justamente o fim do comunismo."},
+  {id:'c',t:"um tratado de paz que encerrou os combates na Europa Oriental.",e:"Errada. Poucos dias depois do pacto começou a invasão da Polônia."},
+  {id:'d',t:"um acordo comercial de venda de petróleo soviético à Grã-Bretanha.",e:"Errada. O pacto era entre Alemanha e União Soviética, e tratava de não agressão e de territórios."}
+ ],ok:'a'},
+{id:12,q:"A Linha Maginot não impediu a derrota da França em 1940 porque:",
+ alts:[
+  {id:'a',t:"além de estar tecnologicamente ultrapassada, foi contornada pelo norte, com os alemães avançando pela Bélgica.",e:"Correta. A França se preparou para o ataque no lugar errado, e as tropas franco-britânicas acabaram encurraladas em Dunquerque."},
+  {id:'b',t:"foi destruída pelos mísseis V-2 alemães logo no início da invasão.",e:"Errada. Os V-2 só passaram a ser usados em 1944, quatro anos depois."},
+  {id:'c',t:"nunca chegou a ser construída, por falta de recursos.",e:"Errada. Ela foi construída a partir do fim dos anos 1920, na fronteira com a Alemanha."},
+  {id:'d',t:"o marechal Pétain ordenou seu desmonte antes da invasão.",e:"Errada. Pétain assinou a rendição depois da queda de Paris; não desmontou as fortificações."}
+ ],ok:'a'},
+{id:13,q:"Segundo o texto estudado, o principal motivo que levou o Japão a atacar Pearl Harbor, em dezembro de 1941, foi:",
+ alts:[
+  {id:'a',t:"a necessidade de garantir fontes de matérias-primas, sobretudo petróleo, neutralizando a frota americana que barrava seu avanço no Pacífico.",e:"Correta. O território japonês é pobre em recursos naturais, e o petróleo que o país queria estava nas Índias Orientais Holandesas (atual Indonésia)."},
+  {id:'b',t:"a intenção de libertar as colônias europeias da Ásia em nome da autodeterminação dos povos.",e:"Errada. O objetivo japonês era expansionista: garantir recursos e domínio, não libertar povos."},
+  {id:'c',t:"uma represália ao lançamento das bombas atômicas pelos Estados Unidos.",e:"Errada. As bombas foram lançadas em agosto de 1945, quase quatro anos DEPOIS de Pearl Harbor."},
+  {id:'d',t:"o cumprimento de uma exigência feita pela Alemanha no Pacto Molotov-Ribbentrop.",e:"Errada. Esse pacto era entre Alemanha e União Soviética; o Japão entrou no Eixo pelo Pacto Tripartite, de 1940."}
+ ],ok:'a'},
+{id:14,q:"As batalhas de Midway, El Alamein e Stalingrado, entre 1942 e 1943, são estudadas em conjunto porque:",
+ alts:[
+  {id:'a',t:"marcaram o momento em que o Eixo deixou de avançar e os Aliados iniciaram a contraofensiva, em três continentes diferentes.",e:"Correta. Midway no Pacífico, El Alamein na África e Stalingrado na Europa Oriental: juntas, viraram o jogo da guerra."},
+  {id:'b',t:"foram as três batalhas em que os Estados Unidos usaram armas nucleares.",e:"Errada. Armas nucleares foram usadas apenas em 1945, contra Hiroshima e Nagasaki."},
+  {id:'c',t:"aconteceram todas no norte da África, sob comando do general Rommel.",e:"Errada. Só El Alamein foi na África; e nela Rommel foi derrotado pelo britânico Montgomery."},
+  {id:'d',t:"foram vitórias alemãs que adiaram o desembarque na Normandia.",e:"Errada. As três foram derrotas do Eixo, e é justamente por isso que representam a virada."}
+ ],ok:'a'},
+{id:15,q:"Sobre a participação do Brasil na Segunda Guerra Mundial, é correto afirmar que:",
+ alts:[
+  {id:'a',t:"o país declarou guerra em agosto de 1942, após ataques de submarinos alemães a navios mercantes brasileiros, e enviou a FEB à Itália em 1944.",e:"Correta. São dois momentos distintos: a entrada no conflito em 1942 e o envio de tropas dois anos depois."},
+  {id:'b',t:"o Brasil entrou na guerra já em 1939, ao lado da França e da Inglaterra.",e:"Errada. Em 1939 o Brasil ainda negociava com Alemanha e Estados Unidos ao mesmo tempo."},
+  {id:'c',t:"a FEB combateu na frente do Pacífico, ao lado das tropas japonesas.",e:"Errada. A FEB combateu na Itália, ao lado dos Aliados, contra as forças do Eixo."},
+  {id:'d',t:"o país aderiu ao Eixo por causa da simpatia de Vargas pelo fascismo.",e:"Errada. Apesar dessa simpatia, o Brasil rompeu com a Alemanha e entrou na guerra ao lado dos Aliados."}
+ ],ok:'a'}
+];
+
+/* ===== embaralhamento com semente fixa (mulberry32) ===== */
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function embaralhar(arr,semente){
+  var r=mulberry32(semente),a=arr.slice(),i,j,t;
+  for(i=a.length-1;i>0;i--){ j=Math.floor(r()*(i+1)); t=a[i];a[i]=a[j];a[j]=t; }
+  return a;
+}
+var ORD={};
+for(var i=0;i<QS.length;i++){ ORD[QS[i].id]=embaralhar(QS[i].alts,QS[i].id*1000+2); }
+var LETRA=['a','b','c','d'];
+
+var D={resp:{},enviado:false,codigo:'',gab:false};
+function salvar(){D.quando=new Date().toLocaleString('pt-BR');setIt(CHAVE,JSON.stringify(D));var q=document.getElementById('quando');if(q)q.textContent=D.quando;}
+function carregar(){var r=getIt(CHAVE);if(r){try{var o=JSON.parse(r);if(o&&typeof o==='object'){D=o;if(!D.resp)D.resp={};}}catch(e){}}var q=document.getElementById('quando');if(q)q.textContent=D.quando||'ainda não salvo';}
+
+function render(){
+  var c=document.getElementById('qs'); c.innerHTML='';
+  for(var i=0;i<QS.length;i++){
+    var Q=QS[i], alts=ORD[Q.id], marc=D.resp[Q.id];
+    var d=document.createElement('div'); d.className='q';
+    var h='<div class="qn">Questão '+(i+1)+' de 15</div><div class="qt">'+Q.q+'</div>';
+    for(var a=0;a<alts.length;a++){
+      var A=alts[a], cls='alt', ex='', exc='exp';
+      if(marc===A.id) cls+=' sel';
+      if(D.enviado&&D.gab){
+        if(A.id===Q.ok){ cls='alt cta'; exc='exp on v'; }
+        else if(marc===A.id){ cls='alt err'; exc='exp on'; }
+        else { cls='alt neu'; exc='exp on'; }
+        ex='<div class="'+exc+'">'+A.e+'</div>';
+      }
+      h+='<label class="'+cls+'"><input type="radio" name="q'+Q.id+'" value="'+A.id+'"'+(marc===A.id?' checked':'')+(D.enviado?' disabled':'')+' onchange="responder('+Q.id+',this.value)">'+
+         '<b>'+LETRA[a]+')</b> '+A.t+'</label>'+ex;
+    }
+    d.innerHTML=h; c.appendChild(d);
+  }
+  document.getElementById('env').style.display=D.enviado?'none':'block';
+  document.getElementById('cod').className='codigo'+(D.enviado?' on':'');
+  document.getElementById('gate').className='gate'+((D.enviado&&!D.gab)?' on':'');
+  if(D.enviado){
+    document.getElementById('codbig').textContent=D.codigo;
+    document.getElementById('acertos').textContent=contar();
+  }
+  attBarra(); attEnv();
+}
+function responder(id,val){ D.resp[id]=val; salvar(); attBarra(); attEnv();
+  var ls=document.getElementsByName('q'+id);
+  for(var i=0;i<ls.length;i++){ ls[i].parentNode.className='alt'+(ls[i].value===val?' sel':''); }
+}
+function attBarra(){var n=0;for(var i=0;i<QS.length;i++){if(D.resp[QS[i].id])n++;}document.getElementById('barra').style.width=(n/QS.length*100)+'%';}
+function attEnv(){var n=0;for(var i=0;i<QS.length;i++){if(D.resp[QS[i].id])n++;}var b=document.getElementById('env');if(b)b.disabled=(n<QS.length);}
+function contar(){var n=0;for(var i=0;i<QS.length;i++){if(D.resp[QS[i].id]===QS[i].ok)n++;}return n;}
+function gerarCod(ac){
+  var L='ABCDEFGHJKLMNPQRSTUVWXYZ'; /* sem I e sem O */
+  var s=L.charAt(Math.floor(Math.random()*L.length))+L.charAt(Math.floor(Math.random()*L.length));
+  var xx=(ac<10?'0':'')+ac;
+  return 'MED-'+xx+'-'+s;
+}
+var acaoModal=null;
+function enviar(){
+  acaoModal=function(){
+    D.enviado=true; D.codigo=gerarCod(contar()); salvar(); render(); fecharModal();
+    document.getElementById('cod').scrollIntoView({behavior:'smooth',block:'center'});
+  };
+  document.getElementById('mdlt').textContent='Enviar as respostas?';
+  document.getElementById('mdlp').textContent='Depois de enviar não dá para mudar nenhuma resposta. Quer enviar agora?';
+  document.getElementById('mdl').className='modal on';
+}
+function abrirGab(){
+  var v=(document.getElementById('codin').value||'').trim().toUpperCase();
+  if(v===D.codigo){ D.gab=true; salvar(); render(); }
+  else{ document.getElementById('gmsg').className='msg err'; }
+}
+function exportar(){
+  var det=[];
+  for(var i=0;i<QS.length;i++){
+    var Q=QS[i],m=D.resp[Q.id]||null,tx='';
+    for(var a=0;a<Q.alts.length;a++){ if(Q.alts[a].id===m) tx=Q.alts[a].t; }
+    det.push({n:i+1,pergunta:Q.q,marcou:tx,correta:(m===Q.ok)});
+  }
+  var out={material:'Quiz',kit:'Primeira Página — História 9º ano',quando:D.quando||'',enviado:D.enviado,codigo:D.codigo,acertos:contar(),total:15,questoes:det};
+  var bl=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  var a2=document.createElement('a'); a2.href=URL.createObjectURL(bl); a2.download='quiz-historia9.json'; a2.click();
+}
+function importar(ev){
+  var f=ev.target.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(x){ try{ var o=JSON.parse(x.target.result);
+    if(o&&o.questoes){ D.enviado=!!o.enviado; D.codigo=o.codigo||''; salvar(); render(); } }catch(e){} };
+  r.readAsText(f); ev.target.value='';
+}
+function pedirZerar(){
+  acaoModal=function(){ delIt(CHAVE); D={resp:{},enviado:false,codigo:'',gab:false}; salvar(); render(); fecharModal(); };
+  document.getElementById('mdlt').textContent='Zerar tudo?';
+  document.getElementById('mdlp').textContent='Isso apaga todas as respostas e o código deste Quiz. Não dá para desfazer.';
+  document.getElementById('mdl').className='modal on';
+}
+function mdlOk(){ if(acaoModal) acaoModal(); }
+function fecharModal(){ document.getElementById('mdl').className='modal'; acaoModal=null; }
+
+carregar(); render();
+</script>
+</body>
+</html>

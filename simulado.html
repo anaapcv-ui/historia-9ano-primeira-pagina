@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simulado — Primeira Página | História 9º ano</title>
+<style>
+:root{--tinta:#0d0c0a;--papel:#c9c3b4;--papel2:#8e8878;--ambar:#e8a33d;--ambar2:#f5c877;--carimbo:#c0392b;--verde:#4f9d69;--borda:#2e2b22;--azul:#132238}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--papel);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:linear-gradient(180deg,#0f1c2e,#0b1421);border-bottom:4px solid var(--carimbo);padding:22px 0 16px}
+.jornal{font-size:2.4rem;letter-spacing:.16em;text-transform:uppercase;color:#dfe8f2;text-align:center;font-weight:700}
+.sub{text-align:center;color:#8fa4bd;font-size:.82rem;letter-spacing:.2em;text-transform:uppercase;margin-top:6px}
+.cabec{border:1px solid var(--borda);background:#101720;margin:18px 0;padding:14px;font-family:Arial,sans-serif;font-size:.86rem;text-align:center;color:#b9c8da}
+.cabec b{color:#dfe8f2;display:block;font-size:1rem;letter-spacing:.06em;margin-bottom:4px}
+nav.abas{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:16px 0 0}
+nav.abas a{padding:8px 14px;border:1px solid var(--borda);background:#141309;color:var(--papel2);text-decoration:none;font-size:.86rem;font-family:Arial,sans-serif}
+nav.abas a:hover{border-color:var(--ambar);color:var(--ambar2)}
+nav.abas a.on{background:var(--carimbo);color:#fff;border-color:var(--carimbo);font-weight:700}
+.painel{background:#141309;border:1px solid var(--borda);border-left:4px solid var(--carimbo);padding:14px;margin:20px 0;font-family:Arial,sans-serif;font-size:.86rem}
+.painel b{color:var(--ambar2)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button{font-family:Arial,sans-serif;cursor:pointer;border:1px solid var(--borda);background:#1e1c13;color:var(--papel);padding:8px 14px;font-size:.85rem}
+button:hover{border-color:var(--ambar);color:var(--ambar2)}
+button:disabled{opacity:.4;cursor:not-allowed}
+button.pri{background:var(--carimbo);color:#fff;font-weight:700;border-color:var(--carimbo)}
+button.pri:disabled{background:#4a2b27;color:#a08a86;border-color:#4a2b27}
+.prog{height:8px;background:#201e15;border:1px solid var(--borda);margin:14px 0}
+.prog i{display:block;height:100%;background:linear-gradient(90deg,var(--carimbo),#e8897e);width:0;transition:width .4s}
+.q{border:1px solid var(--borda);background:#12110b;margin:20px 0;padding:18px}
+.qhead{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.qn{font-family:Arial,sans-serif;font-size:.74rem;letter-spacing:.18em;color:var(--ambar);text-transform:uppercase}
+.badge{font-family:Arial,sans-serif;font-size:.64rem;letter-spacing:.1em;padding:3px 9px;text-transform:uppercase;border:1px solid}
+.badge.mc{border-color:#5b8ec4;color:#8fb6e0}
+.badge.rom{border-color:#a67cc4;color:#c2a1da}
+.badge.som{border-color:#c49a5b;color:#e0bd8f}
+.pts{font-family:Arial,sans-serif;font-size:.74rem;color:var(--papel2)}
+.qt{margin:10px 0 12px;font-size:1.04rem}
+.trecho{border-left:3px solid var(--borda);padding:8px 12px;margin:10px 0;background:#0f0e09;font-size:.94rem;font-style:italic;color:#b5af9f}
+.romlist{margin:10px 0 12px;padding-left:4px}
+.romlist div{margin-bottom:7px;font-size:.96rem}
+.romlist b{color:var(--ambar2);font-family:'Courier New',monospace;margin-right:5px}
+.alt{display:block;border:1px solid var(--borda);background:#0f0e09;padding:10px 12px;margin-bottom:8px;cursor:pointer;font-size:.97rem}
+.alt:hover{border-color:var(--ambar)}
+.alt.sel{border-color:var(--ambar);background:#231f12}
+.alt input{margin-right:8px}
+.alt.cta{border-color:var(--verde);background:#0f1a12}
+.alt.err{border-color:var(--carimbo);background:#1a0c0a}
+.alt.neu{opacity:.75}
+.exp{display:none;font-family:Arial,sans-serif;font-size:.85rem;margin-top:6px;padding-left:24px;color:var(--papel2)}
+.exp.on{display:block}.exp.v{color:#8fd4a5}
+.somitem{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--borda);background:#0f0e09;padding:10px 12px;margin-bottom:8px;font-size:.96rem}
+.somitem .vl{font-family:'Courier New',monospace;color:var(--ambar2);font-weight:700;flex-shrink:0}
+.somitem.cta{border-color:var(--verde);background:#0f1a12}
+.somitem.errx{border-color:var(--carimbo);background:#1a0c0a}
+.somin{margin-top:10px;font-family:Arial,sans-serif;font-size:.88rem}
+.somin input{background:#0a0906;border:1px solid var(--borda);color:var(--papel);padding:9px;font-family:'Courier New',monospace;font-size:1.05rem;width:110px;text-align:center}
+.somin input:focus{outline:none;border-color:var(--ambar)}
+.somres{font-family:Arial,sans-serif;font-size:.86rem;margin-top:8px;display:none}
+.somres.on{display:block}
+.somres.ok{color:#8fd4a5}.somres.no{color:#e8897e}
+.codigo{border:2px solid var(--carimbo);background:#1a1710;padding:20px;text-align:center;margin:24px 0;display:none}
+.codigo.on{display:block}
+.codigo .big{font-family:'Courier New',monospace;font-size:2.2rem;color:#e8897e;letter-spacing:.18em;margin:10px 0}
+.codigo .nota{font-family:Arial,sans-serif;font-size:.86rem;color:var(--papel2)}
+.gate{border:1px solid var(--borda);background:#141309;padding:18px;margin:20px 0;display:none;font-family:Arial,sans-serif}
+.gate.on{display:block}
+.gate input{background:#0a0906;border:1px solid var(--borda);color:var(--papel);padding:9px;font-family:'Courier New',monospace;font-size:1rem;width:180px;text-transform:uppercase}
+.gate .msg{margin-top:8px;font-size:.86rem;display:none}
+.gate .msg.err{display:block;color:#e8897e}
+.fim{text-align:center;padding:26px 0;color:var(--papel2);font-family:Arial,sans-serif;font-size:.85rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:99}
+.modal.on{display:flex}
+.modal .box{background:#15130c;border:1px solid var(--ambar);padding:22px;max-width:420px;font-family:Arial,sans-serif}
+.modal h4{color:var(--ambar2);margin-bottom:10px}.modal p{font-size:.9rem;margin-bottom:14px}
+@media(max-width:640px){.jornal{font-size:1.6rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="jornal">Primeira Página</div>
+  <div class="sub">Simulado &bull; estilo vestibular &bull; 28 questões</div>
+  <nav class="abas">
+    <a href="index.html">🏠 Início</a>
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a href="resumo.html">🗺️ Resumo</a>
+    <a href="simulado.html" class="on">📝 Simulado</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+  <div class="cabec">
+    <b>Avaliação de História — 9º ano do Ensino Fundamental</b>
+    Conteúdo: Governo Vargas (cap. 13) &bull; Segunda Guerra Mundial (caps. 15 e 16) &bull; Brasil na guerra (cap. 17)<br>
+    28 questões &bull; múltipla escolha, números romanos e somatório
+  </div>
+  <div class="painel">
+    <b>📝 Como funciona.</b> Responda <b>todas</b> as questões antes de enviar; depois não dá para mudar. Nas questões de <b>somatório</b>, a resposta é a <b>soma dos números</b> das afirmativas corretas (ex.: se 01 e 04 estiverem certas, a resposta é 05). Você recebe um <b>código SIM</b> e o gabarito comentado abre com ele.
+    <div style="margin-top:8px;color:var(--papel2)">Salvamento automático: <b id="quando">—</b></div>
+    <div class="btns">
+      <button onclick="exportar()">📥 Exportar</button>
+      <button onclick="document.getElementById('imp').click()">📤 Importar</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importar(event)">
+      <button onclick="pedirZerar()">🗑️ Zerar tudo</button>
+    </div>
+  </div>
+  <div class="prog"><i id="barra"></i></div>
+  <div id="qs"></div>
+  <button class="pri" id="env" onclick="enviar()" style="width:100%;padding:14px;font-size:1rem">📨 Enviar respostas</button>
+
+  <div class="codigo" id="cod">
+    <div class="nota">Código de liberação — mostre para um responsável</div>
+    <div class="big" id="codbig">SIM-00-XX</div>
+    <div class="nota">Acertos: <b id="acertos">0</b> de 28</div>
+  </div>
+  <div class="gate" id="gate">
+    <b style="color:var(--ambar2)">🔒 Gabarito comentado</b>
+    <p style="font-size:.88rem;margin:8px 0">Digite o código SIM para abrir o gabarito.</p>
+    <input id="codin" placeholder="SIM-00-XX" maxlength="9">
+    <button class="pri" onclick="abrirGab()">Abrir</button>
+    <div class="msg" id="gmsg">Código incorreto. Confira as letras e os números.</div>
+  </div>
+  <div class="fim">Boa prova, jovem aprendiz. 👊</div>
+</div>
+
+<div class="modal" id="mdl"><div class="box">
+  <h4 id="mdlt">Confirmar</h4><p id="mdlp">?</p>
+  <div class="btns"><button class="pri" onclick="mdlOk()">Confirmar</button><button onclick="fecharModal()">Cancelar</button></div>
+</div></div>
+
+<script>
+var MEM={};
+function LS(){try{var t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return localStorage;}catch(e){return null;}}
+var ST=LS();
+function getIt(k){try{return ST?ST.getItem(k):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+function setIt(k,v){try{if(ST){ST.setItem(k,v);}else{MEM[k]=v;}}catch(e){MEM[k]=v;}}
+function delIt(k){try{if(ST){ST.removeItem(k);}else{delete MEM[k];}}catch(e){delete MEM[k];}}
+var CHAVE='hist9_primeirapagina_simulado';
+
+var QS=[
+{id:1,tipo:'mc',pts:'0,5',q:"A quebra da Bolsa de Nova York, em 1929, teve efeitos profundos no Brasil porque:",
+ alts:[
+  {id:'a',t:"a economia brasileira dependia da exportação do café, cujo preço despencou, enfraquecendo o poder econômico e político das oligarquias.",e:"Correta. Sem a riqueza do café, as oligarquias perderam a base que sustentava seu domínio político."},
+  {id:'b',t:"o Brasil era o maior credor internacional e deixou de receber seus empréstimos.",e:"Errada. O Brasil era devedor: um dos efeitos da crise foi justamente o aumento da dívida externa."},
+  {id:'c',t:"a indústria nacional, já consolidada, perdeu seus mercados na Europa.",e:"Errada. A indústria brasileira ainda era incipiente; a crise até estimulou a produção para o mercado interno."},
+  {id:'d',t:"o país havia acabado de abandonar a produção agrícola em favor da mineração.",e:"Errada. O Brasil continuava agroexportador, com o café como principal produto."}
+ ],ok:'a'},
+{id:2,tipo:'mc',pts:'0,5',q:"A Aliança Liberal, que lançou Getúlio Vargas à presidência em 1930, foi formada pela união de:",
+ alts:[
+  {id:'a',t:"Minas Gerais, Rio Grande do Sul e Paraíba.",e:"Correta. Minas, descontente por não ter recebido a indicação, uniu-se ao Rio Grande do Sul e à Paraíba."},
+  {id:'b',t:"São Paulo, Minas Gerais e Rio de Janeiro.",e:"Errada. São Paulo estava do outro lado, apoiando a candidatura de Júlio Prestes."},
+  {id:'c',t:"Bahia, Pernambuco e Ceará.",e:"Errada. Esses estados não formaram a aliança que lançou Vargas."},
+  {id:'d',t:"Rio Grande do Sul, São Paulo e Santa Catarina.",e:"Errada. São Paulo era adversário da Aliança Liberal nessa disputa."}
+ ],ok:'a'},
+{id:3,tipo:'mc',pts:'0,5',q:"No Governo Provisório, os governadores estaduais foram substituídos por interventores. Esses interventores eram:",
+ alts:[
+  {id:'a',t:"homens de confiança de Vargas, nomeados por ele, muitos deles participantes dos combates de 1930.",e:"Correta. A medida acabou com a autonomia dos estados e reforçou a centralização do poder."},
+  {id:'b',t:"representantes eleitos pelas assembleias estaduais.",e:"Errada. Se fossem eleitos, não haveria centralização — o ponto era exatamente a nomeação direta."},
+  {id:'c',t:"militares indicados pelo Congresso Nacional.",e:"Errada. O Congresso havia sido dissolvido em 1930."},
+  {id:'d',t:"líderes das oligarquias tradicionais mantidos nos cargos.",e:"Errada. O objetivo declarado era acabar com o poder dessas oligarquias."}
+ ],ok:'a'},
+{id:4,tipo:'mc',pts:'0,5',q:"A legislação trabalhista do governo Vargas é considerada ambígua pelos historiadores porque:",
+ alts:[
+  {id:'a',t:"garantiu direitos importantes, mas condicionou o acesso a eles ao registro e ao sindicato reconhecido pelo Estado, além de excluir os trabalhadores rurais.",e:"Correta. Proteção e controle vieram no mesmo pacote, e o campo ficou de fora por causa da aliança com a elite agrária."},
+  {id:'b',t:"beneficiou apenas os trabalhadores rurais, deixando os operários urbanos sem proteção.",e:"Errada. É exatamente o contrário: os rurais é que ficaram de fora."},
+  {id:'c',t:"foi elaborada pelos próprios sindicatos independentes, sem participação do governo.",e:"Errada. A lei limitava o sindicalismo autônomo e aproximava os sindicatos do Estado."},
+  {id:'d',t:"nunca chegou a ser aplicada, permanecendo apenas no papel.",e:"Errada. As medidas foram aplicadas e renderam a Vargas grande apoio popular."}
+ ],ok:'a'},
+{id:5,tipo:'mc',pts:'0,5',q:"A sigla MMDC, ligada à Revolução Constitucionalista de 1932, tem origem:",
+ alts:[
+  {id:'a',t:"nas iniciais dos nomes de quatro manifestantes mortos em São Paulo, em 23 de maio de 1932.",e:"Correta. Martins, Miragaia, Dráusio e Camargo morreram num tiroteio durante uma passeata, e o movimento adotou suas iniciais."},
+  {id:'b',t:"no nome do Movimento Militar Democrático Constitucionalista.",e:"Errada. A sigla vem de nomes de pessoas, não de uma denominação institucional."},
+  {id:'c',t:"nas quatro cidades paulistas que lideraram a revolta.",e:"Errada. As letras correspondem a pessoas, e não a cidades."},
+  {id:'d',t:"nos quatro estados que apoiaram militarmente São Paulo.",e:"Errada. São Paulo buscou apoio de outros estados, mas não o obteve."}
+ ],ok:'a'},
+{id:6,tipo:'mc',pts:'0,5',q:"Um traço importante da Constituição de 1934 é que ela:",
+ alts:[
+  {id:'a',t:"previu eleições diretas para vários cargos do Executivo, mas estabeleceu que o presidente daquele mandato seria eleito de forma indireta pela Assembleia.",e:"Correta. Foi assim que, no dia seguinte à publicação, os deputados elegeram Vargas presidente."},
+  {id:'b',t:"restabeleceu integralmente a autonomia dos estados, como na Constituição de 1891.",e:"Errada. Ela manteve o princípio federativo, mas sem a autonomia que os estados tinham antes."},
+  {id:'c',t:"proibiu qualquer forma de nacionalização de empresas.",e:"Errada. Ela previa a possibilidade de nacionalização e de monopólio estatal em alguns setores."},
+  {id:'d',t:"foi outorgada por Vargas, sem participação de uma Assembleia.",e:"Errada. Quem foi outorgada foi a Carta de 1937, a 'Polaca'. A de 1934 saiu de uma Constituinte eleita."}
+ ],ok:'a'},
+{id:7,tipo:'mc',pts:'0,5',q:"Sobre a participação das mulheres na política brasileira nos anos 1930, é correto afirmar que:",
+ alts:[
+  {id:'a',t:"Bertha Lutz foi uma das principais lutadoras pelo voto feminino e Carlota Pereira de Queirós tornou-se a primeira deputada federal do país.",e:"Correta. Bertha Lutz ajudou a fundar a Federação Brasileira pelo Progresso Feminino (1919); Carlota foi eleita na Constituinte de 1933."},
+  {id:'b',t:"o voto feminino foi conquistado apenas em 1945, com o fim do Estado Novo.",e:"Errada. O direito veio em 1932, no novo Código Eleitoral."},
+  {id:'c',t:"nenhuma mulher chegou ao Congresso antes da redemocratização.",e:"Errada. Carlota Pereira de Queirós foi eleita já em 1933."},
+  {id:'d',t:"o Brasil foi o primeiro país do mundo a adotar o sufrágio feminino.",e:"Errada. O primeiro país foi a Nova Zelândia, em 1893."}
+ ],ok:'a'},
+{id:8,tipo:'mc',pts:'0,5',q:"A trajetória de Olga Benário é usada no estudo do período porque mostra:",
+ alts:[
+  {id:'a',t:"a ligação entre a repressão do governo Vargas e a perseguição nazista, já que ela foi deportada pelo Brasil para a Alemanha e morta num campo de concentração.",e:"Correta. Militante comunista, alemã e judia, foi entregue ao regime nazista mesmo estando grávida."},
+  {id:'b',t:"que os presos políticos brasileiros eram julgados por tribunais independentes.",e:"Errada. O episódio mostra justamente o contrário: uma deportação sem qualquer garantia."},
+  {id:'c',t:"a aliança formal entre o Brasil e a Alemanha durante a Segunda Guerra.",e:"Errada. O Brasil nunca aderiu ao Eixo; acabou entrando na guerra ao lado dos Aliados."},
+  {id:'d',t:"que o governo brasileiro protegia refugiados perseguidos na Europa.",e:"Errada. Ela foi enviada para a Alemanha nazista, e não protegida."}
+ ],ok:'a'},
+{id:9,tipo:'mc',pts:'0,5',q:"A Constituição de 1937 recebeu da população o apelido de 'Polaca' porque:",
+ alts:[
+  {id:'a',t:"foi inspirada no modelo da Constituição da Polônia.",e:"Correta. Ela concentrava poderes quase ilimitados no Executivo e seguia o modelo polonês."},
+  {id:'b',t:"foi redigida durante a ocupação alemã da Polônia.",e:"Errada. A Carta é de novembro de 1937; a invasão da Polônia ocorreu em setembro de 1939."},
+  {id:'c',t:"concedia direitos especiais à colônia polonesa do sul do Brasil.",e:"Errada. O texto tratava da organização do poder, não de grupos de imigrantes."},
+  {id:'d',t:"foi aprovada por um plebiscito popular, prática comum na Polônia.",e:"Errada. Ela foi outorgada, isto é, imposta sem votação."}
+ ],ok:'a'},
+{id:10,tipo:'mc',pts:'0,5',q:"Leia o trecho do decreto que criou o Departamento de Imprensa e Propaganda (DIP), em 1939.",
+ trecho:"&ldquo;Fica criado o Departamento de Imprensa e Propaganda, diretamente subordinado ao presidente da República. [...] compete coordenar e incentivar as relações da imprensa com os poderes públicos [...] e autorizar mensalmente a importação de papel para imprensa, uma vez demonstrada, a seu juízo, a eficiência e a utilidade pública dos jornais e periódicos.&rdquo;",
+ alts:[
+  {id:'a',t:"Ao decidir quem receberia papel para imprimir, o órgão passou a controlar quais jornais podiam existir — um mecanismo de cerceamento da liberdade de expressão.",e:"Correta. Sem papel, não há jornal: era uma forma indireta, mas eficaz, de censura."},
+  {id:'b',t:"O decreto ampliava a diversidade da opinião pública ao financiar novos periódicos.",e:"Errada. A liberação do papel era condicionada ao juízo do próprio governo, o que restringia a diversidade."},
+  {id:'c',t:"O objetivo era privatizar os meios de comunicação, transferindo-os à iniciativa privada.",e:"Errada. O DIP era subordinado ao presidente e servia ao controle estatal, não à privatização."},
+  {id:'d',t:"O órgão tinha função exclusivamente sindical, regulando o trabalho dos jornalistas.",e:"Errada. O DIP divulgava e censurava conteúdo, atuando no rádio, no cinema, na imprensa e nos livros."}
+ ],ok:'a'},
+{id:11,tipo:'mc',pts:'0,5',q:"O chamado 'Corredor Polonês', um dos pontos de tensão que antecederam a Segunda Guerra, era:",
+ alts:[
+  {id:'a',t:"a faixa de território que dava à Polônia saída para o mar, atravessando terras alemãs, e cuja soberania era garantida pela Liga das Nações.",e:"Correta. Nem a Alemanha nem a União Soviética aceitavam essa situação, criada depois de 1918."},
+  {id:'b',t:"a rota de fuga usada pelos judeus poloneses para chegar à Suíça.",e:"Errada. O termo designa uma questão territorial anterior à guerra, e não uma rota de refugiados."},
+  {id:'c',t:"a linha de fortificações construída pela Polônia contra a União Soviética.",e:"Errada. A linha de fortificações estudada é a Maginot, francesa, contra a Alemanha."},
+  {id:'d',t:"o trecho ferroviário que ligava Berlim a Moscou após o pacto de 1939.",e:"Errada. O Corredor Polonês é uma questão de acesso ao mar, não uma ferrovia."}
+ ],ok:'a'},
+{id:12,tipo:'mc',pts:'0,5',q:"O episódio de Dunquerque, em 1940, ficou marcado porque:",
+ alts:[
+  {id:'a',t:"tropas franco-britânicas foram encurraladas e precisaram ser evacuadas às pressas para a Inglaterra, abandonando armamentos e tanques.",e:"Correta. Foi consequência direta de os alemães terem contornado a Linha Maginot pela Bélgica."},
+  {id:'b',t:"foi ali que os Aliados desembarcaram para libertar a França em 1944.",e:"Errada. O desembarque de 1944 foi na Normandia, no Dia D."},
+  {id:'c',t:"a cidade resistiu a um cerco alemão de 900 dias.",e:"Errada. O cerco de 900 dias foi o de Leningrado, na União Soviética."},
+  {id:'d',t:"foi o local onde a França de Vichy instalou sua capital.",e:"Errada. A capital do governo colaboracionista foi a cidade de Vichy, no sul da França."}
+ ],ok:'a'},
+{id:13,tipo:'mc',pts:'0,5',q:"A captura e a decifração da máquina Enigma foram decisivas para os Aliados porque:",
+ alts:[
+  {id:'a',t:"permitiram conhecer antecipadamente os alvos e as estratégias alemãs, tornando ineficazes muitos ataques.",e:"Correta. As informações também foram repassadas aos soviéticos, ajudando-os na frente oriental."},
+  {id:'b',t:"a máquina era capaz de interceptar e derrubar aviões inimigos.",e:"Errada. A Enigma era um equipamento de codificação de mensagens, sem função de combate."},
+  {id:'c',t:"ela continha os planos completos do Projeto Manhattan.",e:"Errada. O Projeto Manhattan era um programa secreto norte-americano, sem relação com a Enigma."},
+  {id:'d',t:"o equipamento produzia códigos fixos, que só precisaram ser decifrados uma única vez.",e:"Errada. Os alemães trocavam as chaves diariamente, o que tornava o trabalho constante e difícil."}
+ ],ok:'a'},
+{id:14,tipo:'mc',pts:'0,5',q:"Durante a Operação Barbarossa, a cidade de Leningrado:",
+ alts:[
+  {id:'a',t:"resistiu e foi mantida sob cerco por cerca de 900 dias, com a população morrendo tanto pela guerra quanto pela fome.",e:"Correta. Cercar significa impedir a retirada e cortar o abastecimento do inimigo."},
+  {id:'b',t:"foi tomada pelos alemães em poucas semanas, abrindo caminho para Moscou.",e:"Errada. A cidade resistiu; os alemães não conseguiram tomá-la."},
+  {id:'c',t:"foi destruída por bombas atômicas lançadas pelos Estados Unidos.",e:"Errada. As únicas bombas atômicas usadas em guerra caíram sobre Hiroshima e Nagasaki, em 1945."},
+  {id:'d',t:"foi entregue voluntariamente por Stálin em troca de um armistício.",e:"Errada. Stálin determinou resistência total, considerando inimigo do Estado quem recuasse."}
+ ],ok:'a'},
+{id:15,tipo:'mc',pts:'0,5',q:"Os kamikazes, utilizados pelo Japão no fim da guerra, podem ser descritos como:",
+ alts:[
+  {id:'a',t:"jovens obrigados a pilotar aviões carregados de explosivos, sem combustível para voltar e sem paraquedas, para se chocar contra navios inimigos.",e:"Correta. O termo pode ser traduzido como 'vento divino' e é ligado à cultura militarista japonesa."},
+  {id:'b',t:"soldados de elite treinados para operações de resgate de prisioneiros.",e:"Errada. Eram ataques suicidas contra embarcações, e não missões de resgate."},
+  {id:'c',t:"os cientistas responsáveis pelo programa nuclear japonês.",e:"Errada. O programa nuclear citado no capítulo é o norte-americano Projeto Manhattan."},
+  {id:'d',t:"pilotos alemães enviados ao Pacífico para apoiar o Japão.",e:"Errada. Os kamikazes eram japoneses."}
+ ],ok:'a'},
+{id:16,tipo:'mc',pts:'0,5',q:"Sobre a Organização das Nações Unidas e a Declaração Universal dos Direitos Humanos, é correto afirmar que:",
+ alts:[
+  {id:'a',t:"a ONU nasceu em 1945 diante do fracasso da Liga das Nações, e em 1948 sua Assembleia Geral adotou a Declaração Universal dos Direitos Humanos.",e:"Correta. As violações cometidas durante a guerra foram decisivas para a elaboração da Declaração."},
+  {id:'b',t:"a ONU substituiu a Liga das Nações ainda antes do início da Segunda Guerra Mundial.",e:"Errada. A Carta das Nações Unidas só foi assinada em 1945, no fim do conflito."},
+  {id:'c',t:"a Declaração foi revogada pela Assembleia Geral no início do século XXI.",e:"Errada. Ela continua em vigor e é o documento mais traduzido do mundo."},
+  {id:'d',t:"a sede da ONU fica em Genebra, mesma sede da antiga Liga das Nações.",e:"Errada. A sede da ONU fica em Nova York, embora a organização tenha escritórios pelo mundo."}
+ ],ok:'a'},
+{id:17,tipo:'mc',pts:'0,5',q:"A instalação de bases militares norte-americanas no Nordeste brasileiro, acertada em 1942, explica-se principalmente porque:",
+ alts:[
+  {id:'a',t:"a região é o ponto da América mais próximo da África, servindo de escala estratégica para o envio de suprimentos.",e:"Correta. Natal, no Rio Grande do Norte, é a ponta mais oriental do continente americano."},
+  {id:'b',t:"ali estavam as maiores reservas de petróleo do país, já exploradas pela Petrobras.",e:"Errada. O Conselho Nacional do Petróleo (1938) administrava jazidas na Bahia, e a região não foi escolhida por isso."},
+  {id:'c',t:"a área abrigava a maior concentração de imigrantes alemães do Brasil.",e:"Errada. Os imigrantes alemães se concentravam sobretudo no Sul e no Sudeste."},
+  {id:'d',t:"era a região mais próxima do teatro de operações do Pacífico.",e:"Errada. O Pacífico fica do lado oposto; a posição do Nordeste interessa pela rota do Atlântico rumo à África."}
+ ],ok:'a'},
+{id:18,tipo:'mc',pts:'0,5',q:"A criação do personagem Zé Carioca e o sucesso de Carmen Miranda nos Estados Unidos estão ligados:",
+ alts:[
+  {id:'a',t:"à política de boa vizinhança, com a qual os Estados Unidos buscavam aproximar-se da América Latina e afastá-la da influência do Eixo.",e:"Correta. Zé Carioca estreou em 1942, no filme Alô, Amigos, ao lado de personagens argentino e mexicano."},
+  {id:'b',t:"a um acordo cultural firmado entre o Brasil e a Alemanha antes da guerra.",e:"Errada. A aproximação cultural retratada é com os Estados Unidos, e não com a Alemanha."},
+  {id:'c',t:"ao trabalho de propaganda do DIP, que produziu esses personagens.",e:"Errada. O DIP era um órgão do governo brasileiro; esses produtos vieram da indústria cultural norte-americana."},
+  {id:'d',t:"à comemoração da vitória da FEB na tomada de Monte Castelo.",e:"Errada. Zé Carioca surgiu em 1942, antes do envio da FEB à Itália, em 1944."}
+ ],ok:'a'},
+{id:19,tipo:'rom',pts:'1,0',q:"Sobre o período que vai da Revolução de 1930 ao Estado Novo, analise as afirmativas:",
+ rom:["A Revolução de 1930 foi conduzida por oligarquias dissidentes aliadas ao tenentismo, e não por um levante popular.","A Revolução Constitucionalista de 1932 terminou com a vitória militar de São Paulo sobre as tropas do governo.","O Código Eleitoral de 1932 instituiu o voto secreto e reconheceu o direito de voto às mulheres.","O golpe de 1937 foi justificado com o Plano Cohen, um documento falso que simulava uma conspiração comunista."],
+ alts:[
+  {id:'a',t:"Apenas I, III e IV estão corretas.",e:"Correta. A afirmativa II é falsa: São Paulo foi derrotado militarmente e se rendeu em 2 de outubro de 1932."},
+  {id:'b',t:"Apenas I e II estão corretas.",e:"Errada. A II é falsa (São Paulo foi derrotado) e deixa de fora as afirmativas III e IV, que são verdadeiras."},
+  {id:'c',t:"Apenas II, III e IV estão corretas.",e:"Errada. Inclui a afirmativa II, que é falsa."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A afirmativa II é falsa: houve derrota militar paulista, ainda que com ganho político."}
+ ],ok:'a'},
+{id:20,tipo:'rom',pts:'1,0',q:"Sobre o início da Segunda Guerra Mundial (1939-1940), analise as afirmativas:",
+ rom:["A invasão da Polônia, em setembro de 1939, levou França e Inglaterra a declararem guerra à Alemanha.","O Pacto Molotov-Ribbentrop era uma aliança ideológica entre nazismo e comunismo, com projeto político comum.","A Blitzkrieg concentrava tanques apoiados por aviões, com ordens transmitidas por rádio em 'tempo real'.","A Linha Maginot foi contornada pelos alemães, que avançaram pela Bélgica."],
+ alts:[
+  {id:'a',t:"Apenas I, III e IV estão corretas.",e:"Correta. A II é falsa: o pacto foi um acordo de conveniência entre inimigos ideológicos, para ganhar tempo e dividir territórios."},
+  {id:'b',t:"Apenas I e II estão corretas.",e:"Errada. A II é falsa e as afirmativas III e IV são verdadeiras."},
+  {id:'c',t:"Apenas III e IV estão corretas.",e:"Errada. Deixa de fora a afirmativa I, que é verdadeira."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A II é falsa: Alemanha e URSS eram inimigas ideológicas e se enfrentaram em 1941."}
+ ],ok:'a'},
+{id:21,tipo:'rom',pts:'1,0',q:"Sobre os crimes cometidos pelo regime nazista, analise as afirmativas:",
+ rom:["O genocídio dos judeus ficou conhecido como Holocausto e era chamado pelos líderes nazistas de 'solução final'.","Os campos de concentração eram administrados pelas SS e neles se praticou o extermínio em câmaras de gás.","Somente judeus foram perseguidos pelo regime, que poupou os demais grupos sociais e étnicos.","Auschwitz, na Polônia, foi o maior complexo de campos de extermínio."],
+ alts:[
+  {id:'a',t:"Apenas I, II e IV estão corretas.",e:"Correta. A III é falsa: também foram perseguidos ciganos, eslavos, negros, homossexuais e opositores políticos."},
+  {id:'b',t:"Apenas I e III estão corretas.",e:"Errada. A III é falsa e deixa de fora as afirmativas II e IV, verdadeiras."},
+  {id:'c',t:"Apenas II e III estão corretas.",e:"Errada. Inclui a III, que é falsa, e exclui I e IV, que são verdadeiras."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A III é falsa: a perseguição alcançou vários outros grupos."}
+ ],ok:'a'},
+{id:22,tipo:'rom',pts:'1,0',q:"Sobre as conferências entre os Aliados e o desfecho da guerra na Europa, analise as afirmativas:",
+ rom:["Na Conferência de Teerã (1943), Stálin reivindicou a abertura de uma segunda frente no Oeste Europeu.","O Dia D, em 6 de junho de 1944, foi o desembarque aliado na Normandia, dentro da Operação Overlord.","Na Conferência de Yalta (1945) decidiu-se criar um novo órgão internacional para substituir a Liga das Nações.","Na Conferência de Potsdam, Roosevelt representou os Estados Unidos e Churchill, a Grã-Bretanha."],
+ alts:[
+  {id:'a',t:"Apenas I, II e III estão corretas.",e:"Correta. A IV é falsa: Roosevelt morreu em abril de 1945 e foi substituído por Truman; Churchill já havia terminado seu mandato."},
+  {id:'b',t:"Apenas I e IV estão corretas.",e:"Errada. A IV é falsa e as afirmativas II e III são verdadeiras."},
+  {id:'c',t:"Apenas II e IV estão corretas.",e:"Errada. Inclui a IV, que é falsa, e deixa de fora I e III."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A IV é falsa por causa da troca de líderes ocorrida antes de Potsdam."}
+ ],ok:'a'},
+{id:23,tipo:'rom',pts:'1,0',q:"Sobre a participação do Brasil na Segunda Guerra Mundial, analise as afirmativas:",
+ rom:["O Brasil declarou guerra ao Eixo em agosto de 1942, após ataques de submarinos alemães a navios mercantes brasileiros.","A Força Expedicionária Brasileira atuou na Itália, participando da tomada de Monte Castelo, Castelnuovo e Montese.","Antes da guerra, o governo Vargas manteve relações comerciais tanto com a Alemanha quanto com os Estados Unidos.","O Brasil enviou tropas ao exterior no mesmo ano em que declarou guerra ao Eixo."],
+ alts:[
+  {id:'a',t:"Apenas I, II e III estão corretas.",e:"Correta. A IV é falsa: a declaração de guerra foi em 1942 e o envio da FEB, em 1944."},
+  {id:'b',t:"Apenas I e IV estão corretas.",e:"Errada. A IV é falsa: houve um intervalo de dois anos entre a declaração e o envio de tropas."},
+  {id:'c',t:"Apenas II, III e IV estão corretas.",e:"Errada. Inclui a IV, que é falsa."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A IV é falsa: declaração em 1942, envio da FEB em 1944."}
+ ],ok:'a'},
+{id:24,tipo:'rom',pts:'1,0',q:"Sobre o Estado Novo (1937-1945), analise as afirmativas:",
+ rom:["A Constituição outorgada em 1937 concedia poderes quase ilimitados ao Executivo.","O DASP permitia ao presidente nomear interventores, que por sua vez indicavam os prefeitos.","Após o golpe, a Ação Integralista Brasileira tornou-se o partido oficial do regime.","O DIP, criado em 1939, acumulava as funções de divulgar e censurar informações."],
+ alts:[
+  {id:'a',t:"Apenas I, II e IV estão corretas.",e:"Correta. A III é falsa: todos os partidos foram fechados, inclusive a AIB, cujos integrantes chegaram a tentar derrubar o governo."},
+  {id:'b',t:"Apenas I e III estão corretas.",e:"Errada. A III é falsa e as afirmativas II e IV são verdadeiras."},
+  {id:'c',t:"Apenas III e IV estão corretas.",e:"Errada. Inclui a III, que é falsa, e exclui I e II, verdadeiras."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A III é falsa: Plínio Salgado apoiou o golpe, mas a AIB foi fechada como os demais partidos."}
+ ],ok:'a'},
+{id:25,tipo:'rom',pts:'1,0',q:"Sobre a contraofensiva dos Aliados entre 1942 e 1943, analise as afirmativas:",
+ rom:["Na Batalha de Midway, os Estados Unidos impuseram ao Japão sua primeira derrota na guerra do Pacífico.","Em El Alamein, o general britânico Montgomery derrotou o alemão Rommel no Egito.","Em Stalingrado, os alemães foram cercados e renderam-se em fevereiro de 1943, apesar da proibição de Hitler.","As três batalhas resultaram em vitórias do Eixo, que ampliou seus domínios até 1945."],
+ alts:[
+  {id:'a',t:"Apenas I, II e III estão corretas.",e:"Correta. A IV é falsa: as três foram derrotas do Eixo e marcaram o início da contraofensiva aliada."},
+  {id:'b',t:"Apenas I e IV estão corretas.",e:"Errada. A IV é falsa e as afirmativas II e III são verdadeiras."},
+  {id:'c',t:"Apenas II e IV estão corretas.",e:"Errada. Inclui a IV, que é falsa."},
+  {id:'d',t:"Todas as afirmativas estão corretas.",e:"Errada. A IV contradiz as três primeiras: foram derrotas, e não vitórias do Eixo."}
+ ],ok:'a'},
+{id:26,tipo:'som',pts:'1,0',q:"Sobre as medidas econômicas e sociais do governo Vargas entre 1930 e 1945, assinale o que for correto e some os números:",
+ itens:[
+  {v:1,t:"O Departamento Nacional do Café comprava e destruía parte da produção para reduzir a oferta e sustentar o preço.",c:true,e:"Correta. Entre 1931 e 1944 foram queimadas mais de 70 milhões de sacas."},
+  {v:2,t:"A Carteira de Trabalho, criada em 1932, garantia direitos apenas a quem estivesse registrado no Ministério do Trabalho.",c:true,e:"Correta. Quem não tinha o documento ficava fora dos direitos."},
+  {v:4,t:"Os trabalhadores rurais foram incluídos na legislação trabalhista desde o início do governo.",c:false,e:"Incorreta. Eles ficaram de fora, por causa da política de proximidade com a elite agrária."},
+  {v:8,t:"A CLT, de 1943, reuniu num único código as normas trabalhistas, garantindo direitos como salário mínimo e férias remuneradas.",c:true,e:"Correta. A CLT organizou o que já vinha sendo construído desde 1930."},
+  {v:16,t:"A criação de indústrias de base, como a Companhia Siderúrgica Nacional e a Vale do Rio Doce, ocorreu na década de 1940.",c:true,e:"Correta. A CSN é de 1941 e a Vale do Rio Doce, de 1942."}
+ ],ok:27},
+{id:27,tipo:'som',pts:'1,0',q:"Sobre o desfecho da Segunda Guerra Mundial em 1945, assinale o que for correto e some os números:",
+ itens:[
+  {v:1,t:"Hitler suicidou-se em 30 de abril, num bunker em Berlim; a cidade rendeu-se aos soviéticos em 2 de maio.",c:true,e:"Correta. Em 8 de maio o alto comando alemão encerrou todas as operações militares."},
+  {v:2,t:"A bomba Little Boy foi lançada sobre Hiroshima em 6 de agosto e a Fat Man sobre Nagasaki em 9 de agosto.",c:true,e:"Correta. A rendição japonesa veio em 15 de agosto e a assinatura em 2 de setembro de 1945."},
+  {v:4,t:"O Projeto Manhattan foi dirigido pelo físico Robert Oppenheimer e desenvolvido em Los Alamos, no Novo México.",c:true,e:"Correta. O primeiro teste de detonação ocorreu em 16 de julho de 1945."},
+  {v:8,t:"Na Conferência de Potsdam decidiu-se manter a Alemanha unificada sob um único governo militar aliado.",c:false,e:"Incorreta. Decidiu-se dividir o território alemão em quatro zonas de ocupação, incluindo Berlim."},
+  {v:16,t:"Estima-se que a guerra tenha deixado cerca de 50 milhões de mortos, a maioria deles civis.",c:true,e:"Correta. Foram ainda 100 milhões de homens mobilizados e 72 países envolvidos."}
+ ],ok:23},
+{id:28,tipo:'som',pts:'1,0',q:"Sobre o fim do Estado Novo e a redemocratização de 1945, assinale o que for correto e some os números:",
+ itens:[
+  {v:1,t:"O Manifesto dos Mineiros, de outubro de 1943, pedia a democratização do país.",c:true,e:"Correta. Foi lançado no aniversário da Revolução de 1930 por políticos de Minas Gerais."},
+  {v:2,t:"O queremismo foi um movimento popular que pedia a permanência de Getúlio Vargas no poder.",c:true,e:"Correta. Em março de 1945, trabalhadores atacaram estudantes antigetulistas aos gritos de 'Queremos Getúlio'."},
+  {v:4,t:"A UDN era um partido getulista, ligado aos trabalhadores e liderado por João Goulart.",c:false,e:"Incorreta. A UDN era antigetulista e liberal; quem era getulista e ligado aos trabalhadores era o PTB."},
+  {v:8,t:"Vargas renunciou em outubro de 1945, pressionado pelos militares, que temiam um novo golpe.",c:true,e:"Correta. A crise foi desencadeada pela substituição do chefe de polícia do Distrito Federal."},
+  {v:16,t:"Nas eleições de dezembro de 1945, venceu o general Eurico Gaspar Dutra, candidato do PSD.",c:true,e:"Correta. Dutra obteve 52,39% dos votos, contra 24,74% de Eduardo Gomes, da UDN."}
+ ],ok:27}
+];
+
+function mulberry32(a){return function(){a|=0;a=a+0x6D2B79F5|0;var t=Math.imul(a^a>>>15,1|a);t=t+Math.imul(t^t>>>7,61|t)^t;return((t^t>>>14)>>>0)/4294967296;};}
+function embaralhar(arr,s){var r=mulberry32(s),a=arr.slice(),i,j,t;for(i=a.length-1;i>0;i--){j=Math.floor(r()*(i+1));t=a[i];a[i]=a[j];a[j]=t;}return a;}
+var ORD={},LETRA=['a','b','c','d'];
+for(var i=0;i<QS.length;i++){ if(QS[i].tipo!=='som'){ ORD[QS[i].id]=embaralhar(QS[i].alts,QS[i].id*1000+11); } }
+
+var D={resp:{},enviado:false,codigo:'',gab:false};
+function salvar(){D.quando=new Date().toLocaleString('pt-BR');setIt(CHAVE,JSON.stringify(D));var q=document.getElementById('quando');if(q)q.textContent=D.quando;}
+function carregar(){var r=getIt(CHAVE);if(r){try{var o=JSON.parse(r);if(o&&typeof o==='object'){D=o;if(!D.resp)D.resp={};}}catch(e){}}var q=document.getElementById('quando');if(q)q.textContent=D.quando||'ainda não salvo';}
+
+var NOMET={mc:'Múltipla escolha',rom:'Números romanos',som:'Somatório'};
+var ROMN=['I','II','III','IV','V'];
+
+function render(){
+  var c=document.getElementById('qs'); c.innerHTML='';
+  for(var i=0;i<QS.length;i++){
+    var Q=QS[i], d=document.createElement('div'); d.className='q';
+    var h='<div class="qhead"><span class="qn">Questão '+(i+1)+' de 28</span>'+
+          '<span><span class="badge '+Q.tipo+'">'+NOMET[Q.tipo]+'</span> <span class="pts">('+Q.pts+')</span></span></div>'+
+          '<div class="qt">'+Q.q+'</div>';
+    if(Q.trecho) h+='<div class="trecho">'+Q.trecho+'</div>';
+    if(Q.rom){
+      h+='<div class="romlist">';
+      for(var r=0;r<Q.rom.length;r++) h+='<div><b>'+ROMN[r]+'.</b> '+Q.rom[r]+'</div>';
+      h+='</div>';
+    }
+    if(Q.tipo==='som'){
+      var val=D.resp[Q.id];
+      for(var s=0;s<Q.itens.length;s++){
+        var It=Q.itens[s], cls='somitem', ex='';
+        if(D.enviado&&D.gab){ cls+=It.c?' cta':' errx'; ex='<br><span style="font-family:Arial,sans-serif;font-size:.82rem;color:#8e8878">'+It.e+'</span>'; }
+        h+='<div class="'+cls+'"><span class="vl">'+(It.v<10?'0'+It.v:It.v)+'</span><span>'+It.t+ex+'</span></div>';
+      }
+      h+='<div class="somin">Soma das corretas: <input type="number" id="sm'+Q.id+'" min="0" max="31" value="'+(val!==undefined&&val!==null?val:'')+'"'+(D.enviado?' disabled':'')+' oninput="respSom('+Q.id+',this.value)"></div>';
+      if(D.enviado&&D.gab){
+        var acer=(parseInt(D.resp[Q.id],10)===Q.ok);
+        h+='<div class="somres on '+(acer?'ok':'no')+'">'+(acer?'✔️ Correto. ':'❌ ')+'A soma correta é <b>'+(Q.ok<10?'0'+Q.ok:Q.ok)+'</b>.</div>';
+      }
+    }else{
+      var alts=ORD[Q.id], marc=D.resp[Q.id];
+      for(var a=0;a<alts.length;a++){
+        var A=alts[a], cls2='alt', exc='exp', ex2='';
+        if(marc===A.id) cls2+=' sel';
+        if(D.enviado&&D.gab){
+          if(A.id===Q.ok){ cls2='alt cta'; exc='exp on v'; }
+          else if(marc===A.id){ cls2='alt err'; exc='exp on'; }
+          else { cls2='alt neu'; exc='exp on'; }
+          ex2='<div class="'+exc+'">'+A.e+'</div>';
+        }
+        h+='<label class="'+cls2+'"><input type="radio" name="q'+Q.id+'" value="'+A.id+'"'+(marc===A.id?' checked':'')+(D.enviado?' disabled':'')+' onchange="responder('+Q.id+',this.value)"><b>'+LETRA[a]+')</b> '+A.t+'</label>'+ex2;
+      }
+    }
+    d.innerHTML=h; c.appendChild(d);
+  }
+  document.getElementById('env').style.display=D.enviado?'none':'block';
+  document.getElementById('cod').className='codigo'+(D.enviado?' on':'');
+  document.getElementById('gate').className='gate'+((D.enviado&&!D.gab)?' on':'');
+  if(D.enviado){ document.getElementById('codbig').textContent=D.codigo; document.getElementById('acertos').textContent=contar(); }
+  attBarra(); attEnv();
+}
+function responder(id,val){ D.resp[id]=val; salvar(); attBarra(); attEnv();
+  var ls=document.getElementsByName('q'+id);
+  for(var i=0;i<ls.length;i++){ ls[i].parentNode.className='alt'+(ls[i].value===val?' sel':''); } }
+function respSom(id,val){ D.resp[id]=(val===''?null:parseInt(val,10)); salvar(); attBarra(); attEnv(); }
+function respondidas(){ var n=0; for(var i=0;i<QS.length;i++){ var v=D.resp[QS[i].id]; if(v!==undefined&&v!==null&&v!=='') n++; } return n; }
+function attBarra(){ document.getElementById('barra').style.width=(respondidas()/QS.length*100)+'%'; }
+function attEnv(){ var b=document.getElementById('env'); if(b) b.disabled=(respondidas()<QS.length); }
+function contar(){
+  var n=0;
+  for(var i=0;i<QS.length;i++){
+    var Q=QS[i], v=D.resp[Q.id];
+    if(Q.tipo==='som'){ if(parseInt(v,10)===Q.ok) n++; }
+    else { if(v===Q.ok) n++; }
+  }
+  return n;
+}
+function gerarCod(ac){
+  var L='ABCDEFGHJKLMNPQRSTUVWXYZ';
+  var s=L.charAt(Math.floor(Math.random()*L.length))+L.charAt(Math.floor(Math.random()*L.length));
+  return 'SIM-'+(ac<10?'0':'')+ac+'-'+s;
+}
+var acaoModal=null;
+function enviar(){
+  acaoModal=function(){ D.enviado=true; D.codigo=gerarCod(contar()); salvar(); render(); fecharModal();
+    document.getElementById('cod').scrollIntoView({behavior:'smooth',block:'center'}); };
+  document.getElementById('mdlt').textContent='Enviar o simulado?';
+  document.getElementById('mdlp').textContent='Depois de enviar não dá para mudar nenhuma resposta. Quer enviar agora?';
+  document.getElementById('mdl').className='modal on';
+}
+function abrirGab(){
+  var v=(document.getElementById('codin').value||'').trim().toUpperCase();
+  if(v===D.codigo){ D.gab=true; salvar(); render(); }
+  else{ document.getElementById('gmsg').className='msg err'; }
+}
+function exportar(){
+  var det=[];
+  for(var i=0;i<QS.length;i++){
+    var Q=QS[i], v=D.resp[Q.id], tx='', ok=false;
+    if(Q.tipo==='som'){ tx=(v===undefined||v===null?'':String(v)); ok=(parseInt(v,10)===Q.ok); }
+    else { for(var a=0;a<Q.alts.length;a++){ if(Q.alts[a].id===v) tx=Q.alts[a].t; } ok=(v===Q.ok); }
+    det.push({n:i+1,tipo:NOMET[Q.tipo],pergunta:Q.q,marcou:tx,correta:ok});
+  }
+  var out={material:'Simulado',kit:'Primeira Página — História 9º ano',quando:D.quando||'',enviado:D.enviado,codigo:D.codigo,acertos:contar(),total:28,questoes:det};
+  var bl=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  var a2=document.createElement('a'); a2.href=URL.createObjectURL(bl); a2.download='simulado-historia9.json'; a2.click();
+}
+function importar(ev){
+  var f=ev.target.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(x){try{var o=JSON.parse(x.target.result);
+    if(o&&o.questoes){ D.enviado=!!o.enviado; D.codigo=o.codigo||''; salvar(); render(); }}catch(e){}};
+  r.readAsText(f); ev.target.value='';
+}
+function pedirZerar(){
+  acaoModal=function(){ delIt(CHAVE); D={resp:{},enviado:false,codigo:'',gab:false}; salvar(); render(); fecharModal(); };
+  document.getElementById('mdlt').textContent='Zerar tudo?';
+  document.getElementById('mdlp').textContent='Isso apaga todas as respostas e o código deste Simulado.';
+  document.getElementById('mdl').className='modal on';
+}
+function mdlOk(){ if(acaoModal) acaoModal(); }
+function fecharModal(){ document.getElementById('mdl').className='modal'; acaoModal=null; }
+
+carregar(); render();
+</script>
+</body>
+</html>

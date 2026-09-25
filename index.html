@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Primeira Página — Kit de História | 9º ano</title>
+<style>
+:root{--tinta:#0d0c0a;--papel:#c9c3b4;--papel2:#8e8878;--ambar:#e8a33d;--ambar2:#f5c877;--carimbo:#c0392b;--verde:#4f9d69;--borda:#2e2b22}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--papel);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:900px;margin:0 auto;padding:0 16px}
+header.top{background:linear-gradient(180deg,#1b1a14,#0d0c0a);border-bottom:3px double var(--ambar);padding:30px 0 20px}
+.jornal{font-size:3rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar2);text-align:center;font-weight:700;line-height:1.1}
+.sub{text-align:center;color:var(--papel2);font-size:.84rem;letter-spacing:.24em;text-transform:uppercase;margin-top:10px}
+.faixa{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:14px;font-size:.78rem;color:var(--papel2);letter-spacing:.1em;text-transform:uppercase;font-family:Arial,sans-serif}
+.lead{border:1px solid var(--borda);border-left:4px solid var(--ambar);background:#141309;padding:18px;margin:26px 0;font-size:1.02rem}
+.lead b{color:var(--ambar2)}
+h2.sec{color:var(--ambar2);font-size:1.4rem;margin:34px 0 6px;border-bottom:2px solid var(--borda);padding-bottom:8px}
+h2.sec small{display:block;font-size:.72rem;color:var(--papel2);letter-spacing:.2em;text-transform:uppercase;font-weight:400;margin-top:4px;font-family:Arial,sans-serif}
+.cards{display:grid;gap:14px;margin-top:18px}
+a.card{display:block;border:1px solid var(--borda);background:#12110b;padding:18px;text-decoration:none;color:var(--papel);position:relative;transition:border-color .2s}
+a.card:hover{border-color:var(--ambar)}
+a.card .ordem{position:absolute;top:14px;right:16px;font-family:'Courier New',monospace;font-size:2rem;color:#221f16}
+a.card h3{color:var(--ambar2);font-size:1.25rem;margin-bottom:6px}
+a.card p{font-size:.95rem;color:var(--papel)}
+a.card .meta{font-family:Arial,sans-serif;font-size:.74rem;letter-spacing:.12em;color:var(--papel2);text-transform:uppercase;margin-top:8px}
+ol.como{margin:16px 0 0 22px}
+ol.como li{margin-bottom:10px}
+ol.como b{color:var(--ambar2)}
+.aviso{border:1px solid var(--borda);background:#141309;padding:16px;margin-top:18px;font-family:Arial,sans-serif;font-size:.88rem;color:var(--papel2)}
+table{width:100%;border-collapse:collapse;margin-top:12px;font-size:.92rem}
+th,td{border:1px solid var(--borda);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:#1b1910;color:var(--ambar2);font-family:Arial,sans-serif;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+/* relatório */
+.rel{border:2px solid var(--ambar);background:#15130c;padding:20px;margin-top:18px}
+.rel h3{color:var(--ambar2);font-family:Arial,sans-serif;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.rel p{font-size:.92rem;margin-bottom:12px}
+.rel input{background:#0a0906;border:1px solid var(--borda);color:var(--papel);padding:10px;font-family:'Courier New',monospace;font-size:1rem;width:190px;text-transform:uppercase}
+.rel button{font-family:Arial,sans-serif;cursor:pointer;border:1px solid var(--ambar);background:var(--ambar);color:#17150d;padding:10px 16px;font-weight:700;font-size:.88rem}
+.rel .msg{margin-top:10px;font-family:Arial,sans-serif;font-size:.86rem;display:none;color:#e8897e}
+.rel .msg.on{display:block}
+#relbox{display:none;margin-top:18px}
+#relbox.on{display:block}
+.relcard{border:1px solid var(--borda);background:#0f0e09;padding:14px;margin-bottom:12px}
+.relcard h4{color:var(--ambar2);font-size:1.05rem;margin-bottom:6px}
+.relcard .linha{display:flex;justify-content:space-between;border-bottom:1px dashed var(--borda);padding:6px 0;font-size:.93rem;gap:12px}
+.relcard .linha b{color:var(--papel)}
+.relcard .vaz{color:var(--papel2);font-size:.9rem;font-style:italic}
+.relcard ul{margin:8px 0 0 20px;font-size:.9rem;color:#e8897e}
+.relcard li{margin-bottom:5px}
+.pill{display:inline-block;font-family:Arial,sans-serif;font-size:.68rem;letter-spacing:.1em;padding:2px 8px;text-transform:uppercase;border:1px solid}
+.pill.ok{border-color:var(--verde);color:#8fd4a5}
+.pill.rev{border-color:var(--carimbo);color:#e8897e}
+.pill.nao{border-color:var(--borda);color:var(--papel2)}
+.fim{text-align:center;padding:30px 0 10px;color:var(--papel2);font-family:Arial,sans-serif;font-size:.85rem;border-top:1px solid var(--borda);margin-top:34px}
+@media(max-width:640px){.jornal{font-size:1.9rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="jornal">Primeira Página</div>
+  <div class="sub">Edição especial &bull; 1930 &ndash; 1945</div>
+  <div class="faixa"><span>História</span><span>&bull;</span><span>9º ano</span><span>&bull;</span><span>Caps. 13, 15, 16 e 17</span><span>&bull;</span><span>Prova 29/09</span></div>
+</div></header>
+
+<div class="wrap">
+  <div class="lead">
+    <b>Olá, jovem aprendiz.</b> Este kit conta quinze anos de história como se fossem <b>edições de um jornal</b> — de um lado o Brasil de Getúlio Vargas, do outro o mundo em guerra, até os dois se encontrarem quando a FEB embarca para a Itália. São quatro materiais, feitos para serem usados <b>nesta ordem</b>. Tudo o que você escrever fica salvo sozinho: dá para fechar e voltar depois.
+  </div>
+
+  <h2 class="sec">📚 Os materiais<small>Use nesta ordem</small></h2>
+  <div class="cards">
+    <a class="card" href="leitura-guiada.html">
+      <span class="ordem">01</span>
+      <h3>📖 Leitura Guiada</h3>
+      <p>Doze edições do jornal, de 1930 a 1945. Você lê a reportagem e responde a três perguntas <b>escrevendo com as suas palavras</b> — é escrever que fixa. Cada edição só abre depois que você confere a anterior.</p>
+      <div class="meta">12 blocos &bull; 36 perguntas &bull; pegadinhas e tabela de cobertura</div>
+    </a>
+    <a class="card" href="quiz.html">
+      <span class="ordem">02</span>
+      <h3>🎯 Quiz</h3>
+      <p>Quinze questões de múltipla escolha para testar na hora o que ficou da leitura. No fim sai um <b>código MED</b> para mostrar em casa, e o gabarito comentado explica cada alternativa.</p>
+      <div class="meta">15 questões &bull; código MED &bull; gabarito comentado</div>
+    </a>
+    <a class="card" href="resumo.html">
+      <span class="ordem">03</span>
+      <h3>🗺️ Resumo</h3>
+      <p>O arquivo do jornal: fichas por bloco, linha do tempo, cartas de datas para virar, post-its com dicas de prova, as dez pegadinhas, glossário e um checklist de revisão.</p>
+      <div class="meta">Linha do tempo &bull; 20 cartas &bull; checklist de 32 tópicos</div>
+    </a>
+    <a class="card" href="simulado.html">
+      <span class="ordem">04</span>
+      <h3>📝 Simulado</h3>
+      <p>Vinte e oito questões no <b>estilo vestibular</b>, como cai no 9º ano: múltipla escolha, números romanos e somatório. Sai um <b>código SIM</b> e o gabarito comentado.</p>
+      <div class="meta">28 questões &bull; código SIM &bull; gabarito comentado</div>
+    </a>
+  </div>
+
+  <h2 class="sec">🧭 Como usar este material</h2>
+  <ol class="como">
+    <li>Comece pela <b>📖 Leitura Guiada</b>. Não pule para o fim: escrever as respostas é o que faz o conteúdo grudar. Se a resposta sair igual ao texto, o material vai pedir para você reescrever com as suas palavras — isso é de propósito.</li>
+    <li>Vá para o <b>🎯 Quiz</b> logo depois, com o assunto fresco. Ele mostra onde estão os buracos.</li>
+    <li>Use o <b>🗺️ Resumo</b> para fechar exatamente os buracos que o Quiz apontou — e não para ler tudo de novo do começo.</li>
+    <li>Deixe o <b>📝 Simulado</b> para o final, valendo, sem consultar nada. É o ensaio da prova de verdade.</li>
+    <li>Em qualquer material, o botão <b>📥 Exportar</b> salva um arquivo com o seu desempenho, e o <b>🗑️ Zerar tudo</b> começa do zero.</li>
+  </ol>
+
+  <h2 class="sec">🗂️ O que cai na prova</h2>
+  <table>
+    <tr><th>Capítulo</th><th>Título</th><th>Assuntos principais</th></tr>
+    <tr><td><b>13</b><br>Livro 1</td><td>Governo Vargas: 1930 a 1945</td><td>Crise de 1929 e o fim do café com leite; Revolução de 1930; Governo Provisório e interventores; leis trabalhistas e Carteira de Trabalho; Departamento Nacional do Café; Revolução Constitucionalista de 1932; Código Eleitoral e voto feminino; Constituição de 1934; AIB e ANL; Intentona Comunista; Plano Cohen; Estado Novo, &ldquo;Polaca&rdquo;, DASP, DIP e CLT</td></tr>
+    <tr><td><b>15</b><br>Livro 2</td><td>A guerra</td><td>O Japão e o petróleo; Blitzkrieg e a invasão da Polônia; Pacto Molotov-Ribbentrop; expansão alemã de 1940; Linha Maginot e Dunquerque; Vichy e a Resistência; Batalha da Grã-Bretanha e a Enigma; Itália de Mussolini; Operação Barbarossa; Pearl Harbor; Midway, El Alamein e Stalingrado; Holocausto</td></tr>
+    <tr><td><b>16</b><br>Livro 2</td><td>O final da Segunda Guerra e a ONU</td><td>Conferência de Teerã; Dia D e a libertação da França; mísseis V-2; Conferência de Yalta; Batalha de Berlim e a rendição alemã; Projeto Manhattan; Conferência de Potsdam; guerra no Pacífico e kamikazes; Hiroshima e Nagasaki; criação da ONU; Declaração Universal dos Direitos Humanos</td></tr>
+    <tr><td><b>17</b><br>Livro 2</td><td>Brasil na Segunda Guerra Mundial</td><td>Brasil entre a Alemanha e os Estados Unidos; Estado Novo e o contexto internacional; rompimento com o Eixo e a CSN; acordos de 1942 e as bases no Nordeste; ataques de submarinos; a FEB na Itália; impactos internos e a política de boa vizinhança; o paradoxo e o fim do Estado Novo; UDN, PSD e PTB; queremismo e a eleição de 1945</td></tr>
+  </table>
+
+  <h2 class="sec">📊 Relatório para os pais<small>Acesso com código</small></h2>
+  <div class="rel">
+    <h3>🔒 Área dos responsáveis</h3>
+    <p>Digite o <b>código da família</b> (<b>PAIS-77</b>) ou qualquer um dos códigos que o jovem aprendiz recebeu ao terminar o Quiz (MED-…) ou o Simulado (SIM-…).</p>
+    <div style="display:flex;gap:8px;flex-wrap:wrap">
+      <input id="codin" placeholder="PAIS-77" maxlength="12">
+      <button onclick="abrir()">Abrir relatório</button>
+    </div>
+    <div class="msg" id="msg">Código incorreto. Tente <b>PAIS-77</b>, ou o código MED/SIM que aparece ao fim do Quiz ou do Simulado.</div>
+    <div id="relbox"></div>
+  </div>
+
+  <div class="aviso">
+    <b>Como ler o relatório.</b> Ele mostra o que foi feito em cada material: acertos no Quiz e no Simulado, quantos blocos da Leitura Guiada foram concluídos, quais respostas ficaram <b>muito parecidas com o texto do livro</b> (sinal de cópia, não de compreensão), quais pontos do checklist ficaram marcados como &ldquo;Não&rdquo; e até onde o Resumo foi lido. Nada disso é nota — é um mapa do que ainda vale revisar antes do dia 29.
+  </div>
+
+  <div class="fim">
+    Kit de estudos &bull; História &bull; 9º ano do Ensino Fundamental<br>
+    Conteúdo baseado no livro didático adotado pela escola &bull; material de uso pessoal
+  </div>
+</div>
+
+<script>
+var MEM={};
+function LS(){try{var t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return localStorage;}catch(e){return null;}}
+var ST=LS();
+function getIt(k){try{return ST?ST.getItem(k):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+var K={lg:'hist9_primeirapagina_leitura',qz:'hist9_primeirapagina_quiz',rs:'hist9_primeirapagina_resumo',sm:'hist9_primeirapagina_simulado'};
+function ler(k){var r=getIt(k);if(!r)return null;try{return JSON.parse(r);}catch(e){return null;}}
+
+/* rótulos dos blocos da leitura (só para o relatório) */
+var BLOCOS=[
+ {id:1,m:"1930 — A queda do café com leite"},{id:2,m:"1931-32 — O Governo Provisório"},
+ {id:3,m:"1932 — São Paulo pega em armas"},{id:4,m:"1935 — Integralistas x Comunistas"},
+ {id:5,m:"1937 — O Plano Cohen e o Estado Novo"},{id:6,m:"1939 — A guerra-relâmpago"},
+ {id:7,m:"1940 — A Europa cai"},{id:8,m:"1941 — Barbarossa e Pearl Harbor"},
+ {id:9,m:"1942-43 — A virada e o Holocausto"},{id:10,m:"1943-45 — Dia D e a queda de Berlim"},
+ {id:11,m:"1945 — Hiroshima, Nagasaki e a ONU"},{id:12,m:"1942-45 — O Brasil na guerra"}
+];
+
+function valido(v){
+  if(v==='PAIS-77') return true;
+  var q=ler(K.qz), s=ler(K.sm);
+  if(q&&q.codigo&&v===q.codigo) return true;
+  if(s&&s.codigo&&v===s.codigo) return true;
+  return false;
+}
+function abrir(){
+  var v=(document.getElementById('codin').value||'').trim().toUpperCase();
+  if(!valido(v)){ document.getElementById('msg').className='msg on'; return; }
+  document.getElementById('msg').className='msg';
+  montar();
+  document.getElementById('relbox').className='on';
+}
+function pill(txt,cls){ return '<span class="pill '+cls+'">'+txt+'</span>'; }
+function montar(){
+  var h='';
+  /* Leitura Guiada */
+  var lg=ler(K.lg);
+  h+='<div class="relcard"><h4>📖 Leitura Guiada</h4>';
+  if(!lg||!lg.blocos||!Object.keys(lg.blocos).length){
+    h+='<div class="vaz">Ainda não foi iniciada.</div>';
+  }else{
+    var feitos=0,verm=[],naos=[];
+    for(var i=0;i<BLOCOS.length;i++){
+      var b=lg.blocos[BLOCOS[i].id];
+      if(!b) continue;
+      if(b.feito) feitos++;
+      if(b.transcrita){
+        for(var q=0;q<b.transcrita.length;q++){
+          if(b.transcrita[q]) verm.push('Edição '+BLOCOS[i].id+' ('+BLOCOS[i].m+'), pergunta '+(q+1));
+        }
+      }
+      if(b.chk){
+        for(var key in b.chk){
+          if(b.chk.hasOwnProperty(key)&&b.chk[key]===false){
+            var qn=parseInt(String(key).split('_')[0],10)+1;
+            naos.push('Edição '+BLOCOS[i].id+', pergunta '+qn);
+          }
+        }
+      }
+    }
+    h+='<div class="linha"><span>Edições concluídas</span><b>'+feitos+' de 12</b></div>';
+    h+='<div class="linha"><span>Respostas copiadas do texto</span><b>'+verm.length+'</b></div>';
+    h+='<div class="linha"><span>Pontos do checklist marcados como &ldquo;Não&rdquo;</span><b>'+naos.length+'</b></div>';
+    if(verm.length){ h+='<ul>'; for(var v1=0;v1<verm.length;v1++) h+='<li>📌 '+verm[v1]+'</li>'; h+='</ul>'; }
+    if(naos.length){
+      var vistos={},lista=[];
+      for(var n1=0;n1<naos.length;n1++){ if(!vistos[naos[n1]]){ vistos[naos[n1]]=1; lista.push(naos[n1]); } }
+      h+='<ul>'; for(var n2=0;n2<lista.length;n2++) h+='<li>🔁 '+lista[n2]+'</li>'; h+='</ul>';
+    }
+  }
+  h+='</div>';
+  /* Quiz */
+  var qz=ler(K.qz);
+  h+='<div class="relcard"><h4>🎯 Quiz</h4>';
+  if(!qz||!qz.enviado){ h+='<div class="vaz">Ainda não foi enviado.</div>'; }
+  else{
+    var ac=0,n=0;
+    if(qz.resp){ /* o quiz guarda só as marcações; o total vem do código */ }
+    ac=parseInt(String(qz.codigo||'MED-00-XX').split('-')[1],10); if(isNaN(ac)) ac=0;
+    h+='<div class="linha"><span>Código</span><b>'+(qz.codigo||'—')+'</b></div>';
+    h+='<div class="linha"><span>Acertos</span><b>'+ac+' de 15</b></div>';
+    h+='<div class="linha"><span>Aproveitamento</span><b>'+Math.round(ac/15*100)+'%</b></div>';
+    h+='<div class="linha"><span>Gabarito aberto</span>'+(qz.gab?pill('sim','ok'):pill('ainda não','nao'))+'</div>';
+  }
+  h+='</div>';
+  /* Resumo */
+  var rs=ler(K.rs);
+  h+='<div class="relcard"><h4>🗺️ Resumo</h4>';
+  if(!rs){ h+='<div class="vaz">Ainda não foi aberto.</div>'; }
+  else{
+    var nm=0; if(rs.chk){ for(var k2 in rs.chk){ if(rs.chk.hasOwnProperty(k2)&&rs.chk[k2]) nm++; } }
+    var nf=rs.flip?Object.keys(rs.flip).length:0;
+    h+='<div class="linha"><span>Tópicos marcados como dominados</span><b>'+nm+' de 32</b></div>';
+    h+='<div class="linha"><span>Cartas de datas viradas</span><b>'+nf+' de 20</b></div>';
+    h+='<div class="linha"><span>Quanto da página foi percorrido</span><b>'+(rs.rol||0)+'%</b></div>';
+  }
+  h+='</div>';
+  /* Simulado */
+  var sm=ler(K.sm);
+  h+='<div class="relcard"><h4>📝 Simulado</h4>';
+  if(!sm||!sm.enviado){ h+='<div class="vaz">Ainda não foi enviado.</div>'; }
+  else{
+    var as=parseInt(String(sm.codigo||'SIM-00-XX').split('-')[1],10); if(isNaN(as)) as=0;
+    h+='<div class="linha"><span>Código</span><b>'+(sm.codigo||'—')+'</b></div>';
+    h+='<div class="linha"><span>Acertos</span><b>'+as+' de 28</b></div>';
+    h+='<div class="linha"><span>Aproveitamento</span><b>'+Math.round(as/28*100)+'%</b></div>';
+    h+='<div class="linha"><span>Gabarito aberto</span>'+(sm.gab?pill('sim','ok'):pill('ainda não','nao'))+'</div>';
+  }
+  h+='</div>';
+  document.getElementById('relbox').innerHTML=h;
+}
+</script>
+</body>
+</html>

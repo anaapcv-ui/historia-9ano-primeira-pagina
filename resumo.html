@@ -1,0 +1,513 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Resumo — Primeira Página | História 9º ano</title>
+<style>
+:root{--tinta:#0d0c0a;--papel:#c9c3b4;--papel2:#8e8878;--ambar:#e8a33d;--ambar2:#f5c877;--carimbo:#c0392b;--verde:#4f9d69;--borda:#2e2b22}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--tinta);color:var(--papel);font-family:Georgia,'Times New Roman',serif;line-height:1.7;padding-bottom:60px}
+.wrap{max-width:960px;margin:0 auto;padding:0 16px}
+header.top{background:linear-gradient(180deg,#1b1a14,#0d0c0a);border-bottom:3px double var(--ambar);padding:22px 0 16px}
+.jornal{font-size:2.5rem;letter-spacing:.16em;text-transform:uppercase;color:var(--ambar2);text-align:center;font-weight:700}
+.sub{text-align:center;color:var(--papel2);font-size:.82rem;letter-spacing:.24em;text-transform:uppercase;margin-top:6px}
+nav.abas{display:flex;gap:6px;flex-wrap:wrap;justify-content:center;margin:16px 0 0}
+nav.abas a{padding:8px 14px;border:1px solid var(--borda);background:#141309;color:var(--papel2);text-decoration:none;font-size:.86rem;font-family:Arial,sans-serif}
+nav.abas a:hover{border-color:var(--ambar);color:var(--ambar2)}
+nav.abas a.on{background:var(--ambar);color:#17150d;border-color:var(--ambar);font-weight:700}
+.painel{background:#141309;border:1px solid var(--borda);border-left:4px solid var(--ambar);padding:14px;margin:20px 0;font-family:Arial,sans-serif;font-size:.86rem}
+.painel b{color:var(--ambar2)}
+.btns{display:flex;gap:8px;flex-wrap:wrap;margin-top:10px}
+button{font-family:Arial,sans-serif;cursor:pointer;border:1px solid var(--borda);background:#1e1c13;color:var(--papel);padding:8px 14px;font-size:.85rem}
+button:hover{border-color:var(--ambar);color:var(--ambar2)}
+button.pri{background:var(--ambar);color:#17150d;font-weight:700;border-color:var(--ambar)}
+h2.sec{color:var(--ambar2);font-size:1.5rem;margin:34px 0 6px;border-bottom:2px solid var(--borda);padding-bottom:8px;letter-spacing:.02em}
+h2.sec small{display:block;font-size:.74rem;color:var(--papel2);letter-spacing:.2em;text-transform:uppercase;font-weight:400;margin-top:4px;font-family:Arial,sans-serif}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));gap:14px;margin-top:16px}
+.card{border:1px solid var(--borda);background:#12110b;padding:16px}
+.card h3{color:var(--ambar2);font-size:1.05rem;margin-bottom:8px}
+.card p{font-size:.95rem;margin-bottom:8px}
+.card ul{margin-left:18px;font-size:.94rem}
+.card li{margin-bottom:6px}
+.tag{display:inline-block;font-family:Arial,sans-serif;font-size:.66rem;letter-spacing:.12em;padding:2px 8px;border:1px solid var(--ambar);color:var(--ambar);text-transform:uppercase;margin-bottom:8px}
+/* flip */
+.flips{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.flip{perspective:1000px;height:180px;cursor:pointer}
+.flip .in{position:relative;width:100%;height:100%;transition:transform .55s;transform-style:preserve-3d}
+.flip.v .in{transform:rotateY(180deg)}
+.flip .f,.flip .b{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--borda);padding:14px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center}
+.flip .f{background:#17150d}
+.flip .f .d{font-family:'Courier New',monospace;font-size:1.5rem;color:var(--ambar2);letter-spacing:.06em}
+.flip .f .l{font-family:Arial,sans-serif;font-size:.72rem;color:var(--papel2);letter-spacing:.14em;text-transform:uppercase;margin-top:8px}
+.flip .b{background:#1a1710;transform:rotateY(180deg);font-size:.92rem;line-height:1.55;overflow:auto}
+.flip .b b{color:var(--ambar2)}
+/* postit */
+.postits{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:16px}
+.postit{background:#e8d98a;color:#221f13;padding:15px;font-family:Arial,sans-serif;font-size:.9rem;line-height:1.55;box-shadow:3px 3px 0 rgba(0,0,0,.45)}
+.postit b{display:block;margin-bottom:5px;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;color:#6b5a11}
+/* pegadinha */
+.peg{border:2px solid var(--carimbo);background:#160b09;padding:14px;margin-bottom:12px}
+.peg b{color:#e8897e;font-family:Arial,sans-serif;font-size:.76rem;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px}
+.peg .x{color:#e8897e}.peg .c{color:#8fd4a5}
+/* linha do tempo */
+.lt{border-left:2px solid var(--ambar);margin:18px 0 0 10px;padding-left:20px}
+.lt .ev{position:relative;padding-bottom:16px}
+.lt .ev:before{content:'';position:absolute;left:-27px;top:7px;width:11px;height:11px;background:var(--ambar);border:2px solid var(--tinta);border-radius:50%}
+.lt .ev .dt{font-family:'Courier New',monospace;color:var(--ambar2);font-size:.92rem}
+.lt .ev .tx{font-size:.95rem}
+.lt .ev.br:before{background:var(--verde)}
+.lt .ev.br .dt{color:#8fd4a5}
+table{width:100%;border-collapse:collapse;margin-top:14px;font-size:.92rem}
+th,td{border:1px solid var(--borda);padding:9px 10px;text-align:left;vertical-align:top}
+th{background:#1b1910;color:var(--ambar2);font-family:Arial,sans-serif;font-size:.76rem;letter-spacing:.08em;text-transform:uppercase}
+.glos dt{color:var(--ambar2);font-weight:700;margin-top:12px}
+.glos dd{margin-left:0;font-size:.95rem}
+.check{display:flex;align-items:flex-start;gap:9px;padding:9px 0;border-bottom:1px dashed var(--borda);font-size:.95rem}
+.check input{margin-top:6px;width:17px;height:17px;accent-color:var(--ambar);flex-shrink:0}
+.check label{cursor:pointer}
+.check.ok label{color:var(--papel2);text-decoration:line-through}
+.fim{text-align:center;padding:26px 0;color:var(--papel2);font-family:Arial,sans-serif;font-size:.85rem}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.82);display:none;align-items:center;justify-content:center;padding:20px;z-index:99}
+.modal.on{display:flex}
+.modal .box{background:#15130c;border:1px solid var(--ambar);padding:22px;max-width:420px;font-family:Arial,sans-serif}
+.modal h4{color:var(--ambar2);margin-bottom:10px}.modal p{font-size:.9rem;margin-bottom:14px}
+@media(max-width:640px){.jornal{font-size:1.7rem}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="jornal">Primeira Página</div>
+  <div class="sub">Resumo &bull; o arquivo do jornal, 1930 &ndash; 1945</div>
+  <nav class="abas">
+    <a href="index.html">🏠 Início</a>
+    <a href="leitura-guiada.html">📖 Leitura Guiada</a>
+    <a href="quiz.html">🎯 Quiz</a>
+    <a href="resumo.html" class="on">🗺️ Resumo</a>
+    <a href="simulado.html">📝 Simulado</a>
+  </nav>
+</div></header>
+
+<div class="wrap">
+  <div class="painel">
+    <b>🗺️ Como usar.</b> Este é o arquivo do jornal: tudo o que caiu nas edições, organizado para revisar rápido. As <b>datas viram cartas</b> — clique para virar. Os <b>post-its amarelos</b> são dicas de prova e as <b>caixas vermelhas</b> são as pegadinhas. No fim há um checklist para marcar o que já está dominado.
+    <div style="margin-top:8px;color:var(--papel2)">Salvamento automático: <b id="quando">—</b></div>
+    <div class="btns">
+      <button onclick="exportar()">📥 Exportar</button>
+      <button onclick="document.getElementById('imp').click()">📤 Importar</button>
+      <input type="file" id="imp" accept="application/json" style="display:none" onchange="importar(event)">
+      <button onclick="pedirZerar()">🗑️ Zerar tudo</button>
+    </div>
+  </div>
+
+  <h2 class="sec">🇧🇷 Bloco 1 — A Era Vargas<small>Capítulo 13 &bull; Livro 1</small></h2>
+  <div class="grid">
+    <div class="card"><span class="tag">Como começou</span>
+      <h3>Revolução de 1930</h3>
+      <p>A crise de <b>1929</b> derrubou o preço do café e enfraqueceu as oligarquias. Washington Luís rompeu a <b>política do café com leite</b> ao indicar o paulista <b>Júlio Prestes</b>. Minas, Rio Grande do Sul e Paraíba formaram a <b>Aliança Liberal</b>, com Getúlio Vargas.</p>
+      <ul>
+        <li>Júlio Prestes <b>venceu</b> a eleição — mas não assumiu.</li>
+        <li>O assassinato de João Pessoa foi o estopim.</li>
+        <li>24/10: militares depõem Washington Luís. 03/11: Vargas assume.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1930-1934</span>
+      <h3>Governo Provisório</h3>
+      <p>Vargas acabou com o poder das oligarquias — <b>centralizando tudo nas próprias mãos</b>.</p>
+      <ul>
+        <li>Revogou a Constituição de 1891 e <b>dissolveu o Congresso</b>.</li>
+        <li>Governadores trocados por <b>interventores</b> nomeados por ele.</li>
+        <li>Criou o <b>Ministério do Trabalho</b> (1930) e a <b>Carteira de Trabalho</b> (1932) — daí o apelido <b>&ldquo;pai dos pobres&rdquo;</b>.</li>
+        <li><b>Departamento Nacional do Café</b>: comprava e <b>queimava</b> café para segurar o preço.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1932</span>
+      <h3>Revolução Constitucionalista</h3>
+      <p>São Paulo, alijado do poder, exigia uma nova Constituição. Do tiroteio de 23/05 nasceu o <b>MMDC</b>. A luta começou em <b>9 de julho</b> e terminou com a rendição paulista em <b>2 de outubro</b>.</p>
+      <p><b>Derrota militar, vitória política:</b> o governo cedeu, convocou a Constituinte e veio a <b>Constituição de 1934</b>.</p>
+    </div>
+    <div class="card"><span class="tag">1932</span>
+      <h3>Código Eleitoral e o voto feminino</h3>
+      <ul>
+        <li>Criou a <b>Justiça Eleitoral</b> e o <b>voto secreto</b>.</li>
+        <li>Reconheceu o <b>voto das mulheres</b>.</li>
+        <li>Limites: só maiores de 21 anos; <b>analfabetos continuaram proibidos</b>.</li>
+        <li><b>Bertha Lutz</b>: bióloga, fundadora da Federação Brasileira pelo Progresso Feminino (1919), deputada em 1936, participou da fundação da ONU.</li>
+        <li><b>Carlota Pereira de Queirós</b>: médica, a primeira deputada federal do Brasil (1933).</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1935</span>
+      <h3>Integralistas x Comunistas</h3>
+      <table>
+        <tr><th>AIB (1932)</th><th>ANL (1935)</th></tr>
+        <tr><td>Plínio Salgado</td><td>Luís Carlos Prestes (pres. de honra)</td></tr>
+        <tr><td>Antiliberal e anticomunista; Estado forte e centralizado; &ldquo;Deus, Pátria e Família&rdquo;</td><td>Ligada ao Partido Comunista; governo popular, reforma agrária, fim do pagamento da dívida externa</td></tr>
+      </table>
+      <p style="margin-top:8px"><b>Intentona Comunista</b> (nov/1935): levantes em Natal (23), Pernambuco (24) e Rio (27). Resposta: estado de sítio e repressão. Presos: Prestes, <b>Olga Benário</b>, Graciliano Ramos, Pedro Ernesto.</p>
+    </div>
+    <div class="card"><span class="tag">1937-1945</span>
+      <h3>O golpe e o Estado Novo</h3>
+      <ul>
+        <li><b>Plano Cohen</b>: documento <b>falso</b>, simulando plano comunista → pretexto para o golpe de <b>10/11/1937</b>.</li>
+        <li>Constituição outorgada, apelidada de <b>&ldquo;Polaca&rdquo;</b> (inspirada na polonesa).</li>
+        <li><b>DASP</b>: presidente nomeia interventores, que indicam prefeitos.</li>
+        <li><b>DESPS</b> (Filinto Müller): polícia política, prisões e tortura.</li>
+        <li><b>DIP</b> (1939): divulgava <b>e</b> censurava; rádio <em>Hora do Brasil</em>.</li>
+        <li><b>CLT</b> (1943): reuniu as normas trabalhistas num só código.</li>
+        <li>Todos os partidos fechados — <b>inclusive a AIB</b>.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec">🌍 Bloco 2 — A Segunda Guerra Mundial<small>Capítulos 15 e 16 &bull; Livro 2</small></h2>
+  <div class="grid">
+    <div class="card"><span class="tag">1939</span>
+      <h3>Blitzkrieg e a invasão da Polônia</h3>
+      <p>A <b>guerra-relâmpago</b> concentrava tanques numa ponta ofensiva, apoiada por aviões em mergulho, avançando <b>50 a 80 km por dia</b>, com ordens por rádio em &ldquo;tempo real&rdquo;.</p>
+      <ul>
+        <li><b>Setembro de 1939</b>: invasão da Polônia → França e Inglaterra declaram guerra.</li>
+        <li><b>17/09</b>: soviéticos invadem o leste polonês (<b>Pacto Molotov-Ribbentrop</b>, ago/1939).</li>
+        <li>Pano de fundo: o <b>Corredor Polonês</b>, a saída da Polônia para o mar.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1940</span>
+      <h3>A Europa cai</h3>
+      <ul>
+        <li>Abril a junho: Dinamarca, Noruega, Bélgica, Holanda, Luxemburgo e França.</li>
+        <li><b>Linha Maginot</b>: ultrapassada e <b>contornada pelo norte</b>, via Bélgica.</li>
+        <li><b>Dunquerque</b>: tropas franco-britânicas encurraladas e evacuadas.</li>
+        <li><b>Pétain</b> assina a rendição → <b>França de Vichy</b>, colaboracionista.</li>
+        <li><b>De Gaulle</b>, de Londres, organiza a <b>Resistência Francesa</b>.</li>
+        <li><b>Batalha da Grã-Bretanha</b>: Luftwaffe x RAF. A Alemanha <b>não</b> conseguiu invadir.</li>
+        <li><b>Enigma</b>: máquina alemã de códigos, decifrada pelos britânicos.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1941</span>
+      <h3>Barbarossa e Pearl Harbor</h3>
+      <p><b>22/06/1941 — Operação Barbarossa</b>: ataque alemão à URSS numa frente de 3 mil km (Leningrado, Moscou, Kiev). <b>Cerco de Leningrado: 900 dias.</b> Stálin adota a <b>terra arrasada</b>; o <b>&ldquo;General Inverno&rdquo;</b> completa o serviço (-30 °C).</p>
+      <p><b>07/12/1941 — Pearl Harbor</b>: ~300 aviões japoneses, sem declaração de guerra. Motivo de fundo: o Japão precisava de <b>petróleo</b> e matérias-primas. Consequência: <b>os EUA entram na guerra</b>.</p>
+    </div>
+    <div class="card"><span class="tag">1942-1943</span>
+      <h3>A virada: três batalhas</h3>
+      <ul>
+        <li><b>Midway</b> (Pacífico, jun/1942): primeira derrota japonesa; frota aniquilada.</li>
+        <li><b>El Alamein</b> (África, out/1942): Montgomery vence Rommel no Egito.</li>
+        <li><b>Stalingrado</b> (URSS, 1942-43): ~1 milhão de soldados; alemães cercados rendem-se em <b>fev/1943</b>.</li>
+      </ul>
+      <p>Itália: desembarque na Sicília (jun/1943), prisão de Mussolini, armistício; ele foge e cria a <b>República de Salò</b>.</p>
+    </div>
+    <div class="card"><span class="tag">Crimes</span>
+      <h3>Holocausto</h3>
+      <p>Genocídio nazista chamado pelos seus líderes de <b>&ldquo;solução final&rdquo;</b>, com o objetivo de eliminar o povo judeu. Campos administrados pelas <b>SS</b>; extermínio em <b>câmaras de gás</b>.</p>
+      <ul>
+        <li>Cerca de <b>6 milhões de judeus</b> assassinados.</li>
+        <li>Também perseguidos: ciganos, eslavos, negros, homossexuais e opositores políticos.</li>
+        <li><b>Auschwitz</b> (Polônia): maior complexo de extermínio.</li>
+        <li>Julgados depois no <b>Tribunal de Nuremberg</b>.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1943-1945</span>
+      <h3>Conferências e o fim na Europa</h3>
+      <ul>
+        <li><b>Teerã</b> (nov/1943): os <b>Três Grandes</b> (Churchill, Roosevelt, Stálin); Stálin cobra a <b>segunda frente</b>.</li>
+        <li><b>Dia D</b> (06/06/1944, Operação Overlord): Normandia, praias <b>Utah, Omaha, Gold, Juno e Sword</b>; engodo com tanques de papelão.</li>
+        <li><b>Yalta</b> (fev/1945): zona de influência soviética no Leste; criação de um <b>novo órgão internacional</b>.</li>
+        <li><b>Berlim</b>: Hitler se suicida em <b>30/04</b>; Berlim se rende em <b>02/05</b>; fim das operações em <b>08/05</b>.</li>
+        <li><b>Potsdam</b> (jul-ago/1945): Truman no lugar de Roosevelt; <b>Alemanha dividida em 4 zonas</b>.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1945</span>
+      <h3>Hiroshima, Nagasaki e a rendição</h3>
+      <ul>
+        <li><b>Projeto Manhattan</b>: dirigido por <b>Oppenheimer</b>, em <b>Los Alamos</b>; teste em 16/07/1945.</li>
+        <li><b>06/08</b> — <b>Little Boy</b> em <b>Hiroshima</b> (~140 mil mortos até o fim do ano).</li>
+        <li><b>09/08</b> — <b>Fat Man</b> em <b>Nagasaki</b>.</li>
+        <li><b>15/08</b>: rendição. <b>02/09/1945</b>: assinatura — fim da guerra.</li>
+        <li><b>Kamikazes</b> (&ldquo;vento divino&rdquo;): aviões-suicidas, sem combustível para voltar.</li>
+        <li>Custo: <b>~50 milhões de mortos</b>, a maioria civis; 72 países envolvidos.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1945-1948</span>
+      <h3>A ONU</h3>
+      <p>Criada porque a <b>Liga das Nações fracassou</b> em evitar a guerra. <b>Carta das Nações Unidas</b> assinada em 1945; sede em <b>Nova York</b>.</p>
+      <ul>
+        <li><b>Seis órgãos:</b> Assembleia Geral, Secretariado Geral, Conselho de Segurança, Conselho Tutelar, Conselho Econômico e Social e Corte Internacional de Justiça.</li>
+        <li><b>Agências:</b> Unicef (infância), Unesco (patrimônio), OMS (saúde), OIT (trabalho).</li>
+        <li><b>1948</b>: Declaração Universal dos Direitos Humanos (<b>30 artigos</b>), o documento mais traduzido do mundo.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h2 class="sec">🇧🇷 Bloco 3 — O Brasil na guerra<small>Capítulo 17 &bull; Livro 2</small></h2>
+  <div class="grid">
+    <div class="card"><span class="tag">Antes da guerra</span>
+      <h3>Jogando nos dois tabuleiros</h3>
+      <p>A <b>Alemanha</b> queria matérias-primas para sua indústria de armamentos e contava com os imigrantes alemães aqui. Os <b>EUA</b> queriam uma zona de influência na América Latina contra nazistas e comunistas (<b>tratado comercial de 1935</b>).</p>
+      <p>Vargas simpatizava com o fascismo, mas estreitou laços com os americanos: o Estado Novo <b>jogava com os interesses dos dois lados</b>.</p>
+    </div>
+    <div class="card"><span class="tag">1940-1942</span>
+      <h3>O rompimento</h3>
+      <ul>
+        <li>A <b>República de Vichy</b> (1940) deu aos alemães o Marrocos como base — a influência alemã cresceu no sul do Atlântico.</li>
+        <li>Moeda de troca: créditos para construir a <b>Companhia Siderúrgica Nacional</b>.</li>
+        <li><b>Acordos de 1942</b>: venda exclusiva de ferro, borracha, cobre, bauxita e zinco aos Aliados + <b>bases americanas no Nordeste</b> (<b>Natal</b>, ponta mais oriental da América).</li>
+        <li><b>Agosto de 1942</b>: após ataques de <b>submarinos alemães</b> a navios mercantes, o Brasil entra na guerra.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1944-1945</span>
+      <h3>A FEB na Itália</h3>
+      <ul>
+        <li><b>25 mil homens</b> na frente italiana, junto ao exército americano.</li>
+        <li>Batalhas: <b>Monte Castelo, Castelnuovo e Montese</b>.</li>
+        <li><b>454 mortos em ação</b> e cerca de 2 mil por ferimentos.</li>
+        <li>Mais <b>400 homens da FAB</b> (Força Aérea Brasileira).</li>
+        <li>Mascote: a <b>cobra fumando</b> — resposta bem-humorada a quem dizia que era mais fácil uma cobra fumar do que o Brasil mandar tropas.</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">Em casa</span>
+      <h3>Impactos internos</h3>
+      <ul>
+        <li>Falta de gasolina e trigo; surge o <b>&ldquo;pão de guerra&rdquo;</b> (farinha e mandioca).</li>
+        <li><b>Política de boa vizinhança</b>: quadrinhos americanos, <b>Zé Carioca</b> (Disney, 1942, em <em>Alô, Amigos</em>) e <b>Carmen Miranda</b> — e o incômodo com o estereótipo da &ldquo;República das Bananas&rdquo;.</li>
+        <li>Comunidades <b>japonesa, alemã e italiana</b> hostilizadas e algumas pessoas detidas.</li>
+        <li>A economia <b>ganhou</b>: preços das matérias-primas subiram e a indústria avançou — CNP (1938), CSN (1941), Vale do Rio Doce (1942), Chesf (1945).</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">1943-1945</span>
+      <h3>O paradoxo e a queda</h3>
+      <p>Lutar pela democracia lá fora <b>sendo uma ditadura</b> aqui dentro ficou insustentável.</p>
+      <ul>
+        <li><b>Manifesto dos Mineiros</b> (out/1943): pedido de democratização.</li>
+        <li>Anistia a presos políticos, entre eles <b>Prestes</b>.</li>
+        <li><b>Queremismo</b> (mar/1945): trabalhadores gritam &ldquo;Queremos Getúlio&rdquo;.</li>
+        <li><b>29/10/1945</b>: militares forçam a <b>renúncia</b> de Vargas.</li>
+        <li><b>02/12/1945</b>: <b>Dutra (PSD)</b> vence com 52,39%, contra 24,74% de Eduardo Gomes (UDN).</li>
+      </ul>
+    </div>
+    <div class="card"><span class="tag">Decore</span>
+      <h3>Os três partidos de 1945</h3>
+      <table>
+        <tr><th>Partido</th><th>Perfil</th><th>Líderes</th></tr>
+        <tr><td><b>UDN</b></td><td>Antigetulista e liberal</td><td>Eduardo Gomes e Carlos Lacerda</td></tr>
+        <tr><td><b>PSD</b></td><td>Getulista, ligado às elites e aos interventores</td><td>Eurico Gaspar Dutra e Juscelino Kubitschek</td></tr>
+        <tr><td><b>PTB</b></td><td>Getulista, ligado aos trabalhadores</td><td>Getúlio Vargas e João Goulart</td></tr>
+      </table>
+    </div>
+  </div>
+
+  <h2 class="sec">🃏 Cartas das datas<small>Clique para virar</small></h2>
+  <div class="flips" id="flips"></div>
+
+  <h2 class="sec">⏳ Linha do tempo<small>Em verde, o que acontece no Brasil</small></h2>
+  <div class="lt">
+    <div class="ev br"><div class="dt">1929</div><div class="tx">Quebra da Bolsa de Nova York; a crise atinge o café brasileiro.</div></div>
+    <div class="ev br"><div class="dt">03/11/1930</div><div class="tx">Revolução de 1930: Vargas assume como presidente provisório.</div></div>
+    <div class="ev br"><div class="dt">1932</div><div class="tx">Revolução Constitucionalista (09/07 a 02/10) &bull; Código Eleitoral: voto secreto e voto feminino &bull; Criação da AIB.</div></div>
+    <div class="ev br"><div class="dt">16/07/1934</div><div class="tx">Constituição de 1934; no dia seguinte a Assembleia elege Vargas.</div></div>
+    <div class="ev br"><div class="dt">nov/1935</div><div class="tx">Intentona Comunista; estado de sítio e repressão.</div></div>
+    <div class="ev br"><div class="dt">10/11/1937</div><div class="tx">Plano Cohen (falso) → golpe do <b>Estado Novo</b>; Constituição &ldquo;Polaca&rdquo;.</div></div>
+    <div class="ev"><div class="dt">ago/1939</div><div class="tx">Pacto Molotov-Ribbentrop entre Alemanha e União Soviética.</div></div>
+    <div class="ev"><div class="dt">set/1939</div><div class="tx">Invasão da Polônia (Blitzkrieg): começa a Segunda Guerra Mundial.</div></div>
+    <div class="ev"><div class="dt">1940</div><div class="tx">Expansão alemã; Dunquerque; queda de Paris; França de Vichy; Batalha da Grã-Bretanha.</div></div>
+    <div class="ev"><div class="dt">22/06/1941</div><div class="tx">Operação Barbarossa: Alemanha ataca a União Soviética.</div></div>
+    <div class="ev"><div class="dt">07/12/1941</div><div class="tx">Pearl Harbor: os Estados Unidos entram na guerra.</div></div>
+    <div class="ev br"><div class="dt">ago/1942</div><div class="tx">Após ataques de submarinos alemães, <b>o Brasil declara guerra ao Eixo</b>.</div></div>
+    <div class="ev"><div class="dt">1942-1943</div><div class="tx">Midway, El Alamein e Stalingrado: a virada dos Aliados.</div></div>
+    <div class="ev"><div class="dt">nov/1943</div><div class="tx">Conferência de Teerã: Stálin cobra a segunda frente.</div></div>
+    <div class="ev br"><div class="dt">1944</div><div class="tx">A <b>FEB</b> embarca para a Itália: Monte Castelo, Castelnuovo e Montese.</div></div>
+    <div class="ev"><div class="dt">06/06/1944</div><div class="tx">Dia D: desembarque na Normandia.</div></div>
+    <div class="ev"><div class="dt">fev/1945</div><div class="tx">Conferência de Yalta.</div></div>
+    <div class="ev"><div class="dt">30/04 e 08/05/1945</div><div class="tx">Hitler se suicida; a guerra termina na Europa.</div></div>
+    <div class="ev"><div class="dt">06 e 09/08/1945</div><div class="tx">Bombas atômicas em Hiroshima e Nagasaki.</div></div>
+    <div class="ev"><div class="dt">02/09/1945</div><div class="tx">Japão assina a rendição: fim da Segunda Guerra Mundial.</div></div>
+    <div class="ev br"><div class="dt">29/10/1945</div><div class="tx">Militares forçam a <b>renúncia de Vargas</b>: fim do Estado Novo.</div></div>
+    <div class="ev br"><div class="dt">02/12/1945</div><div class="tx">Dutra (PSD) é eleito presidente.</div></div>
+  </div>
+
+  <h2 class="sec">📌 Dicas de prova</h2>
+  <div class="postits">
+    <div class="postit"><b>Regra dos dois tempos</b>O Brasil <b>declara guerra em 1942</b> e <b>manda tropas em 1944</b>. Se a questão juntar as duas coisas na mesma data, está errada.</div>
+    <div class="postit"><b>Derrota que virou vitória</b>1932: São Paulo perde a guerra e ganha a Constituição. Guarde essa frase inteira.</div>
+    <div class="postit"><b>Ordem das siglas</b>DASP e &ldquo;Polaca&rdquo; = <b>1937</b>. DIP = <b>1939</b>. CLT = <b>1943</b>. Tudo dentro do Estado Novo.</div>
+    <div class="postit"><b>Três Grandes</b>Churchill (Inglaterra), Roosevelt (EUA) e Stálin (URSS). Em Potsdam, Roosevelt já morreu: quem está lá é <b>Truman</b>.</div>
+    <div class="postit"><b>Antes e depois de Pearl Harbor</b>Pearl Harbor é <b>1941</b>. As bombas atômicas são <b>1945</b>. Uma não é resposta à outra.</div>
+    <div class="postit"><b>Números que caem</b>6 milhões de judeus &bull; ~50 milhões de mortos na guerra &bull; 25 mil homens da FEB &bull; 900 dias de cerco a Leningrado.</div>
+  </div>
+
+  <h2 class="sec">🚨 As pegadinhas</h2>
+  <div class="peg"><b>Pegadinha 1</b><span class="x">✗ &ldquo;Getúlio rompeu o café com leite.&rdquo;</span><br><span class="c">✓ Quem rompeu foi <b>Washington Luís</b>, ao indicar Júlio Prestes. Vargas aproveitou o racha.</span></div>
+  <div class="peg"><b>Pegadinha 2</b><span class="x">✗ &ldquo;A Revolução de 1930 foi um levante popular.&rdquo;</span><br><span class="c">✓ Foi conduzida por <b>oligarquias dissidentes</b> aliadas aos tenentes — disputa dentro da elite.</span></div>
+  <div class="peg"><b>Pegadinha 3</b><span class="x">✗ &ldquo;O voto feminino veio com a Constituição de 1934.&rdquo;</span><br><span class="c">✓ Veio com o <b>Código Eleitoral de 1932</b>. E os <b>analfabetos continuaram sem votar</b>.</span></div>
+  <div class="peg"><b>Pegadinha 4</b><span class="x">✗ &ldquo;A CLT criou os direitos trabalhistas.&rdquo;</span><br><span class="c">✓ A CLT (1943) <b>reuniu num único código</b> normas que vinham desde 1930. E os <b>trabalhadores rurais ficaram de fora</b>.</span></div>
+  <div class="peg"><b>Pegadinha 5</b><span class="x">✗ &ldquo;O Plano Cohen era um plano comunista real.&rdquo;</span><br><span class="c">✓ Era <b>falso</b>, forjado por um militar ligado ao integralismo, para justificar o golpe de 1937.</span></div>
+  <div class="peg"><b>Pegadinha 6</b><span class="x">✗ &ldquo;Plínio Salgado foi recompensado por apoiar o golpe.&rdquo;</span><br><span class="c">✓ <b>Todos os partidos foram fechados, inclusive a AIB</b>; os integralistas se revoltaram e foram presos.</span></div>
+  <div class="peg"><b>Pegadinha 7</b><span class="x">✗ &ldquo;A Linha Maginot foi destruída pelos alemães.&rdquo;</span><br><span class="c">✓ Ela foi <b>contornada pelo norte</b>, pela Bélgica. Estava ultrapassada e no lugar errado.</span></div>
+  <div class="peg"><b>Pegadinha 8</b><span class="x">✗ &ldquo;O pacto de 1939 mostra que nazismo e comunismo eram aliados ideológicos.&rdquo;</span><br><span class="c">✓ Era um <b>acordo de conveniência</b>: ganhar tempo e dividir territórios. Em 1941 a Alemanha atacou a URSS.</span></div>
+  <div class="peg"><b>Pegadinha 9</b><span class="x">✗ &ldquo;A FEB lutou no Pacífico.&rdquo;</span><br><span class="c">✓ A FEB lutou na <b>Itália</b> — Monte Castelo, Castelnuovo e Montese.</span></div>
+  <div class="peg"><b>Pegadinha 10</b><span class="x">✗ &ldquo;Vargas caiu porque perdeu o apoio do povo.&rdquo;</span><br><span class="c">✓ Caiu por pressão dos <b>militares</b>. O apoio popular continuava — tanto que o <b>queremismo</b> existiu e <b>Dutra, apoiado por ele, venceu</b> a eleição.</span></div>
+
+  <h2 class="sec">📔 Glossário</h2>
+  <dl class="glos">
+    <dt>Oligarquia</dt><dd>Governo de um pequeno grupo, geralmente famílias ricas e poderosas. Na República Velha, as oligarquias estaduais mandavam na política.</dd>
+    <dt>Interventor</dt><dd>Governador nomeado diretamente pelo presidente, no lugar de um eleito pelo estado.</dd>
+    <dt>Outorgar</dt><dd>Impor uma Constituição sem votação nem participação de uma Assembleia. Foi o caso da Carta de 1937.</dd>
+    <dt>Alijado</dt><dd>Jogado para fora, afastado. São Paulo foi alijado do poder depois de 1930.</dd>
+    <dt>Colaboracionista</dt><dd>Governo ou pessoa que coopera com o inimigo que ocupou o país. Exemplo: a França de Vichy.</dd>
+    <dt>Blitzkrieg</dt><dd>&ldquo;Guerra-relâmpago&rdquo;: ataque rápido com tanques e aviões coordenados por rádio.</dd>
+    <dt>Cerco</dt><dd>Tática em que as tropas rodeiam o inimigo para impedir sua retirada e cortar o abastecimento de alimentos e munição.</dd>
+    <dt>Terra arrasada</dt><dd>Tática de destruir ou levar tudo o que possa servir ao inimigo antes de recuar.</dd>
+    <dt>Holocausto</dt><dd>Genocídio dos judeus promovido pelo regime nazista, chamado por seus líderes de &ldquo;solução final&rdquo;.</dd>
+    <dt>Armistício</dt><dd>Acordo para interromper os combates, sem ser ainda um tratado de paz definitivo.</dd>
+    <dt>Populismo e trabalhismo</dt><dd>Populismo: usar o cargo para manipular a população e se manter no poder. Trabalhismo: política social voltada aos assalariados. O livro pede para <b>associar</b> os dois conceitos ao analisar Vargas, porque os operários já reivindicavam esses direitos antes dele.</dd>
+    <dt>Queremismo</dt><dd>Movimento popular de 1945 que pedia a permanência de Vargas, com o grito &ldquo;Queremos Getúlio&rdquo;.</dd>
+  </dl>
+
+  <h2 class="sec">✅ Checklist da revisão<small>Marque o que já está dominado</small></h2>
+  <div id="checks"></div>
+  <div class="painel" style="margin-top:16px"><b>Progresso:</b> <span id="cont">0</span> de <span id="tot">0</span> tópicos marcados.</div>
+
+  <div class="fim">Revisou? Agora encare o <a href="simulado.html" style="color:var(--ambar2)">📝 Simulado</a>.</div>
+</div>
+
+<div class="modal" id="mdl"><div class="box">
+  <h4 id="mdlt">Confirmar</h4><p id="mdlp">?</p>
+  <div class="btns"><button class="pri" onclick="mdlOk()">Sim, zerar</button><button onclick="fecharModal()">Cancelar</button></div>
+</div></div>
+
+<script>
+var MEM={};
+function LS(){try{var t='__t';localStorage.setItem(t,'1');localStorage.removeItem(t);return localStorage;}catch(e){return null;}}
+var ST=LS();
+function getIt(k){try{return ST?ST.getItem(k):(MEM[k]||null);}catch(e){return MEM[k]||null;}}
+function setIt(k,v){try{if(ST){ST.setItem(k,v);}else{MEM[k]=v;}}catch(e){MEM[k]=v;}}
+function delIt(k){try{if(ST){ST.removeItem(k);}else{delete MEM[k];}}catch(e){delete MEM[k];}}
+var CHAVE='hist9_primeirapagina_resumo';
+
+var CARTAS=[
+ {d:"1929",l:"Mundo",v:"<b>Quebra da Bolsa de Nova York.</b> A crise derruba o preço do café, enfraquece as oligarquias e abre caminho para a Revolução de 1930."},
+ {d:"03/11/1930",l:"Brasil",v:"<b>Vargas assume.</b> Depois da deposição de Washington Luís em 24/10, uma junta militar entrega a presidência a Getúlio."},
+ {d:"09/07/1932",l:"Brasil",v:"<b>Revolução Constitucionalista.</b> São Paulo pega em armas exigindo nova Constituição. Rendição em 02/10 — mas a Constituinte é convocada."},
+ {d:"1932",l:"Brasil",v:"<b>Código Eleitoral.</b> Justiça Eleitoral, voto secreto e <b>voto feminino</b>. Analfabetos continuam proibidos de votar."},
+ {d:"16/07/1934",l:"Brasil",v:"<b>Constituição de 1934.</b> Separa os três poderes; presidente eleito de forma indireta. No dia seguinte a Assembleia elege Vargas."},
+ {d:"nov/1935",l:"Brasil",v:"<b>Intentona Comunista.</b> Levantes em Natal (23), Pernambuco (24) e Rio (27). Estado de sítio e prisões — entre elas, Olga Benário."},
+ {d:"10/11/1937",l:"Brasil",v:"<b>Golpe do Estado Novo.</b> Com o falso Plano Cohen, Vargas fecha o Congresso e outorga a Constituição &ldquo;Polaca&rdquo;."},
+ {d:"set/1939",l:"Mundo",v:"<b>Invasão da Polônia.</b> A Blitzkrieg abre a Segunda Guerra Mundial; França e Inglaterra declaram guerra."},
+ {d:"1940",l:"Mundo",v:"<b>A Europa cai.</b> Dinamarca, Noruega, Bélgica, Holanda, Luxemburgo e França. Dunquerque, Vichy e a Batalha da Grã-Bretanha."},
+ {d:"22/06/1941",l:"Mundo",v:"<b>Operação Barbarossa.</b> Alemanha ataca a URSS numa frente de 3 mil km. Leningrado resiste a um cerco de 900 dias."},
+ {d:"07/12/1941",l:"Mundo",v:"<b>Pearl Harbor.</b> O Japão ataca sem declarar guerra, buscando garantir petróleo — e traz os Estados Unidos para o conflito."},
+ {d:"ago/1942",l:"Brasil",v:"<b>O Brasil entra na guerra.</b> Depois de ataques de submarinos alemães a navios mercantes brasileiros."},
+ {d:"1942-43",l:"Mundo",v:"<b>A virada.</b> Midway (Pacífico), El Alamein (África) e Stalingrado (URSS): o Eixo para de avançar."},
+ {d:"06/06/1944",l:"Mundo",v:"<b>Dia D.</b> Operação Overlord: desembarque na Normandia em cinco praias — Utah, Omaha, Gold, Juno e Sword."},
+ {d:"1944",l:"Brasil",v:"<b>A FEB vai à Itália.</b> 25 mil homens; Monte Castelo, Castelnuovo e Montese. 454 mortos em ação."},
+ {d:"08/05/1945",l:"Mundo",v:"<b>Fim da guerra na Europa.</b> Hitler se suicida em 30/04, Berlim se rende em 02/05 e o alto comando encerra as operações em 08/05."},
+ {d:"06/08/1945",l:"Mundo",v:"<b>Hiroshima.</b> A bomba <em>Little Boy</em>; cerca de 140 mil mortos até o fim do ano. Em 09/08, <em>Fat Man</em> em Nagasaki."},
+ {d:"02/09/1945",l:"Mundo",v:"<b>Rendição do Japão.</b> Assinatura dos documentos oficiais: fim da Segunda Guerra Mundial."},
+ {d:"29/10/1945",l:"Brasil",v:"<b>Queda de Vargas.</b> Os militares forçam a renúncia; encerra-se o Estado Novo. Em 02/12, Dutra (PSD) é eleito."},
+ {d:"1948",l:"Mundo",v:"<b>Direitos Humanos.</b> A Assembleia Geral da ONU adota a Declaração Universal, com 30 artigos."}
+];
+var TOPICOS=[
+ "Sei explicar por que a crise de 1929 abalou a política brasileira, e não só a economia.",
+ "Sei dizer quem rompeu a política do café com leite e por quê.",
+ "Sei explicar por que a Revolução de 1930 não foi um levante popular.",
+ "Sei listar três atos do Governo Provisório que concentraram poder em Vargas.",
+ "Sei explicar para que servia o Departamento Nacional do Café.",
+ "Sei explicar a frase: em 1932 São Paulo perdeu a guerra e ganhou a Constituição.",
+ "Sei dizer o que o Código Eleitoral de 1932 trouxe e quem continuou sem votar.",
+ "Sei comparar a AIB e a ANL (líderes e bandeiras).",
+ "Sei explicar o que foi a Intentona Comunista e o que o governo ganhou com ela.",
+ "Sei explicar o que foi o Plano Cohen e para que serviu.",
+ "Sei citar os instrumentos do Estado Novo: Polaca, DASP, DESPS e DIP.",
+ "Sei explicar a diferença entre populismo e trabalhismo em Vargas.",
+ "Sei descrever a Blitzkrieg e o que a diferenciava da guerra de trincheiras.",
+ "Sei explicar o Pacto Molotov-Ribbentrop sem dizer que era aliança ideológica.",
+ "Sei explicar por que a Linha Maginot não funcionou.",
+ "Sei diferenciar a França de Vichy da Resistência Francesa.",
+ "Sei explicar a importância da máquina Enigma.",
+ "Sei explicar a Operação Barbarossa e o papel do inverno e da terra arrasada.",
+ "Sei explicar o motivo econômico do ataque a Pearl Harbor.",
+ "Sei dizer o que Midway, El Alamein e Stalingrado têm em comum.",
+ "Sei explicar o que foi o Holocausto, com números e grupos perseguidos.",
+ "Sei situar Teerã, Yalta e Potsdam e o que se decidiu em cada uma.",
+ "Sei contar como foi o Dia D, incluindo o engodo dos tanques falsos.",
+ "Sei narrar o fim da guerra na Europa (30/04, 02/05 e 08/05 de 1945).",
+ "Sei explicar o Projeto Manhattan e as datas de Hiroshima e Nagasaki.",
+ "Sei explicar por que a ONU substituiu a Liga das Nações e citar seus órgãos.",
+ "Sei explicar por que Alemanha e EUA disputavam o Brasil antes da guerra.",
+ "Sei dizer o que fez o Brasil entrar de fato na guerra em 1942.",
+ "Sei falar da FEB: onde lutou, quantos eram e o mascote da cobra fumando.",
+ "Sei explicar a política de boa vizinhança e seus efeitos culturais no Brasil.",
+ "Sei explicar o paradoxo que derrubou o Estado Novo.",
+ "Sei identificar UDN, PSD e PTB e o resultado da eleição de 1945."
+];
+
+var D={flip:{},chk:{},rol:0};
+function salvar(){D.quando=new Date().toLocaleString('pt-BR');setIt(CHAVE,JSON.stringify(D));var q=document.getElementById('quando');if(q)q.textContent=D.quando;}
+function carregar(){var r=getIt(CHAVE);if(r){try{var o=JSON.parse(r);if(o&&typeof o==='object'){D=o;if(!D.flip)D.flip={};if(!D.chk)D.chk={};if(!D.rol)D.rol=0;}}catch(e){}}var q=document.getElementById('quando');if(q)q.textContent=D.quando||'ainda não salvo';}
+
+function render(){
+  var f=document.getElementById('flips'); f.innerHTML='';
+  for(var i=0;i<CARTAS.length;i++){
+    var C=CARTAS[i], d=document.createElement('div');
+    d.className='flip'+(D.flip[i]?' v':''); d.setAttribute('data-i',i);
+    d.innerHTML='<div class="in"><div class="f"><div class="d">'+C.d+'</div><div class="l">'+C.l+'</div></div><div class="b">'+C.v+'</div></div>';
+    d.onclick=(function(n){return function(){virar(n);};})(i);
+    f.appendChild(d);
+  }
+  var c=document.getElementById('checks'); c.innerHTML='';
+  for(var t=0;t<TOPICOS.length;t++){
+    var mk=!!D.chk[t], dv=document.createElement('div');
+    dv.className='check'+(mk?' ok':'');
+    dv.innerHTML='<input type="checkbox" id="ck'+t+'"'+(mk?' checked':'')+'><label for="ck'+t+'">'+TOPICOS[t]+'</label>';
+    dv.querySelector('input').onchange=(function(n){return function(){marcar(n);};})(t);
+    c.appendChild(dv);
+  }
+  document.getElementById('tot').textContent=TOPICOS.length;
+  attCont();
+}
+function virar(i){ D.flip[i]=!D.flip[i]; salvar();
+  var el=document.querySelector('.flip[data-i="'+i+'"]'); if(el) el.className='flip'+(D.flip[i]?' v':''); }
+function marcar(t){ D.chk[t]=!D.chk[t]; salvar();
+  var inp=document.getElementById('ck'+t); if(inp){ inp.checked=!!D.chk[t]; inp.parentNode.className='check'+(D.chk[t]?' ok':''); }
+  attCont(); }
+function attCont(){var n=0;for(var k in D.chk){if(D.chk.hasOwnProperty(k)&&D.chk[k])n++;}document.getElementById('cont').textContent=n;}
+
+/* rolagem máxima */
+window.addEventListener('scroll',function(){
+  var h=document.documentElement.scrollHeight-window.innerHeight;
+  if(h<=0) return;
+  var p=Math.round(window.scrollY/h*100);
+  if(p>(D.rol||0)){ D.rol=Math.min(p,100); salvar(); }
+});
+
+function exportar(){
+  var marc=[],n=0;
+  for(var t=0;t<TOPICOS.length;t++){ if(D.chk[t]){ marc.push(TOPICOS[t]); n++; } }
+  var out={material:'Resumo',kit:'Primeira Página — História 9º ano',quando:D.quando||'',
+    rolagem_maxima_pct:D.rol||0,cartas_viradas:Object.keys(D.flip).length,
+    topicos_marcados:n,topicos_total:TOPICOS.length,lista_marcados:marc};
+  var bl=new Blob([JSON.stringify(out,null,2)],{type:'application/json'});
+  var a=document.createElement('a'); a.href=URL.createObjectURL(bl); a.download='resumo-historia9.json'; a.click();
+}
+function importar(ev){
+  var f=ev.target.files[0]; if(!f) return;
+  var r=new FileReader();
+  r.onload=function(x){try{var o=JSON.parse(x.target.result);
+    if(o){ if(o.rolagem_maxima_pct)D.rol=o.rolagem_maxima_pct;
+      if(o.lista_marcados){ D.chk={}; for(var t=0;t<TOPICOS.length;t++){ if(o.lista_marcados.indexOf(TOPICOS[t])!==-1) D.chk[t]=true; } }
+      salvar(); render(); } }catch(e){}};
+  r.readAsText(f); ev.target.value='';
+}
+var acaoModal=null;
+function pedirZerar(){
+  acaoModal=function(){ delIt(CHAVE); D={flip:{},chk:{},rol:0}; salvar(); render(); fecharModal(); };
+  document.getElementById('mdlt').textContent='Zerar tudo?';
+  document.getElementById('mdlp').textContent='Isso apaga as cartas viradas e o checklist deste Resumo.';
+  document.getElementById('mdl').className='modal on';
+}
+function mdlOk(){ if(acaoModal) acaoModal(); }
+function fecharModal(){ document.getElementById('mdl').className='modal'; acaoModal=null; }
+
+carregar(); render();
+</script>
+</body>
+</html>
